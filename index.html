@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For My Lalove ❤️</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffeef2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating Hearts Animation */
+        .heart-particle {
+            position: absolute;
+            color: rgba(255, 107, 139, 0.4);
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUp 6s linear infinite;
+            bottom: -30px;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-105vh) translateX(50px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            background-color: #fff0f5;
+            padding: 25px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+            border: 2px solid #fff;
+        }
+
+        /* Screen Management */
+        .screen {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        .screen.active { display: flex; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Component Details */
+        .hearts { font-size: 26px; color: #ff6b8b; margin-bottom: 5px; }
+        .mascot { width: 140px; height: 140px; object-fit: contain; margin-bottom: 10px; }
+        .subtitle { color: #ff6b8b; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
+        h1 { color: #b3002d; font-size: 24px; margin: 8px 0 25px 0; font-weight: 700; }
+
+        /* Buttons Interaction */
+        .btn-group { display: flex; gap: 15px; justify-content: center; width: 100%; position: relative; min-height: 50px; }
+        button {
+            padding: 12px 24px;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.15s, background-color 0.2s;
+        }
+        .primary-btn {
+            background: linear-gradient(135deg, #ff6b8b, #ff4757);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+        }
+        .primary-btn:active { transform: scale(0.95); }
+        .secondary-btn {
+            background-color: #ffffff;
+            color: #ff6b8b;
+            border: 2px solid #ffb6c1;
+        }
+
+        /* Screen 2: Bouquet Elements */
+        .bouquet-img { width: 150px; height: 150px; object-fit: contain; margin: 10px 0; }
+        .message-wall {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 15px;
+            border-radius: 15px;
+            max-height: 180px;
+            overflow-y: auto;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px dashed #ffb6c1;
+        }
+        .side-msg {
+            color: #d11a47;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+
+        /* Screen 3: Home Layout */
+        .nav-grid { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-top: 10px; }
+        .nav-tab-btn {
+            background-color: white;
+            color: #b3002d;
+            border: 2px solid #ffb6c1;
+            padding: 14px;
+            font-size: 15px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 3px 6px rgba(255,182,193,0.2);
+        }
+        .nav-tab-btn:active { background-color: #ffeef2; }
+
+        /* Screen 4: Dynamic Display Layout */
+        .content-display {
+            width: 100%;
+            background: white;
+            padding: 20px 15px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .letter-text { color: #4a4a4a; font-size: 16px; font-style: italic; line-height: 1.6; font-weight: 500; }
+
+        /* Mobile Slideshow Carousel */
+        .slideshow-container { position: relative; width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; }
+        .slide { display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+        .slide.active { display: block; }
+        .slide-nav {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            background: rgba(255, 107, 139, 0.8); color: white; border: none;
+            width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 16px;
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .prev-slide { left: -10px; }
+        .next-slide { right: -10px; }
+    </style>
+</head>
+<body>
+
+    <!-- Background Animation System -->
+    <div id="heartBackground"></div>
+
+    <div class="container">
+        
+        <!-- SCREEN 1: Dynamic Ask Screen -->
+        <div id="screenAsk" class="screen active">
+            <div class="hearts">💖 ✨ 💖</div>
+            <img class="mascot" src="https://giphy.com" alt="Cute Cat Mascot">
+            <div class="subtitle">Hey beautiful</div>
+            <h1>Do you want to see your gift?</h1>
+            <div class="btn-group">
+                <button id="yesBtn" class="primary-btn" onclick="changeScreen('screenBouquet')">YES PLEASE</button>
+                <button id="noBtn" class="secondary-btn" onmouseover="moveNoButton()" onclick="moveNoButton()" ontouchstart="moveNoButton(event)">NO THANKS</button>
+            </div>
+        </div>
+
+        <!-- SCREEN 2: Bouquet Presentation Screen -->
+        <div id="screenBouquet" class="screen">
+            <div class="hearts">🌸 🌷 🌹</div>
+            <div class="subtitle">A special arrangement for you</div>
+            <img class="bouquet-img" src="https://giphy.com" alt="Cute Flower Bouquet Animation">
+            
+            <div class="message-wall">
+                <div class="side-msg">"Let's do our best together"</div>
+                <div class="side-msg">"We will get married soon lalove"</div>
+                <div class="side-msg">"You're my wife"</div>
+                <div class="side-msg">"Happy Anniversary"</div>
+                <div class="side-msg">"I'm so glad that I'm yours and you're mine"</div>
+                <div class="side-msg" style="color: #ff4757; font-size: 15px; font-weight: 700;">"I LOVE YOU SO MUCH!!!"</div>
+                <div class="side-msg">"MUAHHH!!! MUAHHH!!! MUAHHH!! MUAHHHH!!!"</div>
+            </div>
+
+            <button class="primary-btn" onclick="changeScreen('screenHome')">🏠 Go to Home</button>
+        </div>
+
+        <!-- SCREEN 3: Core Home Screen Hub -->
+        <div id="screenHome" class="screen">
+            <div class="hearts">💝 🌟 💝</div>
+            <div class="subtitle">Choose a gift box to open</div>
+            
+            <div class="nav-grid">
+                <button class="nav-tab-btn" onclick="openContentScreen('letter')">✉️ Read My Letter</button>
+                <button class="nav-tab-btn" onclick="openContentScreen('images')">📸 Our Memories</button>
+                <button class="nav-tab-btn" onclick="openContentScreen('ribbon')">🎀 Our Future Plans</button>
+            </div>
+            <button class="secondary-btn" style="margin-top: 25px; font-size: 13px; padding: 8px 20px;" onclick="changeScreen('screenBouquet')">⬅️ Back to Bouquet</button>
+        </div>
+
+        <!-- SCREEN 4: Selected Content Screen View -->
+        <div id="screenContent" class="screen">
+            <div class="hearts" id="contentEmoji">✨</div>
+            <h2 id="contentTitle" style="color: #b3002d; margin: 5px 0 15px 0; font-size: 20px;"></h2>
+            
+            <div class="content-display">
+                <!-- Text Message Display -->
+                <div id="letterContainer" class="letter-text" style="display: none;"></div>
+                
+                <!-- Photos Showcase Slider -->
+                <div id="slideshowContainer" class="slideshow-container" style="display: none;">
+                    <!-- 👇 MEMORY PHOTOS SECTION: Swap these direct links with photos of you both later -->
+                    <img class="slide active" src="https://unsplash.com" alt="Couple Moment 1">
+  
