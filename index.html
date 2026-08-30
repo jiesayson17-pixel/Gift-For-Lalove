@@ -1,238 +1,597 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>For My Lalove ❤️</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-        body {
-            margin: 0;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #ffeef2;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Lalove ❤️</title><style>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
 
-        /* Fixed Background Animations */
-        #heartBackground {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-        .heart-particle {
-            position: absolute;
-            color: rgba(255, 107, 139, 0.4);
-            font-size: 20px;
-            pointer-events: none;
-            bottom: -30px;
-            animation: floatUp 6s linear infinite;
-        }
-        @keyframes floatUp {
-            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-110vh) translateX(50px) rotate(360deg); opacity: 0; }
-        }
+body {
+    margin: 0;
+    padding: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffeef2;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
 
-        /* Container Layout */
-        .container {
-            background-color: #fff0f5;
-            padding: 25px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
-            max-width: 400px;
-            width: 100%;
-            position: relative;
-            min-height: 520px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 5;
-            border: 2px solid #fff;
-        }
+#heartBackground {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
 
-        /* Screen States */
-        .screen {
-            display: none;
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .screen.active { 
-            display: flex; 
-        }
+.heart-particle {
+    position: absolute;
+    bottom: -30px;
+    font-size: 20px;
+    animation: floatUp 6s linear forwards;
+}
 
-        /* Typography & Assets */
-        .hearts { font-size: 26px; color: #ff6b8b; margin-bottom: 5px; }
-        .mascot { width: 140px; height: 140px; object-fit: contain; margin-bottom: 10px; }
-        .subtitle { color: #ff6b8b; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
-        h1 { color: #b3002d; font-size: 24px; margin: 8px 0 25px 0; font-weight: 700; }
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
 
-        /* Buttons & Interactions */
-        .btn-group { display: flex; gap: 15px; justify-content: center; width: 100%; position: relative; min-height: 50px; }
-        button {
-            padding: 12px 24px;
-            font-size: 15px;
-            font-weight: bold;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: transform 0.1s;
-        }
-        .primary-btn {
-            background: linear-gradient(135deg, #ff6b8b, #ff4757);
-            color: white;
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
-        }
-        button:active { transform: scale(0.95); }
-        .secondary-btn {
-            background-color: #ffffff;
-            color: #ff6b8b;
-            border: 2px solid #ffb6c1;
-        }
+.container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 400px;
+    min-height: 520px;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff0f5;
+    border: 2px solid white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255,182,193,.5);
+}
 
-        /* Screen 2: Bouquet Elements */
-        .bouquet-img { width: 150px; height: 150px; object-fit: contain; margin: 10px 0; }
-        .message-wall {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 15px;
-            border-radius: 15px;
-            max-height: 180px;
-            overflow-y: auto;
-            width: 100%;
-            margin-bottom: 20px;
-            border: 1px dashed #ffb6c1;
-        }
-        .side-msg {
-            color: #d11a47;
-            font-size: 14px;
-            font-weight: 600;
-            margin: 10px 0;
-            line-height: 1.4;
-        }
+.screen {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-        /* Screen 3: Home Layout */
-        .nav-grid { display: flex; flex-direction: column; gap: 12px; width: 100%; margin-top: 10px; }
-        .nav-tab-btn {
-            background-color: white;
-            color: #b3002d;
-            border: 2px solid #ffb6c1;
-            padding: 14px;
-            font-size: 15px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 3px 6px rgba(255,182,193,0.2);
-        }
+.screen.active {
+    display: flex;
+}
 
-        /* Screen 4: Content Displays */
-        .content-display {
-            width: 100%;
-            background: white;
-            padding: 20px 15px;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            min-height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
-        }
-        .letter-text { color: #4a4a4a; font-size: 16px; font-style: italic; line-height: 1.6; font-weight: 500; }
+.hearts {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
 
-        /* Mobile Slideshow */
-        .slideshow-container { position: relative; width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; }
-        .slide { display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
-        .slide.active { display: block; }
-        .slide-nav {
-            position: absolute; top: 50%; transform: translateY(-50%);
-            background: rgba(255, 107, 139, 0.8); color: white; border: none;
-            width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 16px;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .prev-slide { left: -10px; }
-        .next-slide { right: -10px; }
-    </style>
-</head>
-<body>
+.mascot,
+.bouquet-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 10px 0;
+}
 
-    <div id="heartBackground"></div>
+.subtitle {
+    color: #ff6b8b;
+    font-size: 15px;
+    font-weight: 600;
+}
 
-    <div class="container">
-        
-        <!-- SCREEN 1: First Landing Screen (Matches Image Layout) -->
-        <div id="screenAsk" class="screen active">
-            <div class="hearts">💖 ✨ 💖</div>
-            <img class="mascot" src="https://giphy.com" alt="Cat Mascot">
-            <div class="subtitle">Hey beautiful</div>
-            <h1>Do you want to see your gift?</h1>
-            <div class="btn-group">
-                <button id="yesBtn" class="primary-btn" onclick="changeScreen('screenBouquet')">YES PLEASE</button>
-                <button id="noBtn" class="secondary-btn" onmouseover="moveNoButton()" onclick="moveNoButton()" ontouchstart="moveNoButton(event)">NO THANKS</button>
-            </div>
-        </div>
+h1 {
+    color: #b3002d;
+    font-size: 24px;
+    margin: 8px 0 25px;
+}
 
-        <!-- SCREEN 2: Bouquet Presentation Screen -->
-        <div id="screenBouquet" class="screen">
-            <div class="hearts">🌸 🌷 🌹</div>
-            <div class="subtitle">A special arrangement for you</div>
-            <img class="bouquet-img" src="https://giphy.com" alt="Bouquet">
-            
-            <div class="message-wall">
-                <div class="side-msg">"Let's do our best together"</div>
-                <div class="side-msg">"We will get married soon lalove"</div>
-                <div class="side-msg">"You're my wife"</div>
-                <div class="side-msg">"Happy Anniversary"</div>
-                <div class="side-msg">"I'm so glad that I'm yours and you're mine"</div>
-                <div class="side-msg" style="color: #ff4757; font-size: 15px; font-weight: 700;">"I LOVE YOU SO MUCH!!!"</div>
-                <div class="side-msg">"MUAHHH!!! MUAHHH!!! MUAHHH!! MUAHHHH!!!"</div>
-            </div>
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-            <button class="primary-btn" onclick="changeScreen('screenHome')">🏠 Go to Home</button>
-        </div>
+button:active {
+    transform: scale(.95);
+}
 
-        <!-- SCREEN 3: Core Selection Screen Hub -->
-        <div id="screenHome" class="screen">
-            <div class="hearts">💝 🌟 💝</div>
-            <div class="subtitle">Choose a gift box to open</div>
-            
-            <div class="nav-grid">
-                <button class="nav-tab-btn" onclick="openContentScreen('letter')">✉️ Read My Letter</button>
-                <button class="nav-tab-btn" onclick="openContentScreen('images')">📸 Our Memories</button>
-                <button class="nav-tab-btn" onclick="openContentScreen('ribbon')">🎀 Our Future Plans</button>
-            </div>
-            <button class="secondary-btn" style="margin-top: 25px; font-size: 13px; padding: 8px 20px;" onclick="changeScreen('screenBouquet')">⬅️ Back to Bouquet</button>
-        </div>
+.primary-btn {
+    color: white;
+    background: linear-gradient(135deg,#ff6b8b,#ff4757);
+    box-shadow: 0 5px 15px rgba(255,71,87,.3);
+}
 
-        <!-- SCREEN 4: Display View Panel -->
-        <div id="screenContent" class="screen">
-            <div class="hearts" id="contentEmoji">✨</div>
-            <h2 id="contentTitle" style="color: #b3002d; margin: 5px 0 15px 0; font-size: 20px;"></h2>
-            
-            <div class="content-display">
-                <div id="letterContainer" class="letter-text" style="display: none;"></div>
-                
-                <div id="slideshowContainer" class="slideshow-container" style="display: none;">
-                    <!-- PHOTO URLS: Replace these placeholder links with direct URLs of your pictures later -->
-                    <img class="slide active" src="https://unsplash.com" alt="Moment 1">
-                    <img class="slide" src="https://unsplash.com" alt="Moment 2">
-                    <img class="slide" src="https://unsplash.com" alt="Moment 3">
+.secondary-btn {
+    color: #ff6b8b;
+    background: white;
+    border: 2px solid #ffb6c1;
+}
 
-                    
+.btn-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    min-height: 50px;
+}
+
+.message-wall {
+    width: 100%;
+    max-height: 180px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,.85);
+    border: 1px dashed #ffb6c1;
+    border-radius: 15px;
+}
+
+.side-msg {
+    color: #d11a47;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 10px 0;
+}
+
+.nav-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.nav-tab-btn {
+    width: 100%;
+    color: #b3002d;
+    background: white;
+    border: 2px solid #ffb6c1;
+    border-radius: 15px;
+    padding: 14px;
+}
+
+.content-display {
+    width: 100%;
+    min-height: 180px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,.05);
+}
+
+.letter-text {
+    color: #4a4a4a;
+    font-size: 16px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+#futureContainer {
+    color: #4a4a4a;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 180px;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    color: white;
+    background: rgba(255,107,139,.85);
+    border-radius: 50%;
+}
+
+.prev-slide {
+    left: -10px;
+}
+
+.next-slide {
+    right: -10px;
+}
+</style></head><body><div id="heartBackground"></div><div class="container"><!-- SCREEN 1 --><div id="screenAsk" class="screen active"><div class="hearts">💖 ✨ 💖</div>
+
+<!-- Replace this with your actual GIF/image URL -->
+<div style="font-size:100px;">🐱</div>
+
+<div class="subtitle">Hey beautiful</div>
+
+<h1>Do you want to see your gift?</h1>
+
+<div class="btn-group">
+    <button
+        id="yesBtn"
+        class="primary-btn"
+        onclick="changeScreen('screenBouquet')">
+        YES PLEASE
+    </button>
+
+    <button
+        id="noBtn"
+        class="secondary-btn"
+        onclick="moveNoButton(event)">
+        NO THANKS
+    </button>
+</div>
+
+</div><!-- SCREEN 2 --><div id="screenBouquet" class="screen"><div class="hearts">🌸 🌷 🌹</div>
+
+<div class="subtitle">
+    A special arrangement for you
+</div>
+
+<div style="font-size:100px;">💐</div>
+
+<div class="message-wall">
+
+    <div class="side-msg">
+        "Let's do our best together"
+    </div>
+
+    <div class="side-msg">
+        "We will get married soon lalove"
+    </div>
+
+    <div class="side-msg">
+        "You're my wife"
+    </div>
+
+    <div class="side-msg">
+        "Happy Anniversary"
+    </div>
+
+    <div class="side-msg">
+        "I'm so glad that I'm yours and you're mine"
+    </div>
+
+    <div class="side-msg"
+         style="color:#ff4757;font-size:15px;">
+        "I LOVE YOU SO MUCH!!!"
+    </div>
+
+    <div class="side-msg">
+        "MUAHHH!!! MUAHHH!!! MUAHHH!!"
+    </div>
+
+</div>
+
+<button
+    class="primary-btn"
+    onclick="changeScreen('screenHome')">
+    🏠 Go to Home
+</button>
+
+</div><!-- SCREEN 3 --><div id="screenHome" class="screen"><div class="hearts">💝 🌟 💝</div>
+
+<div class="subtitle">
+    Choose a gift box to open
+</div>
+
+<div class="nav-grid">
+
+    <button
+        class="nav-tab-btn"
+        onclick="openContentScreen('letter')">
+        ✉️ Read My Letter
+    </button>
+
+    <button
+        class="nav-tab-btn"
+        onclick="openContentScreen('images')">
+        📸 Our Memories
+    </button>
+
+    <button
+        class="nav-tab-btn"
+        onclick="openContentScreen('ribbon')">
+        🎀 Our Future Plans
+    </button>
+
+</div>
+
+<button
+    class="secondary-btn"
+    style="margin-top:25px;font-size:13px;padding:8px 20px;"
+    onclick="changeScreen('screenBouquet')">
+    ⬅️ Back to Bouquet
+</button>
+
+</div><!-- SCREEN 4 --><div id="screenContent" class="screen"><div class="hearts" id="contentEmoji">
+    ✨
+</div>
+
+<h2
+    id="contentTitle"
+    style="color:#b3002d;margin:5px 0 15px;font-size:20px;">
+</h2>
+
+<div class="content-display">
+
+    <!-- LETTER -->
+    <div
+        id="letterContainer"
+        class="letter-text"
+        style="display:none;">
+        I love you so much, lalove ko! ❤️
+        <br><br>
+        Thank you for staying and for being part of my life.
+        I hope we continue choosing each other every day.
+    </div>
+
+
+    <!-- MEMORIES -->
+    <div
+        id="slideshowContainer"
+        class="slideshow-container"
+        style="display:none;">
+
+        <!-- Replace these with your actual DIRECT image links -->
+        <img
+            class="slide active"
+            src="https://images.unsplash.com/photo-1518199266791-5375a83190b7"
+            alt="Memory 1">
+
+        <img
+            class="slide"
+            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946"
+            alt="Memory 2">
+
+        <img
+            class="slide"
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23"
+            alt="Memory 3">
+
+        <button
+            class="slide-nav prev-slide"
+            onclick="changeSlide(-1)">
+            ❮
+        </button>
+
+        <button
+            class="slide-nav next-slide"
+            onclick="changeSlide(1)">
+            ❯
+        </button>
+
+    </div>
+
+
+    <!-- FUTURE PLANS -->
+    <div
+        id="futureContainer"
+        style="display:none;">
+
+        I hope we get to experience many more beautiful
+        moments together. ❤️
+        <br><br>
+        Let's keep supporting each other, growing together,
+        and making more memories.
+    </div>
+
+</div>
+
+<button
+    class="secondary-btn"
+    onclick="changeScreen('screenHome')">
+    ⬅️ Back to Options
+</button>
+
+</div></div><script>
+
+let currentSlideIdx = 0;
+
+
+/* CHANGE SCREEN */
+function changeScreen(screenId) {
+
+    document
+        .querySelectorAll('.screen')
+        .forEach(screen => {
+            screen.classList.remove('active');
+        });
+
+    const target = document.getElementById(screenId);
+
+    if (target) {
+        target.classList.add('active');
+    }
+}
+
+
+/* OPEN CONTENT */
+function openContentScreen(type) {
+
+    document.getElementById('letterContainer').style.display = 'none';
+
+    document.getElementById('slideshowContainer').style.display = 'none';
+
+    document.getElementById('futureContainer').style.display = 'none';
+
+    const title = document.getElementById('contentTitle');
+
+    const emoji = document.getElementById('contentEmoji');
+
+
+    if (type === 'letter') {
+
+        emoji.innerText = '✉️';
+
+        title.innerText = 'A Letter For You';
+
+        document.getElementById('letterContainer').style.display = 'block';
+
+    }
+
+
+    else if (type === 'images') {
+
+        emoji.innerText = '📸';
+
+        title.innerText = 'Our Memories';
+
+        document.getElementById('slideshowContainer').style.display = 'block';
+
+        currentSlideIdx = 0;
+
+        showSlide(currentSlideIdx);
+
+    }
+
+
+    else if (type === 'ribbon') {
+
+        emoji.innerText = '🎀';
+
+        title.innerText = 'Our Future Plans';
+
+        document.getElementById('futureContainer').style.display = 'block';
+
+    }
+
+
+    changeScreen('screenContent');
+}
+
+
+/* SLIDESHOW */
+function showSlide(index) {
+
+    const slides = document.querySelectorAll('.slide');
+
+    if (!slides.length) return;
+
+    if (index >= slides.length) {
+        currentSlideIdx = 0;
+    }
+
+    if (index < 0) {
+        currentSlideIdx = slides.length - 1;
+    }
+
+    slides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+
+    slides[currentSlideIdx].classList.add('active');
+}
+
+
+function changeSlide(step) {
+
+    currentSlideIdx += step;
+
+    showSlide(currentSlideIdx);
+}
+
+
+/* NO BUTTON */
+function moveNoButton(event) {
+
+    if (event) {
+        event.preventDefault();
+    }
+
+    const noBtn = document.getElementById('noBtn');
+
+    const maxX =
+        window.innerWidth - noBtn.offsetWidth - 10;
+
+    const maxY =
+        window.innerHeight - noBtn.offsetHeight - 10;
+
+    const x =
+        Math.max(10, Math.random() * maxX);
+
+    const y =
+        Math.max(10, Math.random() * maxY);
+
+    noBtn.style.position = 'fixed';
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+    noBtn.style.zIndex = '9999';
+}
+
+
+/* FLOATING HEARTS */
+function createHeartParticle() {
+
+    const background =
+        document.getElementById('heartBackground');
+
+    const heart =
+        document.createElement('div');
+
+    heart.className = 'heart-particle';
+
+    const hearts = [
+        '❤️',
+        '💖',
+        '💝',
+        '🌸',
+        '✨'
+    ];
+
+    heart.innerText =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left =
+        Math.random() * 100 + 'vw';
+
+    heart.style.animationDuration =
+        (Math.random() * 3 + 4) + 's';
+
+    background.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
+}
+
+
+setInterval(createHeartParticle, 700);
+
+</script></body>
+</html>
