@@ -23,21 +23,31 @@
             position: relative;
         }
 
-        /* Floating Hearts Animation */
+        /* Fixed Background Animations */
+        #heartBackground {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
         .heart-particle {
             position: absolute;
             color: rgba(255, 107, 139, 0.4);
             font-size: 20px;
             pointer-events: none;
-            z-index: 1;
-            animation: floatUp 6s linear infinite;
             bottom: -30px;
+            animation: floatUp 6s linear infinite;
         }
         @keyframes floatUp {
             0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-105vh) translateX(50px) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(-110vh) translateX(50px) rotate(360deg); opacity: 0; }
         }
 
+        /* Container Layout */
         .container {
             background-color: #fff0f5;
             padding: 25px 20px;
@@ -55,28 +65,25 @@
             border: 2px solid #fff;
         }
 
-        /* Screen Management */
+        /* Screen States */
         .screen {
             display: none;
             width: 100%;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            animation: fadeIn 0.4s ease-out forwards;
         }
-        .screen.active { display: flex; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+        .screen.active { 
+            display: flex; 
         }
 
-        /* Component Details */
+        /* Typography & Assets */
         .hearts { font-size: 26px; color: #ff6b8b; margin-bottom: 5px; }
         .mascot { width: 140px; height: 140px; object-fit: contain; margin-bottom: 10px; }
         .subtitle { color: #ff6b8b; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
         h1 { color: #b3002d; font-size: 24px; margin: 8px 0 25px 0; font-weight: 700; }
 
-        /* Buttons Interaction */
+        /* Buttons & Interactions */
         .btn-group { display: flex; gap: 15px; justify-content: center; width: 100%; position: relative; min-height: 50px; }
         button {
             padding: 12px 24px;
@@ -85,14 +92,14 @@
             border: none;
             border-radius: 25px;
             cursor: pointer;
-            transition: transform 0.15s, background-color 0.2s;
+            transition: transform 0.1s;
         }
         .primary-btn {
             background: linear-gradient(135deg, #ff6b8b, #ff4757);
             color: white;
             box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
         }
-        .primary-btn:active { transform: scale(0.95); }
+        button:active { transform: scale(0.95); }
         .secondary-btn {
             background-color: #ffffff;
             color: #ff6b8b;
@@ -134,9 +141,8 @@
             gap: 10px;
             box-shadow: 0 3px 6px rgba(255,182,193,0.2);
         }
-        .nav-tab-btn:active { background-color: #ffeef2; }
 
-        /* Screen 4: Dynamic Display Layout */
+        /* Screen 4: Content Displays */
         .content-display {
             width: 100%;
             background: white;
@@ -151,7 +157,7 @@
         }
         .letter-text { color: #4a4a4a; font-size: 16px; font-style: italic; line-height: 1.6; font-weight: 500; }
 
-        /* Mobile Slideshow Carousel */
+        /* Mobile Slideshow */
         .slideshow-container { position: relative; width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; }
         .slide { display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
         .slide.active { display: block; }
@@ -159,7 +165,7 @@
             position: absolute; top: 50%; transform: translateY(-50%);
             background: rgba(255, 107, 139, 0.8); color: white; border: none;
             width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 16px;
-            display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex; align-items: center; justify-content: center;
         }
         .prev-slide { left: -10px; }
         .next-slide { right: -10px; }
@@ -167,15 +173,14 @@
 </head>
 <body>
 
-    <!-- Background Animation System -->
     <div id="heartBackground"></div>
 
     <div class="container">
         
-        <!-- SCREEN 1: Dynamic Ask Screen -->
+        <!-- SCREEN 1: First Landing Screen (Matches Image Layout) -->
         <div id="screenAsk" class="screen active">
             <div class="hearts">💖 ✨ 💖</div>
-            <img class="mascot" src="https://giphy.com" alt="Cute Cat Mascot">
+            <img class="mascot" src="https://giphy.com" alt="Cat Mascot">
             <div class="subtitle">Hey beautiful</div>
             <h1>Do you want to see your gift?</h1>
             <div class="btn-group">
@@ -188,7 +193,7 @@
         <div id="screenBouquet" class="screen">
             <div class="hearts">🌸 🌷 🌹</div>
             <div class="subtitle">A special arrangement for you</div>
-            <img class="bouquet-img" src="https://giphy.com" alt="Cute Flower Bouquet Animation">
+            <img class="bouquet-img" src="https://giphy.com" alt="Bouquet">
             
             <div class="message-wall">
                 <div class="side-msg">"Let's do our best together"</div>
@@ -203,7 +208,7 @@
             <button class="primary-btn" onclick="changeScreen('screenHome')">🏠 Go to Home</button>
         </div>
 
-        <!-- SCREEN 3: Core Home Screen Hub -->
+        <!-- SCREEN 3: Core Selection Screen Hub -->
         <div id="screenHome" class="screen">
             <div class="hearts">💝 🌟 💝</div>
             <div class="subtitle">Choose a gift box to open</div>
@@ -216,17 +221,18 @@
             <button class="secondary-btn" style="margin-top: 25px; font-size: 13px; padding: 8px 20px;" onclick="changeScreen('screenBouquet')">⬅️ Back to Bouquet</button>
         </div>
 
-        <!-- SCREEN 4: Selected Content Screen View -->
+        <!-- SCREEN 4: Display View Panel -->
         <div id="screenContent" class="screen">
             <div class="hearts" id="contentEmoji">✨</div>
             <h2 id="contentTitle" style="color: #b3002d; margin: 5px 0 15px 0; font-size: 20px;"></h2>
             
             <div class="content-display">
-                <!-- Text Message Display -->
                 <div id="letterContainer" class="letter-text" style="display: none;"></div>
                 
-                <!-- Photos Showcase Slider -->
                 <div id="slideshowContainer" class="slideshow-container" style="display: none;">
-                    <!-- 👇 MEMORY PHOTOS SECTION: Swap these direct links with photos of you both later -->
-                    <img class="slide active" src="https://unsplash.com" alt="Couple Moment 1">
-  
+                    <!-- PHOTO URLS: Replace these placeholder links with direct URLs of your pictures later -->
+                    <img class="slide active" src="https://unsplash.com" alt="Moment 1">
+                    <img class="slide" src="https://unsplash.com" alt="Moment 2">
+                    <img class="slide" src="https://unsplash.com" alt="Moment 3">
+
+                    
