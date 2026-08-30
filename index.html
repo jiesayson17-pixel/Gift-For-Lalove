@@ -1,121 +1,78 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>For My Lalove 💗</title><style>
-
-/* =========================
-   GLOBAL
-========================= */
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Lalove ❤️</title><style>
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
 }
 
-html, body {
-    margin: 0;
-    width: 100%;
-    min-height: 100%;
-}
-
 body {
-    min-height: 100vh;
+    margin: 0;
     padding: 15px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #ffeef3;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    text-align: center;
     overflow: hidden;
-
-    font-family:
-        "Segoe UI",
-        Tahoma,
-        sans-serif;
-
-    background:
-        radial-gradient(circle at top left, #fff7fa, transparent 40%),
-        radial-gradient(circle at bottom right, #ffdce7, transparent 40%),
-        #ffeef4;
 }
 
-/* =========================
-   BACKGROUND
-========================= */
-
-#background {
+#heartBackground {
     position: fixed;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    z-index: 0;
+    z-index: 1;
 }
 
-.particle {
+.heart {
     position: absolute;
     bottom: -40px;
-    animation: floatParticle linear forwards;
-    opacity: 0;
+    font-size: 20px;
+    animation: floatUp linear forwards;
 }
 
-@keyframes floatParticle {
-
+@keyframes floatUp {
     0% {
-        transform:
-            translateY(0)
-            rotate(0deg)
-            scale(.7);
+        transform: translateY(0) rotate(0);
         opacity: 0;
     }
 
     15% {
-        opacity: .8;
+        opacity: 1;
     }
 
     100% {
-        transform:
-            translateY(-115vh)
-            rotate(360deg)
-            scale(1.2);
+        transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
 }
 
-/* =========================
-   MAIN CARD
-========================= */
-
 .container {
     position: relative;
     z-index: 5;
-
     width: 100%;
     max-width: 430px;
     min-height: 580px;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    padding: 28px 22px;
+    background: rgba(255, 245, 248, 0.95);
 
+    border: 2px solid white;
     border-radius: 30px;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.9),
-            rgba(255,239,246,.96)
-        );
-
-    border: 2px solid rgba(255,255,255,.9);
-
     box-shadow:
-        0 25px 70px rgba(210,80,120,.18),
-        inset 0 0 30px rgba(255,255,255,.6);
+        0 20px 60px rgba(220, 80, 120, 0.2);
 
     overflow: hidden;
-
-    backdrop-filter: blur(10px);
 }
-
-/* =========================
-   SCREENS
-========================= */
 
 .screen {
     display: none;
@@ -125,19 +82,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    animation: screenIn .6s ease;
 }
 
 .screen.active {
     display: flex;
+    animation: screenIn .5s ease;
 }
 
 @keyframes screenIn {
-
     from {
         opacity: 0;
-        transform: translateY(18px) scale(.97);
+        transform: translateY(15px) scale(.97);
     }
 
     to {
@@ -146,20 +101,13 @@ body {
     }
 }
 
-/* =========================
-   TEXT
-========================= */
-
 .hearts {
-    font-size: 27px;
-    margin-bottom: 7px;
-
-    animation:
-        heartbeat 2s ease-in-out infinite;
+    font-size: 28px;
+    margin-bottom: 8px;
+    animation: heartbeat 2s infinite;
 }
 
 @keyframes heartbeat {
-
     0%,100% {
         transform: scale(1);
     }
@@ -170,129 +118,118 @@ body {
 }
 
 .subtitle {
-    color: #ff7095;
+    color: #ff6b91;
     font-size: 15px;
     font-weight: 600;
-    letter-spacing: 1px;
 }
 
 h1 {
-    margin: 10px 0 25px;
-
     color: #a90036;
-
     font-size: 25px;
-    line-height: 1.25;
+    line-height: 1.3;
+    margin: 10px 0 25px;
 }
 
 h2 {
     color: #a90036;
+    margin: 8px 0 18px;
 }
 
-/* =========================
-   FIRST SCREEN
-========================= */
-
 .cute-cat {
-    font-size: 105px;
-
+    font-size: 100px;
     margin: 15px 0;
-
-    filter:
-        drop-shadow(0 10px 12px rgba(255,100,140,.15));
-
-    animation:
-        catFloat 3s ease-in-out infinite;
+    animation: catFloat 3s ease-in-out infinite;
 }
 
 @keyframes catFloat {
-
     0%,100% {
-        transform: translateY(0) rotate(-2deg);
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-10px) rotate(2deg);
+        transform: translateY(-10px);
     }
 }
 
-.btn-group {
-    display: flex;
-    gap: 13px;
-    justify-content: center;
-    width: 100%;
-}
+/* BUTTONS */
 
 button {
-    border: none;
+    font-family: inherit;
     cursor: pointer;
-
-    font-size: 14px;
-    font-weight: 700;
-
-    border-radius: 30px;
-
-    transition:
-        transform .2s,
-        box-shadow .2s;
-}
-
-button:active {
-    transform: scale(.94);
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .primary-btn {
     padding: 13px 24px;
+    border: none;
+    border-radius: 30px;
 
     color: white;
+    font-size: 14px;
+    font-weight: 700;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff7198,
-            #ff4770
-        );
+    background: linear-gradient(
+        135deg,
+        #ff7198,
+        #ff416c
+    );
 
     box-shadow:
-        0 9px 22px rgba(255,71,112,.25);
+        0 8px 20px rgba(255, 65, 108, .25);
+
+    transition: transform .2s;
 }
 
-.primary-btn:hover {
-    transform: translateY(-3px);
+.primary-btn:active {
+    transform: scale(.94);
 }
 
-/* =========================
-   FLOWER SCREEN
-========================= */
+.secondary-btn {
+    padding: 11px 20px;
+
+    border: 2px solid #ffc0d0;
+    border-radius: 30px;
+
+    color: #ff6b91;
+    background: white;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.btn-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* FLOWER SCREEN */
 
 .flower-scene {
     position: relative;
-
     width: 100%;
-    height: 360px;
+    height: 350px;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .bouquet {
-    position: relative;
+    font-size: 135px;
     z-index: 3;
 
-    font-size: 130px;
-
-    animation:
-        bouquetFloat 3s ease-in-out infinite;
+    animation: bouquetFloat 3s ease-in-out infinite;
 
     filter:
-        drop-shadow(0 15px 15px rgba(255,100,140,.2));
+        drop-shadow(0 12px 12px rgba(255,100,140,.18));
 }
 
 @keyframes bouquetFloat {
-
     0%,100% {
-        transform: translateY(4px);
+        transform: translateY(5px);
     }
 
     50% {
@@ -300,205 +237,143 @@ button:active {
     }
 }
 
-/* WORDS */
-
 .flower-word {
     position: absolute;
-
-    color: #d94a72;
-
-    font-size: 13px;
+    color: #d34c75;
+    font-size: 12px;
     font-weight: 700;
-
     white-space: nowrap;
 
-    opacity: 0;
-
-    animation:
-        wordFloat 4s ease-in-out infinite;
+    animation: wordFloat 4s ease-in-out infinite;
 }
 
 .left1 {
-    left: 2%;
-    top: 22%;
-    animation-delay: .2s;
+    left: 0;
+    top: 20%;
 }
 
 .left2 {
-    left: 0;
+    left: 2%;
     top: 48%;
-    animation-delay: 1.1s;
+    animation-delay: 1s;
 }
 
 .left3 {
     left: 8%;
-    top: 72%;
+    top: 75%;
     animation-delay: 2s;
 }
 
 .right1 {
-    right: 2%;
-    top: 22%;
-    animation-delay: .7s;
+    right: 0;
+    top: 20%;
+    animation-delay: .5s;
 }
 
 .right2 {
-    right: 0;
+    right: 2%;
     top: 48%;
-    animation-delay: 1.6s;
+    animation-delay: 1.5s;
 }
 
 .right3 {
     right: 8%;
-    top: 72%;
+    top: 75%;
     animation-delay: 2.5s;
 }
 
 @keyframes wordFloat {
-
-    0% {
-        opacity: 0;
-        transform:
-            translateY(18px)
-            rotate(-3deg);
-    }
-
-    25% {
-        opacity: 1;
-    }
-
-    70% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-        transform:
-            translateY(-30px)
-            rotate(3deg);
-    }
-}
-
-.flower-heart {
-    position: absolute;
-
-    font-size: 18px;
-
-    animation:
-        tinyFloat 3s ease-in-out infinite;
-}
-
-.fh1 {
-    top: 12%;
-    left: 27%;
-}
-
-.fh2 {
-    top: 16%;
-    right: 27%;
-}
-
-.fh3 {
-    bottom: 18%;
-    left: 27%;
-}
-
-.fh4 {
-    bottom: 15%;
-    right: 27%;
-}
-
-@keyframes tinyFloat {
-
     0%,100% {
-        transform: translateY(0);
-        opacity: .5;
+        transform: translateY(8px);
+        opacity: .45;
     }
 
     50% {
-        transform: translateY(-15px);
+        transform: translateY(-12px);
         opacity: 1;
     }
 }
 
-.flower-message {
-    color: #a90036;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 15px;
+.flower-sparkle {
+    position: absolute;
+    font-size: 18px;
+    animation: sparkle 2s ease-in-out infinite;
 }
 
-/* =========================
-   HOME — THREE BOXES
-========================= */
-
-.home-title {
-    margin-bottom: 22px;
+.s1 {
+    top: 12%;
+    left: 28%;
 }
+
+.s2 {
+    top: 15%;
+    right: 28%;
+    animation-delay: .5s;
+}
+
+.s3 {
+    bottom: 18%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.s4 {
+    bottom: 15%;
+    right: 25%;
+    animation-delay: 1.5s;
+}
+
+@keyframes sparkle {
+    0%,100% {
+        transform: scale(.7);
+        opacity: .3;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+/* HOME */
 
 .gift-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 10px;
-
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
 }
 
 .gift {
-    position: relative;
-
-    min-height: 155px;
-
-    padding: 15px 7px;
-
-    border-radius: 20px;
-
-    background: rgba(255,255,255,.9);
+    min-height: 160px;
+    padding: 10px 5px;
 
     border: 2px solid #ffd0dc;
+    border-radius: 20px;
+
+    background: white;
 
     box-shadow:
-        0 10px 25px rgba(255,100,140,.1);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
+        0 8px 20px rgba(255,100,140,.1);
 
     transition:
-        transform .3s,
-        box-shadow .3s;
-}
-
-.gift:hover {
-    transform:
-        translateY(-8px)
-        rotate(-1deg);
-
-    box-shadow:
-        0 18px 35px rgba(255,100,140,.2);
+        transform .25s,
+        box-shadow .25s;
 }
 
 .gift:active {
-    transform: scale(.94);
+    transform: scale(.93);
 }
 
 .gift-icon {
-    font-size: 48px;
-
+    display: block;
+    font-size: 45px;
     margin-bottom: 12px;
 
-    animation:
-        giftBounce 2.5s ease-in-out infinite;
+    animation: giftBounce 2.5s infinite;
 }
 
 @keyframes giftBounce {
-
     0%,100% {
         transform: translateY(0);
     }
@@ -509,116 +384,74 @@ button:active {
 }
 
 .gift-title {
+    display: block;
     color: #a90036;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
 }
 
 .gift-sub {
+    display: block;
     margin-top: 5px;
-
-    color: #e37b99;
-
-    font-size: 10px;
+    color: #e17b99;
+    font-size: 9px;
 }
 
-.gift::after {
-    content: "♡";
-
-    position: absolute;
-
-    top: 8px;
-    right: 10px;
-
-    color: #ff9ab5;
-
-    animation:
-        heartbeat 2s infinite;
+.back-btn {
+    margin-top: 20px;
 }
 
-/* =========================
-   CONTENT
-========================= */
-
-.content-screen {
-    justify-content: flex-start;
-    padding-top: 10px;
-}
+/* CONTENT */
 
 .content-display {
     width: 100%;
-    min-height: 330px;
-
+    min-height: 320px;
     padding: 20px;
 
-    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #fff4f8
-        );
-
+    background: white;
     border: 2px solid #ffe0e8;
-
-    box-shadow:
-        inset 0 0 25px rgba(255,180,200,.12);
+    border-radius: 22px;
 
     overflow-y: auto;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-
-/* LETTER */
 
 .letter-text {
     color: #555;
-
-    font-size: 16px;
-
-    line-height: 1.75;
-
+    font-size: 15px;
+    line-height: 1.7;
     font-style: italic;
 }
 
-/* =========================
-   MEMORIES
-========================= */
+/* SLIDESHOW */
 
 .slideshow {
-    width: 100%;
     position: relative;
+    width: 100%;
 }
 
 .slide {
     display: none;
 
     width: 100%;
-    height: 270px;
+    height: 260px;
 
     object-fit: cover;
-
-    border-radius: 18px;
-
-    box-shadow:
-        0 10px 25px rgba(0,0,0,.12);
+    border-radius: 17px;
 }
 
 .slide.active {
     display: block;
-
-    animation:
-        photoIn .5s ease;
+    animation: photoIn .4s ease;
 }
 
 @keyframes photoIn {
-
     from {
         opacity: 0;
-        transform: scale(.94);
+        transform: scale(.95);
     }
 
     to {
@@ -629,21 +462,18 @@ button:active {
 
 .slide-btn {
     position: absolute;
-
     top: 50%;
 
     transform: translateY(-50%);
 
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
 
-    padding: 0;
+    border: none;
+    border-radius: 50%;
 
     color: white;
-
-    background: rgba(255,90,125,.85);
-
-    border-radius: 50%;
+    background: rgba(255,80,120,.85);
 
     font-size: 17px;
 }
@@ -656,74 +486,42 @@ button:active {
     right: 5px;
 }
 
-.photo-dots {
-    margin-top: 12px;
-}
-
-.dot {
-    display: inline-block;
-
-    width: 7px;
-    height: 7px;
-
-    margin: 0 3px;
-
-    border-radius: 50%;
-
-    background: #ffc5d4;
-
-    transition: .3s;
-}
-
-.dot.active {
-    width: 18px;
-    border-radius: 10px;
-    background: #ff6b8b;
-}
-
-/* =========================
-   FUTURE PLANS
-========================= */
+/* FUTURE */
 
 .future-list {
     width: 100%;
 }
 
 .future-item {
-    position: relative;
-
-    margin: 12px 0;
-    padding: 14px;
+    margin: 10px 0;
+    padding: 13px;
 
     text-align: left;
 
-    border-radius: 15px;
-
     background: #fff5f8;
 
-    border-left: 4px solid #ff7396;
+    border-left: 4px solid #ff7095;
+    border-radius: 14px;
 
-    animation:
-        futureIn .6s ease both;
+    animation: futureIn .5s ease both;
 }
 
-.future-item:nth-child(2) {
-    animation-delay: .15s;
+.future-item strong {
+    color: #ad1746;
 }
 
-.future-item:nth-child(3) {
-    animation-delay: .3s;
-}
+.future-item span {
+    display: block;
+    margin-top: 5px;
 
-.future-item:nth-child(4) {
-    animation-delay: .45s;
+    color: #666;
+    font-size: 12px;
 }
 
 @keyframes futureIn {
-
     from {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateX(-15px);
     }
 
     to {
@@ -732,45 +530,10 @@ button:active {
     }
 }
 
-.future-item strong {
-    color: #b3003b;
-}
-
-.future-item span {
-    display: block;
-
-    margin-top: 5px;
-
-    color: #666;
-
-    font-size: 13px;
-}
-
-/* =========================
-   BACK BUTTON
-========================= */
-
-.back-btn {
-    margin-top: 18px;
-
-    padding: 10px 18px;
-
-    color: #ff6b8b;
-
-    background: white;
-
-    border: 2px solid #ffc1d0;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
 @media(max-width:360px) {
 
     .container {
-        min-height: 540px;
-        padding: 20px 15px;
+        padding: 20px 14px;
     }
 
     .gift {
@@ -778,22 +541,16 @@ button:active {
     }
 
     .gift-icon {
-        font-size: 40px;
-    }
-
-    .gift-title {
-        font-size: 10px;
+        font-size: 38px;
     }
 
     .flower-word {
-        font-size: 11px;
+        font-size: 10px;
     }
-
 }
-
-</style></head><body><div id="background"></div><div class="container"><!-- =================================
-     SCREEN 1
-================================= --><div id="screenAsk" class="screen active"><div class="hearts">
+</style></head><body><div id="heartBackground"></div><div class="container"><!-- =========================
+     FIRST PAGE
+========================= --><div id="screenAsk" class="screen active"><div class="hearts">
     💖 ✨ 💖
 </div>
 
@@ -813,17 +570,19 @@ button:active {
 <div class="btn-group">
 
     <button
+        id="yesBtn"
         class="primary-btn"
-        onclick="changeScreen('screenBouquet')">
+        type="button">
 
         YES PLEASE 💗
 
     </button>
 
+
     <button
         id="noBtn"
         class="secondary-btn"
-        onclick="moveNoButton(event)">
+        type="button">
 
         NO THANKS
 
@@ -831,9 +590,9 @@ button:active {
 
 </div>
 
-</div><!-- =================================
-     SCREEN 2 — FLOWERS
-================================= --><div id="screenBouquet" class="screen"><div class="hearts">
+</div><!-- =========================
+     FLOWER PAGE
+========================= --><div id="screenBouquet" class="screen"><div class="hearts">
     🌸 ✨ 🌷
 </div>
 
@@ -841,9 +600,8 @@ button:active {
     Something special for you
 </div>
 
-<div class="flower-scene">
 
-    <!-- LEFT WORDS -->
+<div class="flower-scene">
 
     <div class="flower-word left1">
         you're precious ♡
@@ -858,8 +616,6 @@ button:active {
     </div>
 
 
-    <!-- RIGHT WORDS -->
-
     <div class="flower-word right1">
         my lalove ♡
     </div>
@@ -873,26 +629,22 @@ button:active {
     </div>
 
 
-    <!-- FLOATING HEARTS -->
-
-    <div class="flower-heart fh1">
-        💕
-    </div>
-
-    <div class="flower-heart fh2">
+    <div class="flower-sparkle s1">
         ✨
     </div>
 
-    <div class="flower-heart fh3">
-        🌷
+    <div class="flower-sparkle s2">
+        💕
     </div>
 
-    <div class="flower-heart fh4">
+    <div class="flower-sparkle s3">
+        🌸
+    </div>
+
+    <div class="flower-sparkle s4">
         💗
     </div>
 
-
-    <!-- FLOWERS -->
 
     <div class="bouquet">
         💐
@@ -900,22 +652,24 @@ button:active {
 
 </div>
 
-<div class="flower-message">
-    A little bouquet for the person<br>
-    who makes my heart happiest. 💗
-</div>
+
+<p style="color:#a90036;font-size:14px;font-weight:600;">
+    A little bouquet for my favorite person. 💗
+</p>
+
 
 <button
+    id="openGiftsBtn"
     class="primary-btn"
-    onclick="changeScreen('screenHome')">
+    type="button">
 
     🏠 Open My Gifts
 
 </button>
 
-</div><!-- =================================
-     SCREEN 3 — HOME
-================================= --><div id="screenHome" class="screen"><div class="hearts">
+</div><!-- =========================
+     HOME PAGE
+========================= --><div id="screenHome" class="screen"><div class="hearts">
     💝 ✨ 💝
 </div>
 
@@ -923,87 +677,103 @@ button:active {
     Three little things for you
 </div>
 
-<h2 class="home-title">
+<h2>
     Pick one, lalove ♡
 </h2>
+
 
 <div class="gift-grid">
 
     <button
         class="gift"
-        onclick="openContentScreen('letter')">
+        type="button"
+        data-content="letter">
 
-        <div class="gift-icon">
+        <span class="gift-icon">
             💌
-        </div>
+        </span>
 
-        <div class="gift-title">
+        <span class="gift-title">
             MY LETTER
-        </div>
+        </span>
 
-        <div class="gift-sub">
+        <span class="gift-sub">
             open me ♡
-        </div>
+        </span>
 
     </button>
 
 
     <button
         class="gift"
-        onclick="openContentScreen('images')">
+        type="button"
+        data-content="images">
 
-        <div class="gift-icon">
+        <span class="gift-icon">
             📸
-        </div>
+        </span>
 
-        <div class="gift-title">
+        <span class="gift-title">
             MEMORIES
-        </div>
+        </span>
 
-        <div class="gift-sub">
+        <span class="gift-sub">
             our moments ♡
-        </div>
+        </span>
 
     </button>
 
 
     <button
         class="gift"
-        onclick="openContentScreen('ribbon')">
+        type="button"
+        data-content="ribbon">
 
-        <div class="gift-icon">
+        <span class="gift-icon">
             🎀
-        </div>
+        </span>
 
-        <div class="gift-title">
+        <span class="gift-title">
             OUR FUTURE
-        </div>
+        </span>
 
-        <div class="gift-sub">
+        <span class="gift-sub">
             someday ♡
-        </div>
+        </span>
 
     </button>
 
 </div>
 
+
 <button
-    class="back-btn"
-    onclick="changeScreen('screenBouquet')">
+    class="secondary-btn back-btn"
+    type="button"
+    data-go="screenBouquet">
 
     ⬅️ Back
 
 </button>
 
-</div><!-- =================================
-     SCREEN 4 — CONTENT
-================================= --><div id="screenContent" class="screen content-screen"><div class="hearts" id="contentEmoji">
+</div><!-- =========================
+     CONTENT PAGE
+========================= --><div id="screenContent" class="screen"><div
+    class="hearts"
+    id="contentEmoji">
+
     ✨
+
 </div>
 
-<div class="subtitle" id="contentSubtitle">
+
+<div
+    class="subtitle"
+    id="contentSubtitle">
+
     Something from my heart
+
 </div>
+
 
 <h2 id="contentTitle">
     A little something for you
@@ -1025,24 +795,23 @@ button:active {
         <br><br>
 
         I just want you to know how grateful I am
-        that you're part of my life.
+        that you're part of my life. ❤️
 
         <br><br>
 
-        No matter how many things happen,
+        Thank you for every little moment,
+        every laugh, every conversation,
+        and every memory we've made.
+
+        <br><br>
+
         I hope we continue choosing each other,
         understanding each other, and growing
         together.
 
         <br><br>
 
-        You are one of the sweetest parts of my life,
-        and I hope we get to make many more memories
-        together.
-
-        <br><br>
-
-        I love you so much. ❤️
+        I love you so much, lalove. 💗
 
         <br><br>
 
@@ -1058,7 +827,7 @@ button:active {
         class="slideshow"
         style="display:none;">
 
-        <!-- REPLACE THESE WITH YOUR PHOTOS -->
+        <!-- REPLACE THESE WITH YOUR OWN PHOTO LINKS -->
 
         <img
             class="slide active"
@@ -1078,24 +847,22 @@ button:active {
 
         <button
             class="slide-btn prev"
-            onclick="changeSlide(-1)">
+            id="prevBtn"
+            type="button">
 
             ❮
 
         </button>
 
+
         <button
             class="slide-btn next"
-            onclick="changeSlide(1)">
+            id="nextBtn"
+            type="button">
 
             ❯
 
         </button>
-
-        <div
-            id="photoDots"
-            class="photo-dots">
-        </div>
 
     </div>
 
@@ -1112,11 +879,12 @@ button:active {
             💕 <strong>More memories</strong>
 
             <span>
-                More random dates, laughs,
+                More laughs, random dates,
                 pictures, and little moments.
             </span>
 
         </div>
+
 
         <div class="future-item">
 
@@ -1129,26 +897,26 @@ button:active {
 
         </div>
 
+
         <div class="future-item">
 
             ✈️ <strong>Dream together</strong>
 
             <span>
-                Places we want to visit,
-                things we want to experience,
-                and memories we want to make.
+                Places we want to visit and
+                memories we want to make.
             </span>
 
         </div>
 
+
         <div class="future-item">
 
-            🎀 <strong>Always choose love</strong>
+            🎀 <strong>Keep choosing love</strong>
 
             <span>
-                Whatever the future brings,
-                I hope we keep choosing kindness,
-                patience, and each other.
+                I hope we continue choosing
+                kindness, patience, and each other.
             </span>
 
         </div>
@@ -1159,39 +927,137 @@ button:active {
 
 
 <button
-    class="back-btn"
-    onclick="changeScreen('screenHome')">
+    id="backToHome"
+    class="secondary-btn back-btn"
+    type="button">
 
     ⬅️ Back to Gifts
 
 </button>
 
-</div></div><script>
+</div></div><!-- =========================
+     JAVASCRIPT
+========================= --><script>
 
-/* =================================
-   SCREEN NAVIGATION
-================================= */
+"use strict";
+
+
+/* =========================
+   SCREEN CHANGE
+========================= */
 
 function changeScreen(screenId) {
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen => {
-            screen.classList.remove("active");
-        });
+    const screens =
+        document.querySelectorAll(".screen");
 
-    const screen =
+    screens.forEach(function(screen) {
+
+        screen.classList.remove("active");
+
+    });
+
+
+    const target =
         document.getElementById(screenId);
 
-    if (screen) {
-        screen.classList.add("active");
+
+    if (!target) {
+
+        console.error(
+            "Screen not found:",
+            screenId
+        );
+
+        return;
+
     }
+
+
+    target.classList.add("active");
 }
 
 
-/* =================================
-   OPEN CONTENT
-================================= */
+/* =========================
+   YES BUTTON
+========================= */
+
+document
+    .getElementById("yesBtn")
+    .addEventListener("click", function() {
+
+        changeScreen("screenBouquet");
+
+    });
+
+
+/* =========================
+   OPEN GIFTS
+========================= */
+
+document
+    .getElementById("openGiftsBtn")
+    .addEventListener("click", function() {
+
+        changeScreen("screenHome");
+
+    });
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+document
+    .getElementById("backToHome")
+    .addEventListener("click", function() {
+
+        changeScreen("screenHome");
+
+    });
+
+
+/* =========================
+   BACK TO BOUQUET
+========================= */
+
+document
+    .querySelectorAll("[data-go]")
+    .forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            changeScreen(
+                button.dataset.go
+            );
+
+        });
+
+    });
+
+
+/* =========================
+   GIFT BOXES
+========================= */
+
+document
+    .querySelectorAll("[data-content]")
+    .forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            openContentScreen(
+                button.dataset.content
+            );
+
+        });
+
+    });
+
+
+/* =========================
+   CONTENT
+========================= */
 
 function openContentScreen(type) {
 
@@ -1203,6 +1069,7 @@ function openContentScreen(type) {
 
     const future =
         document.getElementById("futureContainer");
+
 
     letter.style.display = "none";
     slideshow.style.display = "none";
@@ -1221,12 +1088,12 @@ function openContentScreen(type) {
 
     if (type === "letter") {
 
-        emoji.innerText = "💌";
+        emoji.textContent = "💌";
 
-        title.innerText =
+        title.textContent =
             "A Letter For You";
 
-        subtitle.innerText =
+        subtitle.textContent =
             "straight from my heart ♡";
 
         letter.style.display = "block";
@@ -1234,33 +1101,33 @@ function openContentScreen(type) {
     }
 
 
-    else if (type === "images") {
+    if (type === "images") {
 
-        emoji.innerText = "📸";
+        emoji.textContent = "📸";
 
-        title.innerText =
+        title.textContent =
             "Our Memories";
 
-        subtitle.innerText =
+        subtitle.textContent =
             "little moments I treasure ♡";
 
         slideshow.style.display = "block";
 
-        currentSlideIdx = 0;
+        currentSlide = 0;
 
-        showSlide(0);
+        showSlide();
 
     }
 
 
-    else if (type === "ribbon") {
+    if (type === "ribbon") {
 
-        emoji.innerText = "🎀";
+        emoji.textContent = "🎀";
 
-        title.innerText =
+        title.textContent =
             "Our Future";
 
-        subtitle.innerText =
+        subtitle.textContent =
             "things I hope we experience ♡";
 
         future.style.display = "block";
@@ -1269,45 +1136,176 @@ function openContentScreen(type) {
 
 
     changeScreen("screenContent");
+
 }
 
 
-/* =================================
+/* =========================
    SLIDESHOW
-================================= */
+========================= */
 
-let currentSlideIdx = 0;
+let currentSlide = 0;
 
 
-function showSlide(index) {
+function getSlides() {
+
+    return document.querySelectorAll(".slide");
+
+}
+
+
+function showSlide() {
 
     const slides =
-        document.querySelectorAll(".slide");
-
-    if (!slides.length) return;
+        getSlides();
 
 
-    if (index >= slides.length) {
-        currentSlideIdx = 0;
+    if (!slides.length) {
+        return;
     }
 
-    if (index < 0) {
-        currentSlideIdx =
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+
+    if (currentSlide < 0) {
+        currentSlide =
             slides.length - 1;
     }
 
 
-    slides.forEach(slide => {
+    slides.forEach(function(slide) {
+
         slide.classList.remove("active");
+
     });
 
 
-    slides[currentSlideIdx]
+    slides[currentSlide]
         .classList.add("active");
 
-
-    createDots();
 }
 
 
-function changeSlide(step
+document
+    .getElementById("nextBtn")
+    .addEventListener("click", function() {
+
+        currentSlide++;
+
+        showSlide();
+
+    });
+
+
+document
+    .getElementById("prevBtn")
+    .addEventListener("click", function() {
+
+        currentSlide--;
+
+        showSlide();
+
+    });
+
+
+/* =========================
+   NO BUTTON
+========================= */
+
+document
+    .getElementById("noBtn")
+    .addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const button =
+            document.getElementById("noBtn");
+
+
+        const maxX =
+            Math.max(
+                10,
+                window.innerWidth -
+                button.offsetWidth -
+                10
+            );
+
+
+        const maxY =
+            Math.max(
+                10,
+                window.innerHeight -
+                button.offsetHeight -
+                10
+            );
+
+
+        const x =
+            Math.random() * maxX;
+
+
+        const y =
+            Math.random() * maxY;
+
+
+        button.style.position = "fixed";
+
+        button.style.left =
+            x + "px";
+
+        button.style.top =
+            y + "px";
+
+        button.style.zIndex = "9999";
+
+    });
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHeart() {
+
+    const background =
+        document.getElementById(
+            "heartBackground"
+        );
+
+
+    const heart =
+        document.createElement("div");
+
+
+    heart.className = "heart";
+
+
+    const choices = [
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💝",
+        "✨",
+        "🌸"
+    ];
+
+
+    heart.textContent =
+        choices[
+            Math.floor(
+                Math.random() *
+                choices.length
+            )
+        ];
+
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+
+    heart.style.fontSize =
+        (12 + Mat
