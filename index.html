@@ -1308,4 +1308,38 @@ function createHeart() {
 
 
     heart.style.fontSize =
-        (12 + Mat
+        (12 + Math.random() * 14) + "px";
+
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 4) + "s";
+
+
+    background.appendChild(heart);
+
+
+    setTimeout(function() {
+
+        heart.remove();
+
+    }, 10000);
+
+}
+
+
+setInterval(createHeart, 600);
+
+
+for (let i = 0; i < 8; i++) {
+
+    setTimeout(
+        createHeart,
+        i * 300
+    );
+
+}
+
+</script>
+
+</body>
+</html>
