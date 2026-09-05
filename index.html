@@ -6,6 +6,7 @@
 <title>For My Lalove ❤️</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
@@ -24,6 +25,14 @@ body {
     overflow: hidden;
 }
 
+/* AUDIO */
+
+audio {
+    display: none;
+}
+
+/* FLOATING HEARTS */
+
 #heartBackground {
     position: fixed;
     inset: 0;
@@ -40,6 +49,7 @@ body {
 }
 
 @keyframes floatUp {
+
     0% {
         transform: translateY(0) rotate(0);
         opacity: 0;
@@ -53,7 +63,10 @@ body {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
+
 }
+
+/* CONTAINER */
 
 .container {
     position: relative;
@@ -72,6 +85,8 @@ body {
     overflow: hidden;
 }
 
+/* SCREENS */
+
 .screen {
     display: none;
     width: 100%;
@@ -87,6 +102,7 @@ body {
 }
 
 @keyframes screenIn {
+
     from {
         opacity: 0;
         transform: translateY(15px) scale(.97);
@@ -96,7 +112,10 @@ body {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+
 }
+
+/* HEADERS */
 
 .hearts {
     font-size: 28px;
@@ -105,6 +124,7 @@ body {
 }
 
 @keyframes heartbeat {
+
     0%, 100% {
         transform: scale(1);
     }
@@ -112,6 +132,7 @@ body {
     50% {
         transform: scale(1.12);
     }
+
 }
 
 .subtitle {
@@ -151,6 +172,7 @@ h2 {
 }
 
 @keyframes catFloat {
+
     0%, 100% {
         transform: translateY(0);
     }
@@ -158,6 +180,7 @@ h2 {
     50% {
         transform: translateY(-10px);
     }
+
 }
 
 /* SECOND STAGE */
@@ -201,6 +224,7 @@ h2 {
 }
 
 @keyframes gif002Entrance {
+
     0% {
         opacity: 0;
         transform: scale(.2) rotate(-8deg);
@@ -215,9 +239,11 @@ h2 {
         opacity: 1;
         transform: scale(1) rotate(0);
     }
+
 }
 
 @keyframes questionAppear {
+
     from {
         opacity: 0;
         transform: translateY(-15px);
@@ -227,6 +253,7 @@ h2 {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 /* DISINTEGRATION */
@@ -236,6 +263,7 @@ h2 {
 }
 
 @keyframes disintegrate {
+
     0% {
         opacity: 1;
         transform: scale(1) rotate(0);
@@ -259,6 +287,7 @@ h2 {
         transform: scale(.55) rotate(-8deg);
         filter: blur(15px) brightness(1.8);
     }
+
 }
 
 /* BIG YES */
@@ -273,6 +302,7 @@ h2 {
 }
 
 @keyframes yesGrow {
+
     from {
         opacity: 0;
         transform: scale(.5);
@@ -287,9 +317,11 @@ h2 {
         opacity: 1;
         transform: scale(1.2);
     }
+
 }
 
 @keyframes yesPulse {
+
     0%, 100% {
         transform: scale(1.2);
     }
@@ -297,6 +329,7 @@ h2 {
     50% {
         transform: scale(1.32);
     }
+
 }
 
 /* THIRD GIF */
@@ -325,6 +358,7 @@ h2 {
 }
 
 @keyframes gif003Entrance {
+
     0% {
         opacity: 0;
         transform: scale(.2) rotate(10deg);
@@ -339,9 +373,11 @@ h2 {
         opacity: 1;
         transform: scale(1) rotate(0);
     }
+
 }
 
 @keyframes gif003Text {
+
     from {
         opacity: 0;
         transform: translateY(15px) scale(.8);
@@ -351,6 +387,7 @@ h2 {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+
 }
 
 /* BUTTONS */
@@ -424,6 +461,7 @@ button {
 }
 
 @keyframes bouquetFloat {
+
     0%, 100% {
         transform: translateY(5px) scale(1);
     }
@@ -431,6 +469,7 @@ button {
     50% {
         transform: translateY(-12px) scale(1.04);
     }
+
 }
 
 .flower-word {
@@ -479,6 +518,7 @@ button {
 }
 
 @keyframes wordFloat {
+
     0%, 100% {
         transform: translateY(8px);
         opacity: .45;
@@ -488,6 +528,7 @@ button {
         transform: translateY(-12px);
         opacity: 1;
     }
+
 }
 
 .flower-sparkle {
@@ -521,6 +562,7 @@ button {
 }
 
 @keyframes sparkle {
+
     0%, 100% {
         transform: scale(.7);
         opacity: .3;
@@ -530,6 +572,7 @@ button {
         transform: scale(1.3);
         opacity: 1;
     }
+
 }
 
 /* HOME */
@@ -563,6 +606,7 @@ button {
 }
 
 @keyframes giftBounce {
+
     0%, 100% {
         transform: translateY(0);
     }
@@ -570,6 +614,7 @@ button {
     50% {
         transform: translateY(-7px);
     }
+
 }
 
 .gift-title {
@@ -615,12 +660,14 @@ button {
     text-align: left;
     overflow-y: auto;
     border-radius: 10px;
+
     background: repeating-linear-gradient(
         to bottom,
         #fffdf7 0px,
         #fffdf7 29px,
         #c9dff5 30px
     );
+
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
     border: 1px solid #eadfce;
 }
@@ -706,7 +753,7 @@ button {
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
 }
 
-/* Alternating sides */
+/* ALTERNATING IMAGE / DESCRIPTION */
 
 .slide:nth-of-type(odd) {
     flex-direction: row;
@@ -722,6 +769,7 @@ button {
 }
 
 @keyframes photoIn {
+
     from {
         opacity: 0;
         transform: scale(.97);
@@ -731,6 +779,7 @@ button {
         opacity: 1;
         transform: scale(1);
     }
+
 }
 
 .slide img {
@@ -812,6 +861,7 @@ button {
 }
 
 @keyframes futureIn {
+
     from {
         opacity: 0;
         transform: translateX(-15px);
@@ -821,6 +871,7 @@ button {
         opacity: 1;
         transform: translateX(0);
     }
+
 }
 
 /* MOBILE */
@@ -891,6 +942,7 @@ button {
         font-size: 12px;
         line-height: 1.45;
     }
+
 }
 
 @media(max-width: 360px) {
@@ -948,23 +1000,35 @@ button {
         font-size: 11px;
         line-height: 1.4;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- Invisible audio: takes no layout space -->
+<!-- AUDIO -->
+
 <audio id="audio001" src="./audio001.mp3" loop preload="auto"></audio>
 <audio id="audio002" src="./audio002.mp3" loop preload="auto"></audio>
 <audio id="audio003" src="./audio003.mp3" preload="auto"></audio>
 <audio id="music001" src="./music001.mp3" loop preload="auto"></audio>
 
+
+<!-- FLOATING HEARTS -->
+
 <div id="heartBackground"></div>
+
+
+<!-- MAIN CONTAINER -->
 
 <div class="container">
 
-<!-- OPENING -->
+
+<!-- =========================
+     OPENING SCREEN
+========================= -->
 
 <div id="screenAsk" class="screen active">
 
@@ -975,7 +1039,12 @@ button {
         </div>
 
         <div class="cute-cat" id="gif001Container">
-            <img src="./gif001.gif" alt="Cute cat">
+
+            <img
+                src="./gif001.gif"
+                alt="Cute cat"
+            >
+
         </div>
 
         <div class="subtitle">
@@ -989,17 +1058,26 @@ button {
 
         <div class="btn-group">
 
-            <button id="yesBtn" class="primary-btn" type="button">
+            <button
+                id="yesBtn"
+                class="primary-btn"
+                type="button"
+            >
                 YES PLEASE 💗
             </button>
 
-            <button id="noBtn" class="secondary-btn" type="button">
+            <button
+                id="noBtn"
+                class="secondary-btn"
+                type="button"
+            >
                 NO THANKS
             </button>
 
         </div>
 
     </div>
+
 
     <!-- SECOND STAGE -->
 
@@ -1010,17 +1088,28 @@ button {
         </div>
 
         <div class="gif002-wrapper">
-            <img src="./gif002.gif" alt="Sad cat">
+
+            <img
+                src="./gif002.gif"
+                alt="Sad cat"
+            >
+
         </div>
 
     </div>
+
 
     <!-- THIRD STAGE -->
 
     <div id="stageThree" class="stage-three">
 
         <div class="gif003-wrapper">
-            <img src="./gif003.gif" alt="Happy cat">
+
+            <img
+                src="./gif003.gif"
+                alt="Happy cat"
+            >
+
         </div>
 
         <div class="gif003-text">
@@ -1031,7 +1120,10 @@ button {
 
 </div>
 
-<!-- FLOWER SCREEN -->
+
+<!-- =========================
+     FLOWER SCREEN
+========================= -->
 
 <div id="screenBouquet" class="screen">
 
@@ -1050,7 +1142,7 @@ button {
         </div>
 
         <div class="flower-word left2">
-            LALOVE THE BEST!!
+            LALOVE IS THE BEST!!
         </div>
 
         <div class="flower-word left3">
@@ -1062,35 +1154,62 @@ button {
         </div>
 
         <div class="flower-word right2">
-            MUAHHHH! MUAHHHH!!!😚
+            MUAHHHH!!! muah! muah! muah! MUAHHHH!!!😚
         </div>
 
         <div class="flower-word right3">
             MY ONE AND ONLY LALOVE!!
         </div>
 
-        <div class="flower-sparkle s1">✨</div>
-        <div class="flower-sparkle s2">💕</div>
-        <div class="flower-sparkle s3">🌸</div>
-        <div class="flower-sparkle s4">💗</div>
+
+        <div class="flower-sparkle s1">
+            ✨
+        </div>
+
+        <div class="flower-sparkle s2">
+            💕
+        </div>
+
+        <div class="flower-sparkle s3">
+            🌸
+        </div>
+
+        <div class="flower-sparkle s4">
+            💗
+        </div>
+
 
         <div class="bouquet">
-            <img src="./gif004.webp" alt="Animated flowers">
+
+            <img
+                src="./gif004.webp"
+                alt="Animated flowers"
+            >
+
         </div>
 
     </div>
+
 
     <p style="color:#a90036;font-size:14px;font-weight:600;">
         A little bouquet for my favorite person. 💗
     </p>
 
-    <button id="openGiftsBtn" class="primary-btn" type="button">
+
+    <button
+        id="openGiftsBtn"
+        class="primary-btn"
+        type="button"
+    >
         🏠 Open My Gifts
     </button>
 
 </div>
 
-<!-- HOME -->
+
+<!-- =========================
+     HOME / GIFTS
+========================= -->
 
 <div id="screenHome" class="screen">
 
@@ -1106,35 +1225,88 @@ button {
         Pick one, lalove ♡
     </h2>
 
+
     <div class="gift-grid">
 
-        <button class="gift" type="button" data-content="letter">
-            <span class="gift-icon">💌</span>
-            <span class="gift-title">MY LETTER</span>
-            <span class="gift-sub">open me ♡</span>
+        <button
+            class="gift"
+            type="button"
+            data-content="letter"
+        >
+
+            <span class="gift-icon">
+                💌
+            </span>
+
+            <span class="gift-title">
+                MY LETTER
+            </span>
+
+            <span class="gift-sub">
+                open me ♡
+            </span>
+
         </button>
 
-        <button class="gift" type="button" data-content="images">
-            <span class="gift-icon">📸</span>
-            <span class="gift-title">MEMORIES</span>
-            <span class="gift-sub">our moments ♡</span>
+
+        <button
+            class="gift"
+            type="button"
+            data-content="images"
+        >
+
+            <span class="gift-icon">
+                📸
+            </span>
+
+            <span class="gift-title">
+                MEMORIES
+            </span>
+
+            <span class="gift-sub">
+                our moments ♡
+            </span>
+
         </button>
 
-        <button class="gift" type="button" data-content="ribbon">
-            <span class="gift-icon">🎀</span>
-            <span class="gift-title">OUR FUTURE</span>
-            <span class="gift-sub">someday ♡</span>
+
+        <button
+            class="gift"
+            type="button"
+            data-content="ribbon"
+        >
+
+            <span class="gift-icon">
+                🎀
+            </span>
+
+            <span class="gift-title">
+                OUR FUTURE
+            </span>
+
+            <span class="gift-sub">
+                someday ♡
+            </span>
+
         </button>
 
     </div>
 
-    <button class="secondary-btn back-btn" type="button" data-go="screenBouquet">
+
+    <button
+        class="secondary-btn back-btn"
+        type="button"
+        data-go="screenBouquet"
+    >
         ⬅️ Back
     </button>
 
 </div>
 
-<!-- CONTENT -->
+
+<!-- =========================
+     CONTENT SCREEN
+========================= -->
 
 <div id="screenContent" class="screen">
 
@@ -1150,15 +1322,28 @@ button {
         A little something for you
     </h2>
 
+
     <div class="content-display">
 
-        <!-- LETTER -->
 
-        <div id="letterContainer" style="display:none;width:100%;">
+        <!-- =====================
+             LETTER
+        ====================== -->
+
+        <div
+            id="letterContainer"
+            style="display:none;width:100%;"
+        >
 
             <div class="notebook">
 
-                <div class="letter-page" id="letterPage1">
+
+                <!-- PAGE 1 -->
+
+                <div
+                    class="letter-page"
+                    id="letterPage1"
+                >
 
                     <p class="greeting">
                         Hello po lalove ko Happy Anniversary po mwhehehehe.
@@ -1178,7 +1363,14 @@ button {
 
                 </div>
 
-                <div class="letter-page" id="letterPage2" style="display:none;">
+
+                <!-- PAGE 2 -->
+
+                <div
+                    class="letter-page"
+                    id="letterPage2"
+                    style="display:none;"
+                >
 
                     <p>
                         Let's move on sa depressing part.
@@ -1194,7 +1386,14 @@ button {
 
                 </div>
 
-                <div class="letter-page" id="letterPage3" style="display:none;">
+
+                <!-- PAGE 3 -->
+
+                <div
+                    class="letter-page"
+                    id="letterPage3"
+                    style="display:none;"
+                >
 
                     <p>
                         kumain ng kahit anong gusto natin and marami pang iba.
@@ -1210,7 +1409,14 @@ button {
 
                 </div>
 
-                <div class="letter-page" id="letterPage4" style="display:none;">
+
+                <!-- PAGE 4 -->
+
+                <div
+                    class="letter-page"
+                    id="letterPage4"
+                    style="display:none;"
+                >
 
                     <p>
                         I LOVE YOU SO MUCH LALOVE KO!!!
@@ -1228,17 +1434,33 @@ button {
 
             </div>
 
+
+            <!-- LETTER NAVIGATION -->
+
             <div class="letter-navigation">
 
-                <button id="letterPrev" class="secondary-btn" type="button">
+                <button
+                    id="letterPrev"
+                    class="secondary-btn"
+                    type="button"
+                >
                     ❮ Previous
                 </button>
 
-                <div id="letterPageIndicator" class="letter-page-indicator">
+
+                <div
+                    id="letterPageIndicator"
+                    class="letter-page-indicator"
+                >
                     1 / 4
                 </div>
 
-                <button id="letterNext" class="primary-btn" type="button">
+
+                <button
+                    id="letterNext"
+                    class="primary-btn"
+                    type="button"
+                >
                     Continue ❯
                 </button>
 
@@ -1246,187 +1468,352 @@ button {
 
         </div>
 
-        <!-- MEMORIES -->
 
-        <div id="slideshowContainer" class="slideshow" style="display:none;">
+        <!-- =====================
+             MEMORIES
+        ====================== -->
+
+        <div
+            id="slideshowContainer"
+            class="slideshow"
+            style="display:none;"
+        >
+
+
+            <!-- MEMORY 1 -->
 
             <div class="slide active">
 
-                <img src="./001.jpg" alt="Memory 1">
+                <img
+                    src="./001.jpg"
+                    alt="Memory 1"
+                >
 
                 <div class="memory-description">
-                    <h3>Our First Memory ♡</h3>
+
+                    <h3>
+                        Our First Memory ♡
+                    </h3>
+
                     <p>
                         This was one of those little moments that I really wanted to remember.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 2 -->
+
             <div class="slide">
 
-                <img src="./002.jpg" alt="Memory 2">
+                <img
+                    src="./002.jpg"
+                    alt="Memory 2"
+                >
 
                 <div class="memory-description">
-                    <h3>A Beautiful Day ♡</h3>
+
+                    <h3>
+                        A Beautiful Day ♡
+                    </h3>
+
                     <p>
                         A simple moment, but one that became special to me.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 3 -->
+
             <div class="slide">
 
-                <img src="./003.jpg" alt="Memory 3">
+                <img
+                    src="./003.jpg"
+                    alt="Memory 3"
+                >
 
                 <div class="memory-description">
-                    <h3>That Special Moment</h3>
+
+                    <h3>
+                        That Special Moment
+                    </h3>
+
                     <p>
                         I'm really happy that we got to share this moment together.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 4 -->
+
             <div class="slide">
 
-                <img src="./004.jpg" alt="Memory 4">
+                <img
+                    src="./004.jpg"
+                    alt="Memory 4"
+                >
 
                 <div class="memory-description">
-                    <h3>Another Memory ♡</h3>
+
+                    <h3>
+                        Another Memory ♡
+                    </h3>
+
                     <p>
                         One of the many little moments that I'll always treasure.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 5 -->
+
             <div class="slide">
 
-                <img src="./005.jpg" alt="Memory 5">
+                <img
+                    src="./005.jpg"
+                    alt="Memory 5"
+                >
 
                 <div class="memory-description">
-                    <h3>Sweet Moment</h3>
+
+                    <h3>
+                        Sweet Moment
+                    </h3>
+
                     <p>
                         Even the simplest moments can become beautiful memories.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 6 -->
+
             <div class="slide">
 
-                <img src="./006.jpg" alt="Memory 6">
+                <img
+                    src="./006.jpg"
+                    alt="Memory 6"
+                >
 
                 <div class="memory-description">
-                    <h3>Us ♡</h3>
+
+                    <h3>
+                        Us ♡
+                    </h3>
+
                     <p>
                         Another moment that I'm glad we were able to experience.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 7 -->
+
             <div class="slide">
 
-                <img src="./007.jpg" alt="Memory 7">
+                <img
+                    src="./007.jpg"
+                    alt="Memory 7"
+                >
 
                 <div class="memory-description">
-                    <h3>A Day to Remember</h3>
+
+                    <h3>
+                        A Day to Remember
+                    </h3>
+
                     <p>
                         This is another memory that I'll always be happy to look back on.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 8 -->
+
             <div class="slide">
 
-                <img src="./008.jpg" alt="Memory 8">
+                <img
+                    src="./008.jpg"
+                    alt="Memory 8"
+                >
 
                 <div class="memory-description">
-                    <h3>Another Little Memory ♡</h3>
+
+                    <h3>
+                        Another Little Memory ♡
+                    </h3>
+
                     <p>
                         I hope we can make many more memories like this together.
                     </p>
+
                 </div>
 
             </div>
 
+
+            <!-- MEMORY 9 -->
+
             <div class="slide">
 
-                <img src="./009.jpg" alt="Memory 9">
+                <img
+                    src="./009.jpg"
+                    alt="Memory 9"
+                >
 
                 <div class="memory-description">
-                    <h3>One More Memory</h3>
+
+                    <h3>
+                        One More Memory
+                    </h3>
+
                     <p>
                         Sometimes the simplest moments become our favorite memories.
                     </p>
+
                 </div>
 
             </div>
+
+
+            <!-- MEMORY 10 -->
 
             <div class="slide">
 
-                <img src="./010.jpg" alt="Memory 10">
+                <img
+                    src="./010.jpg"
+                    alt="Memory 10"
+                >
 
                 <div class="memory-description">
-                    <h3>Forever in My Memories ♡</h3>
+
+                    <h3>
+                        Forever in My Memories ♡
+                    </h3>
+
                     <p>
                         Thank you for all the beautiful memories we've made together.
                     </p>
+
                 </div>
 
             </div>
 
-            <button class="slide-btn prev" id="prevBtn" type="button">
+
+            <!-- SLIDESHOW BUTTONS -->
+
+            <button
+                class="slide-btn prev"
+                id="prevBtn"
+                type="button"
+            >
                 ❮
             </button>
 
-            <button class="slide-btn next" id="nextBtn" type="button">
+            <button
+                class="slide-btn next"
+                id="nextBtn"
+                type="button"
+            >
                 ❯
             </button>
 
         </div>
 
-        <!-- FUTURE -->
 
-        <div id="futureContainer" class="future-list" style="display:none;">
+        <!-- =====================
+             FUTURE
+        ====================== -->
+
+        <div
+            id="futureContainer"
+            class="future-list"
+            style="display:none;"
+        >
 
             <div class="future-item">
-                💕 <strong>More memories</strong>
+
+                💕 <strong>
+                    More memories
+                </strong>
+
                 <span>
                     More laughs, random dates, pictures, and little moments.
                 </span>
+
             </div>
 
+
             <div class="future-item">
-                🌷 <strong>Grow together</strong>
+
+                🌷 <strong>
+                    Grow together
+                </strong>
+
                 <span>
                     Keep supporting each other through every new chapter.
                 </span>
+
             </div>
 
+
             <div class="future-item">
-                ✈️ <strong>Dream together</strong>
+
+                ✈️ <strong>
+                    Dream together
+                </strong>
+
                 <span>
                     Places we want to visit and memories we want to make.
                 </span>
+
             </div>
 
+
             <div class="future-item">
-                🎀 <strong>Keep choosing love</strong>
+
+                🎀 <strong>
+                    Keep choosing love
+                </strong>
+
                 <span>
                     I hope we continue choosing kindness, patience, and each other.
                 </span>
+
             </div>
 
         </div>
 
     </div>
 
-    <button id="backToHome" class="secondary-btn back-btn" type="button">
+
+    <!-- BACK TO GIFTS -->
+
+    <button
+        id="backToHome"
+        class="secondary-btn back-btn"
+        type="button"
+    >
         ⬅️ Back to Gifts
     </button>
 
@@ -1434,15 +1821,28 @@ button {
 
 </div>
 
+
 <script>
+
 "use strict";
 
-/* AUDIO */
 
-const audio001 = document.getElementById("audio001");
-const audio002 = document.getElementById("audio002");
-const audio003 = document.getElementById("audio003");
-const music001 = document.getElementById("music001");
+/* ==================================================
+   AUDIO
+================================================== */
+
+const audio001 =
+    document.getElementById("audio001");
+
+const audio002 =
+    document.getElementById("audio002");
+
+const audio003 =
+    document.getElementById("audio003");
+
+const music001 =
+    document.getElementById("music001");
+
 
 function playAudio(audio, restart = false) {
 
@@ -1459,50 +1859,78 @@ function playAudio(audio, restart = false) {
     if (promise !== undefined) {
         promise.catch(() => {});
     }
+
 }
+
 
 function stopAudio(audio) {
 
     if (!audio) return;
 
     audio.pause();
+
     audio.currentTime = 0;
+
 }
 
 
-/* SCREEN */
+/* ==================================================
+   SCREEN SYSTEM
+================================================== */
 
 function changeScreen(screenId) {
 
-    document.querySelectorAll(".screen").forEach(screen => {
-        screen.classList.remove("active");
-    });
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen => {
 
-    const target = document.getElementById(screenId);
+            screen.classList.remove("active");
+
+        });
+
+
+    const target =
+        document.getElementById(screenId);
+
 
     if (target) {
+
         target.classList.add("active");
+
     }
+
 }
 
 
-/* OPENING */
+/* ==================================================
+   OPENING
+================================================== */
 
-const firstStage = document.getElementById("firstStage");
-const stageTwo = document.getElementById("stageTwo");
-const stageThree = document.getElementById("stageThree");
-const gif001Container = document.getElementById("gif001Container");
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
+const firstStage =
+    document.getElementById("firstStage");
+
+const stageTwo =
+    document.getElementById("stageTwo");
+
+const stageThree =
+    document.getElementById("stageThree");
+
+const gif001Container =
+    document.getElementById("gif001Container");
+
+const noBtn =
+    document.getElementById("noBtn");
+
+const yesBtn =
+    document.getElementById("yesBtn");
+
 
 let noCount = 0;
+
 let stageTwoStarted = false;
 
 
-/*
-   Try to start Audio001 immediately.
-   Some mobile browsers block autoplay.
-*/
+/* TRY TO PLAY AUDIO001 */
 
 window.addEventListener("load", () => {
 
@@ -1511,26 +1939,34 @@ window.addEventListener("load", () => {
 });
 
 
-/*
-   If autoplay was blocked,
-   the first tap will start Audio001.
-*/
+/* AUTOPLAY FALLBACK */
 
-document.addEventListener("pointerdown", () => {
+document.addEventListener(
+    "pointerdown",
+    () => {
 
-    if (!stageTwoStarted) {
-        playAudio(audio001);
+        if (!stageTwoStarted) {
+
+            playAudio(audio001);
+
+        }
+
+    },
+    {
+        once: true,
+        passive: true
     }
-
-}, {
-    once: true,
-    passive: true
-});
+);
 
 
-/* YES */
+/* ==================================================
+   YES BUTTON
+================================================== */
 
 yesBtn.addEventListener("click", () => {
+
+
+    /* SECOND STAGE YES */
 
     if (stageTwoStarted) {
 
@@ -1538,227 +1974,373 @@ yesBtn.addEventListener("click", () => {
 
         yesBtn.remove();
 
+
         stageTwo.classList.remove("active");
+
         stageThree.classList.add("active");
 
-        /*
-           Audio003 starts 2.5 seconds
-           after GIF003 appears.
-        */
+
+        /* START AUDIO003 AFTER 2.5 SECONDS */
 
         setTimeout(() => {
 
-            playAudio(audio003, true);
+            playAudio(
+                audio003,
+                true
+            );
 
         }, 2500);
 
 
-        /*
-           GIF003 remains for 5 seconds.
-        */
+        /* RETURN TO FLOWERS AFTER 5 SECONDS */
 
         setTimeout(() => {
 
             stopAudio(audio003);
 
-            changeScreen("screenBouquet");
+            changeScreen(
+                "screenBouquet"
+            );
 
         }, 5000);
 
+
         return;
+
     }
 
 
-    /* Normal YES */
+    /* NORMAL YES */
 
     stopAudio(audio001);
 
-    changeScreen("screenBouquet");
+    changeScreen(
+        "screenBouquet"
+    );
 
 });
 
 
-/* NO */
+/* ==================================================
+   NO BUTTON
+================================================== */
 
-noBtn.addEventListener("click", event => {
+noBtn.addEventListener(
+    "click",
+    event => {
 
-    event.preventDefault();
-
-    if (stageTwoStarted) return;
-
-    noCount++;
+        event.preventDefault();
 
 
-    /*
-       First four NO presses:
-       move the button around.
-    */
+        if (stageTwoStarted) {
+            return;
+        }
 
-    if (noCount < 5) {
 
-        const maxX = Math.max(
-            10,
-            window.innerWidth - noBtn.offsetWidth - 10
-        );
+        noCount++;
 
-        const maxY = Math.max(
-            10,
-            window.innerHeight - noBtn.offsetHeight - 10
-        );
 
-        noBtn.style.position = "fixed";
-        noBtn.style.left =
-            Math.random() * maxX + "px";
+        /* FIRST FOUR NO PRESSES */
 
-        noBtn.style.top =
-            Math.random() * maxY + "px";
+        if (noCount < 5) {
 
-        noBtn.style.zIndex = "9999";
+            const maxX =
+                Math.max(
+                    10,
+                    window.innerWidth -
+                    noBtn.offsetWidth -
+                    10
+                );
 
-        return;
+
+            const maxY =
+                Math.max(
+                    10,
+                    window.innerHeight -
+                    noBtn.offsetHeight -
+                    10
+                );
+
+
+            noBtn.style.position =
+                "fixed";
+
+
+            noBtn.style.left =
+                Math.random() *
+                maxX +
+                "px";
+
+
+            noBtn.style.top =
+                Math.random() *
+                maxY +
+                "px";
+
+
+            noBtn.style.zIndex =
+                "9999";
+
+
+            return;
+
+        }
+
+
+        /* FIFTH NO */
+
+        startSecondStage();
+
     }
+);
 
 
-    /* Fifth NO */
-
-    startSecondStage();
-
-});
-
-
-/* SECOND STAGE */
+/* ==================================================
+   SECOND STAGE
+================================================== */
 
 function startSecondStage() {
 
     stageTwoStarted = true;
 
+
     stopAudio(audio001);
 
-    gif001Container.classList.add("disintegrate");
+
+    /* DISINTEGRATE GIF001 */
+
+    gif001Container.classList.add(
+        "disintegrate"
+    );
+
 
     const subtitle =
-        firstStage.querySelector(".subtitle");
+        firstStage.querySelector(
+            ".subtitle"
+        );
+
 
     const question =
-        firstStage.querySelector("h1");
+        firstStage.querySelector(
+            "h1"
+        );
+
 
     if (subtitle) {
-        subtitle.style.display = "none";
+
+        subtitle.style.display =
+            "none";
+
     }
+
 
     if (question) {
-        question.style.display = "none";
+
+        question.style.display =
+            "none";
+
     }
 
-    noBtn.style.display = "none";
 
+    noBtn.style.display =
+        "none";
+
+
+    /* SHOW SECOND STAGE */
 
     setTimeout(() => {
 
-        gif001Container.style.display = "none";
+        gif001Container.style.display =
+            "none";
 
-        stageTwo.appendChild(yesBtn);
 
-        yesBtn.classList.add("big-yes");
+        stageTwo.appendChild(
+            yesBtn
+        );
 
-        stageTwo.classList.add("active");
 
-        /*
-           Start Audio002 as GIF002 appears.
-        */
+        yesBtn.classList.add(
+            "big-yes"
+        );
 
-        playAudio(audio002, true);
+
+        stageTwo.classList.add(
+            "active"
+        );
+
+
+        /* START AUDIO002 */
+
+        playAudio(
+            audio002,
+            true
+        );
 
     }, 850);
 
 }
 
 
-/* FLOWER SCREEN */
+/* ==================================================
+   FLOWER SCREEN
+================================================== */
 
 document
     .getElementById("openGiftsBtn")
-    .addEventListener("click", () => {
+    .addEventListener(
+        "click",
+        () => {
 
-        changeScreen("screenHome");
+            changeScreen(
+                "screenHome"
+            );
 
-    });
+        }
+    );
 
 
-/* BACK BUTTONS */
+/* ==================================================
+   BACK BUTTON
+================================================== */
 
-document.querySelectorAll("[data-go]")
+document
+    .querySelectorAll("[data-go]")
     .forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            stopAudio(music001);
+                stopAudio(
+                    music001
+                );
 
-            changeScreen(button.dataset.go);
+                changeScreen(
+                    button.dataset.go
+                );
 
-        });
+            }
+        );
 
     });
 
 
 document
     .getElementById("backToHome")
-    .addEventListener("click", () => {
+    .addEventListener(
+        "click",
+        () => {
 
-        stopAudio(music001);
-
-        changeScreen("screenHome");
-
-    });
-
-
-/* GIFTS */
-
-document.querySelectorAll("[data-content]")
-    .forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            openContentScreen(
-                button.dataset.content
+            stopAudio(
+                music001
             );
 
-        });
+            changeScreen(
+                "screenHome"
+            );
 
-    });
+        }
+    );
 
 
-/* LETTER */
+/* ==================================================
+   CONTENT ELEMENTS
+================================================== */
+
+const letter =
+    document.getElementById(
+        "letterContainer"
+    );
+
+const slideshow =
+    document.getElementById(
+        "slideshowContainer"
+    );
+
+const future =
+    document.getElementById(
+        "futureContainer"
+    );
+
+const contentTitle =
+    document.getElementById(
+        "contentTitle"
+    );
+
+const contentEmoji =
+    document.getElementById(
+        "contentEmoji"
+    );
+
+const contentSubtitle =
+    document.getElementById(
+        "contentSubtitle"
+    );
+
+
+/* ==================================================
+   LETTER
+================================================== */
 
 const letterPages = [
-    document.getElementById("letterPage1"),
-    document.getElementById("letterPage2"),
-    document.getElementById("letterPage3"),
-    document.getElementById("letterPage4")
+
+    document.getElementById(
+        "letterPage1"
+    ),
+
+    document.getElementById(
+        "letterPage2"
+    ),
+
+    document.getElementById(
+        "letterPage3"
+    ),
+
+    document.getElementById(
+        "letterPage4"
+    )
+
 ];
+
 
 let currentLetterPage = 0;
 
+
 const letterPrev =
-    document.getElementById("letterPrev");
+    document.getElementById(
+        "letterPrev"
+    );
+
 
 const letterNext =
-    document.getElementById("letterNext");
+    document.getElementById(
+        "letterNext"
+    );
+
 
 const letterPageIndicator =
-    document.getElementById("letterPageIndicator");
+    document.getElementById(
+        "letterPageIndicator"
+    );
 
 
 function showLetterPage() {
 
-    letterPages.forEach((page, index) => {
+    letterPages.forEach(
+        (page, index) => {
 
-        page.style.display =
-            index === currentLetterPage
-                ? "block"
-                : "none";
+            if (page) {
 
-    });
+                page.style.display =
+                    index ===
+                    currentLetterPage
+                        ? "block"
+                        : "none";
+
+            }
+
+        }
+    );
 
 
     letterPageIndicator.textContent =
@@ -1772,235 +2354,399 @@ function showLetterPage() {
 
 
     letterNext.textContent =
-        currentLetterPage === letterPages.length - 1
+        currentLetterPage ===
+        letterPages.length - 1
             ? "Finish ♡"
             : "Continue ❯";
 
 }
 
 
-letterPrev.addEventListener("click", () => {
+letterPrev.addEventListener(
+    "click",
+    () => {
 
-    if (currentLetterPage > 0) {
+        if (currentLetterPage > 0) {
 
-        currentLetterPage--;
+            currentLetterPage--;
 
-        showLetterPage();
+            showLetterPage();
 
-    }
-
-});
-
-
-letterNext.addEventListener("click", () => {
-
-    if (currentLetterPage < letterPages.length - 1) {
-
-        currentLetterPage++;
-
-        showLetterPage();
-
-    } else {
-
-        changeScreen("screenHome");
+        }
 
     }
+);
 
-});
+
+letterNext.addEventListener(
+    "click",
+    () => {
+
+        if (
+            currentLetterPage <
+            letterPages.length - 1
+        ) {
+
+            currentLetterPage++;
+
+            showLetterPage();
+
+        } else {
+
+            stopAudio(music001);
+
+            changeScreen(
+                "screenHome"
+            );
+
+        }
+
+    }
+);
 
 
-/* MEMORIES */
+/* ==================================================
+   MEMORIES
+================================================== */
 
 const slides =
-    document.querySelectorAll(".slide");
+    document.querySelectorAll(
+        ".slide"
+    );
 
-const slideshow =
-    document.getElementById("slideshowContainer");
 
 let currentSlide = 0;
 
 
 function showSlide() {
 
-    slides.forEach((slide, index) => {
+    slides.forEach(
+        (slide, index) => {
 
-        slide.classList.toggle(
-            "active",
-            index === currentSlide
-        );
+            slide.classList.toggle(
+                "active",
+                index === currentSlide
+            );
 
-    });
+        }
+    );
 
 }
 
 
 document
     .getElementById("prevBtn")
-    .addEventListener("click", () => {
+    .addEventListener(
+        "click",
+        () => {
 
-        currentSlide =
-            (currentSlide - 1 + slides.length) %
-            slides.length;
+            currentSlide =
+                (
+                    currentSlide -
+                    1 +
+                    slides.length
+                ) %
+                slides.length;
 
-        showSlide();
 
-    });
+            showSlide();
+
+        }
+    );
 
 
 document
     .getElementById("nextBtn")
-    .addEventListener("click", () => {
+    .addEventListener(
+        "click",
+        () => {
 
-        currentSlide =
-            (currentSlide + 1) %
-            slides.length;
+            currentSlide =
+                (
+                    currentSlide +
+                    1
+                ) %
+                slides.length;
 
-        showSlide();
 
-    });
+            showSlide();
+
+        }
+    );
 
 
-/* CONTENT SCREEN */
+/* ==================================================
+   OPEN CONTENT SCREEN
+================================================== */
 
 function openContentScreen(type) {
 
-    const letter =
-        document.getElementById("letterContainer");
 
-    const future =
-        document.getElementById("futureContainer");
+    /* STOP MEMORY MUSIC */
 
-
-    stopAudio(music001);
-
-    letter.style.display = "none";
-    slideshow.style.display = "none";
-    future.style.display = "none";
+    stopAudio(
+        music001
+    );
 
 
-    const title =
-        document.getElementById("contentTitle");
+    /* HIDE ALL CONTENT */
 
-    const emoji =
-        document.getElementById("contentEmoji");
+    letter.style.display =
+        "none";
 
-    const subtitle =
-        document.getElementById("contentSubtitle");
+    slideshow.style.display =
+        "none";
+
+    future.style.display =
+        "none";
 
 
-    /* LETTER */
+    /* OPEN CONTENT SCREEN */
+
+    changeScreen(
+        "screenContent"
+    );
+
+
+    /* ==================================================
+       LETTER
+    ================================================== */
 
     if (type === "letter") {
 
-        emoji.textContent = "💌";
+        contentEmoji.textContent =
+            "💌";
 
-        title.textContent =
+
+        contentTitle.textContent =
             "A Letter For You";
 
-        subtitle.textContent =
+
+        contentSubtitle.textContent =
             "straight from my heart ♡";
 
-        currentLetterPage = 0;
+
+        currentLetterPage =
+            0;
+
 
         showLetterPage();
 
-        letter.style.display = "block";
+
+        letter.style.display =
+            "block";
+
+
+        return;
 
     }
 
 
-    /* MEMORIES */
+    /* ==================================================
+       MEMORIES
+    ================================================== */
 
     if (type === "images") {
 
-        emoji.textContent = "📸";
+        contentEmoji.textContent =
+            "📸";
 
-        title.textContent =
+
+        contentTitle.textContent =
             "Our Memories";
 
-        subtitle.textContent =
+
+        contentSubtitle.textContent =
             "little moments I treasure ♡";
 
-        currentSlide = 0;
+
+        currentSlide =
+            0;
+
 
         showSlide();
 
-        slideshow.style.display = "block";
+
+        slideshow.style.display =
+            "block";
 
 
-        /*
-           Start music immediately when
-           the Memories button is clicked.
-        */
+        /* START MUSIC001 */
 
-        playAudio(music001, true);
+        playAudio(
+            music001,
+            true
+        );
+
+
+        return;
 
     }
 
 
-    /* FUTURE */
+    /* ==================================================
+       FUTURE
+    ================================================== */
 
     if (type === "ribbon") {
 
-        emoji.textContent = "🎀";
+        contentEmoji.textContent =
+            "🎀";
 
-        title.textContent =
+
+        contentTitle.textContent =
             "Our Future";
 
-        subtitle.textContent =
+
+        contentSubtitle.textContent =
             "things I hope we experience ♡";
 
-        future.style.display = "block";
+
+        future.style.display =
+            "block";
+
+
+        return;
 
     }
 
 }
 
 
-/* FLOATING HEARTS */
+/* ==================================================
+   GIFT BUTTONS
+================================================== */
+
+/*
+   Event delegation is used here.
+   This makes the three gift buttons
+   reliably open their content.
+*/
+
+document.addEventListener(
+    "click",
+    event => {
+
+        const gift =
+            event.target.closest(
+                "[data-content]"
+            );
+
+
+        if (!gift) {
+            return;
+        }
+
+
+        const type =
+            gift.getAttribute(
+                "data-content"
+            );
+
+
+        if (!type) {
+            return;
+        }
+
+
+        openContentScreen(
+            type
+        );
+
+    }
+);
+
+
+/* ==================================================
+   FLOATING HEARTS
+================================================== */
 
 const heartBackground =
-    document.getElementById("heartBackground");
+    document.getElementById(
+        "heartBackground"
+    );
 
 
 function createHeart() {
 
     const heart =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
-    heart.className = "heart";
+
+    heart.className =
+        "heart";
+
+
+    const hearts = [
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "❤️"
+    ];
+
 
     heart.textContent =
-        ["💗", "💕", "💖", "💘", "❤️"][
-            Math.floor(Math.random() * 5)
+        hearts[
+            Math.floor(
+                Math.random() *
+                hearts.length
+            )
         ];
 
+
     heart.style.left =
-        Math.random() * 100 + "%";
+        Math.random() *
+        100 +
+        "%";
+
 
     heart.style.fontSize =
-        14 + Math.random() * 18 + "px";
+        14 +
+        Math.random() *
+        18 +
+        "px";
+
 
     heart.style.animationDuration =
-        5 + Math.random() * 5 + "s";
+        5 +
+        Math.random() *
+        5 +
+        "s";
 
-    heartBackground.appendChild(heart);
 
-    setTimeout(() => {
+    heartBackground.appendChild(
+        heart
+    );
 
-        heart.remove();
 
-    }, 10000);
+    setTimeout(
+        () => {
+
+            heart.remove();
+
+        },
+        10000
+    );
 
 }
 
 
-setInterval(createHeart, 900);
+setInterval(
+    createHeart,
+    900
+);
 
 
-/* INITIAL LETTER STATE */
+/* ==================================================
+   INITIAL STATES
+================================================== */
 
 showLetterPage();
+
+showSlide();
 
 </script>
 
