@@ -44,9 +44,11 @@ body {
         transform: translateY(0) rotate(0);
         opacity: 0;
     }
+
     15% {
         opacity: 1;
     }
+
     100% {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
@@ -89,6 +91,7 @@ body {
         opacity: 0;
         transform: translateY(15px) scale(.97);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -105,6 +108,7 @@ body {
     0%, 100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.12);
     }
@@ -150,6 +154,7 @@ h2 {
     0%, 100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -171,6 +176,14 @@ h2 {
     display: flex;
 }
 
+.gif002-question {
+    color: #a90036;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    animation: questionAppear .8s ease both;
+}
+
 .gif002-wrapper {
     width: 240px;
     height: 240px;
@@ -187,23 +200,17 @@ h2 {
     object-fit: contain;
 }
 
-.gif002-question {
-    color: #a90036;
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    animation: questionAppear .8s ease both;
-}
-
 @keyframes gif002Entrance {
     0% {
         opacity: 0;
         transform: scale(.2) rotate(-8deg);
     }
+
     60% {
         opacity: 1;
         transform: scale(1.12) rotate(3deg);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) rotate(0);
@@ -215,13 +222,14 @@ h2 {
         opacity: 0;
         transform: translateY(-15px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* GIF 001 DISINTEGRATION */
+/* DISINTEGRATION */
 
 .disintegrate {
     animation: disintegrate .9s ease forwards !important;
@@ -233,16 +241,19 @@ h2 {
         transform: scale(1) rotate(0);
         filter: blur(0) brightness(1);
     }
+
     25% {
         opacity: .9;
         transform: scale(1.04) rotate(-2deg);
         filter: blur(1px) brightness(1.2);
     }
+
     55% {
         opacity: .5;
         transform: scale(.92) rotate(3deg);
         filter: blur(5px) brightness(1.4);
     }
+
     100% {
         opacity: 0;
         transform: scale(.55) rotate(-8deg);
@@ -266,10 +277,12 @@ h2 {
         opacity: 0;
         transform: scale(.5);
     }
+
     70% {
         opacity: 1;
         transform: scale(1.3);
     }
+
     to {
         opacity: 1;
         transform: scale(1.2);
@@ -280,12 +293,13 @@ h2 {
     0%, 100% {
         transform: scale(1.2);
     }
+
     50% {
         transform: scale(1.32);
     }
 }
 
-/* GIF 003 */
+/* THIRD GIF */
 
 .gif003-wrapper {
     width: 250px;
@@ -315,10 +329,12 @@ h2 {
         opacity: 0;
         transform: scale(.2) rotate(10deg);
     }
+
     60% {
         opacity: 1;
         transform: scale(1.12) rotate(-3deg);
     }
+
     100% {
         opacity: 1;
         transform: scale(1) rotate(0);
@@ -330,6 +346,7 @@ h2 {
         opacity: 0;
         transform: translateY(15px) scale(.8);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -378,7 +395,7 @@ button {
     justify-content: center;
 }
 
-/* FLOWER SCREEN */
+/* FLOWERS */
 
 .flower-scene {
     position: relative;
@@ -410,6 +427,7 @@ button {
     0%, 100% {
         transform: translateY(5px) scale(1);
     }
+
     50% {
         transform: translateY(-12px) scale(1.04);
     }
@@ -424,8 +442,6 @@ button {
     animation: wordFloat 4s ease-in-out infinite;
     z-index: 4;
 }
-
-/* More separated from the flower */
 
 .left1 {
     left: -2%;
@@ -467,6 +483,7 @@ button {
         transform: translateY(8px);
         opacity: .45;
     }
+
     50% {
         transform: translateY(-12px);
         opacity: 1;
@@ -508,6 +525,7 @@ button {
         transform: scale(.7);
         opacity: .3;
     }
+
     50% {
         transform: scale(1.3);
         opacity: 1;
@@ -548,6 +566,7 @@ button {
     0%, 100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-7px);
     }
@@ -673,7 +692,6 @@ button {
 .slideshow {
     position: relative;
     width: 100%;
-    padding-bottom: 48px;
 }
 
 .slide {
@@ -688,7 +706,7 @@ button {
     box-shadow: 0 5px 15px rgba(0,0,0,.08);
 }
 
-/* Alternates every picture */
+/* Alternating sides */
 
 .slide:nth-of-type(odd) {
     flex-direction: row;
@@ -708,6 +726,7 @@ button {
         opacity: 0;
         transform: scale(.97);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -765,25 +784,6 @@ button {
     right: 2px;
 }
 
-/* MEMORY AUDIO
-   Absolute so it does not take width from
-   the photo or description. */
-
-.memory-audio {
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 210px;
-    height: 34px;
-    z-index: 20;
-}
-
-.memory-audio audio {
-    width: 100%;
-    height: 34px;
-}
-
 /* FUTURE */
 
 .future-list {
@@ -816,6 +816,7 @@ button {
         opacity: 0;
         transform: translateX(-15px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -825,6 +826,7 @@ button {
 /* MOBILE */
 
 @media(max-width: 600px) {
+
     .gif002-wrapper {
         width: 210px;
         height: 210px;
@@ -889,13 +891,10 @@ button {
         font-size: 12px;
         line-height: 1.45;
     }
-
-    .memory-audio {
-        width: 190px;
-    }
 }
 
 @media(max-width: 360px) {
+
     .container {
         padding: 20px 14px;
     }
@@ -949,17 +948,13 @@ button {
         font-size: 11px;
         line-height: 1.4;
     }
-
-    .memory-audio {
-        width: 175px;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- AUDIO FILES -->
+<!-- Invisible audio: takes no layout space -->
 <audio id="audio001" src="./audio001.mp3" loop preload="auto"></audio>
 <audio id="audio002" src="./audio002.mp3" loop preload="auto"></audio>
 <audio id="audio003" src="./audio003.mp3" preload="auto"></audio>
@@ -969,7 +964,7 @@ button {
 
 <div class="container">
 
-<!-- FIRST SCREEN -->
+<!-- OPENING -->
 
 <div id="screenAsk" class="screen active">
 
@@ -1139,7 +1134,7 @@ button {
 
 </div>
 
-<!-- CONTENT SCREEN -->
+<!-- CONTENT -->
 
 <div id="screenContent" class="screen">
 
@@ -1163,8 +1158,6 @@ button {
 
             <div class="notebook">
 
-                <!-- PAGE 1 -->
-
                 <div class="letter-page" id="letterPage1">
 
                     <p class="greeting">
@@ -1185,8 +1178,6 @@ button {
 
                 </div>
 
-                <!-- PAGE 2 -->
-
                 <div class="letter-page" id="letterPage2" style="display:none;">
 
                     <p>
@@ -1203,8 +1194,6 @@ button {
 
                 </div>
 
-                <!-- PAGE 3 -->
-
                 <div class="letter-page" id="letterPage3" style="display:none;">
 
                     <p>
@@ -1220,8 +1209,6 @@ button {
                     </p>
 
                 </div>
-
-                <!-- PAGE 4 -->
 
                 <div class="letter-page" id="letterPage4" style="display:none;">
 
@@ -1264,83 +1251,133 @@ button {
         <div id="slideshowContainer" class="slideshow" style="display:none;">
 
             <div class="slide active">
+
                 <img src="./001.jpg" alt="Memory 1">
+
                 <div class="memory-description">
                     <h3>Our First Memory ♡</h3>
-                    <p>This was one of those little moments that I really wanted to remember.</p>
+                    <p>
+                        This was one of those little moments that I really wanted to remember.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./002.jpg" alt="Memory 2">
+
                 <div class="memory-description">
                     <h3>A Beautiful Day ♡</h3>
-                    <p>A simple moment, but one that became special to me.</p>
+                    <p>
+                        A simple moment, but one that became special to me.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./003.jpg" alt="Memory 3">
+
                 <div class="memory-description">
                     <h3>That Special Moment</h3>
-                    <p>I'm really happy that we got to share this moment together.</p>
+                    <p>
+                        I'm really happy that we got to share this moment together.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./004.jpg" alt="Memory 4">
+
                 <div class="memory-description">
                     <h3>Another Memory ♡</h3>
-                    <p>One of the many little moments that I'll always treasure.</p>
+                    <p>
+                        One of the many little moments that I'll always treasure.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./005.jpg" alt="Memory 5">
+
                 <div class="memory-description">
                     <h3>Sweet Moment</h3>
-                    <p>Even the simplest moments can become beautiful memories.</p>
+                    <p>
+                        Even the simplest moments can become beautiful memories.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./006.jpg" alt="Memory 6">
+
                 <div class="memory-description">
                     <h3>Us ♡</h3>
-                    <p>Another moment that I'm glad we were able to experience.</p>
+                    <p>
+                        Another moment that I'm glad we were able to experience.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./007.jpg" alt="Memory 7">
+
                 <div class="memory-description">
                     <h3>A Day to Remember</h3>
-                    <p>This is another memory that I'll always be happy to look back on.</p>
+                    <p>
+                        This is another memory that I'll always be happy to look back on.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./008.jpg" alt="Memory 8">
+
                 <div class="memory-description">
                     <h3>Another Little Memory ♡</h3>
-                    <p>I hope we can make many more memories like this together.</p>
+                    <p>
+                        I hope we can make many more memories like this together.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./009.jpg" alt="Memory 9">
+
                 <div class="memory-description">
                     <h3>One More Memory</h3>
-                    <p>Sometimes the simplest moments become our favorite memories.</p>
+                    <p>
+                        Sometimes the simplest moments become our favorite memories.
+                    </p>
                 </div>
+
             </div>
 
             <div class="slide">
+
                 <img src="./010.jpg" alt="Memory 10">
+
                 <div class="memory-description">
                     <h3>Forever in My Memories ♡</h3>
-                    <p>Thank you for all the beautiful memories we've made together.</p>
+                    <p>
+                        Thank you for all the beautiful memories we've made together.
+                    </p>
                 </div>
+
             </div>
 
             <button class="slide-btn prev" id="prevBtn" type="button">
@@ -1351,13 +1388,6 @@ button {
                 ❯
             </button>
 
-            <!-- MUSIC CONTROL -->
-            <div class="memory-audio">
-                <audio id="memoryMusicPlayer" controls loop preload="auto">
-                    <source src="./music001.mp3" type="audio/mpeg">
-                </audio>
-            </div>
-
         </div>
 
         <!-- FUTURE -->
@@ -1366,22 +1396,30 @@ button {
 
             <div class="future-item">
                 💕 <strong>More memories</strong>
-                <span>More laughs, random dates, pictures, and little moments.</span>
+                <span>
+                    More laughs, random dates, pictures, and little moments.
+                </span>
             </div>
 
             <div class="future-item">
                 🌷 <strong>Grow together</strong>
-                <span>Keep supporting each other through every new chapter.</span>
+                <span>
+                    Keep supporting each other through every new chapter.
+                </span>
             </div>
 
             <div class="future-item">
                 ✈️ <strong>Dream together</strong>
-                <span>Places we want to visit and memories we want to make.</span>
+                <span>
+                    Places we want to visit and memories we want to make.
+                </span>
             </div>
 
             <div class="future-item">
                 🎀 <strong>Keep choosing love</strong>
-                <span>I hope we continue choosing kindness, patience, and each other.</span>
+                <span>
+                    I hope we continue choosing kindness, patience, and each other.
+                </span>
             </div>
 
         </div>
@@ -1404,31 +1442,38 @@ button {
 const audio001 = document.getElementById("audio001");
 const audio002 = document.getElementById("audio002");
 const audio003 = document.getElementById("audio003");
-const memoryMusic = document.getElementById("memoryMusicPlayer");
-
-function stopAudio(audio) {
-    if (!audio) return;
-    audio.pause();
-    audio.currentTime = 0;
-}
+const music001 = document.getElementById("music001");
 
 function playAudio(audio, restart = false) {
+
     if (!audio) return;
 
     if (restart) {
         audio.currentTime = 0;
     }
 
+    audio.volume = 1;
+
     const promise = audio.play();
 
-    if (promise) {
+    if (promise !== undefined) {
         promise.catch(() => {});
     }
 }
 
+function stopAudio(audio) {
+
+    if (!audio) return;
+
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+
 /* SCREEN */
 
 function changeScreen(screenId) {
+
     document.querySelectorAll(".screen").forEach(screen => {
         screen.classList.remove("active");
     });
@@ -1440,7 +1485,8 @@ function changeScreen(screenId) {
     }
 }
 
-/* FIRST PAGE */
+
+/* OPENING */
 
 const firstStage = document.getElementById("firstStage");
 const stageTwo = document.getElementById("stageTwo");
@@ -1451,31 +1497,40 @@ const yesBtn = document.getElementById("yesBtn");
 
 let noCount = 0;
 let stageTwoStarted = false;
-let audio001Unlocked = false;
 
-/* Try to start audio001 immediately */
+
+/*
+   Try to start Audio001 immediately.
+   Some mobile browsers block autoplay.
+*/
 
 window.addEventListener("load", () => {
+
     playAudio(audio001);
 
-    /* If autoplay is blocked, the first tap/click will unlock it. */
-    document.addEventListener("pointerdown", unlockAudio001, {
-        passive: true
-    });
 });
 
-function unlockAudio001() {
-    if (audio001Unlocked || stageTwoStarted) return;
 
-    playAudio(audio001);
-    audio001Unlocked = true;
-}
+/*
+   If autoplay was blocked,
+   the first tap will start Audio001.
+*/
+
+document.addEventListener("pointerdown", () => {
+
+    if (!stageTwoStarted) {
+        playAudio(audio001);
+    }
+
+}, {
+    once: true,
+    passive: true
+});
+
 
 /* YES */
 
 yesBtn.addEventListener("click", () => {
-
-    /* YES after the fifth NO */
 
     if (stageTwoStarted) {
 
@@ -1486,27 +1541,42 @@ yesBtn.addEventListener("click", () => {
         stageTwo.classList.remove("active");
         stageThree.classList.add("active");
 
-        /* Audio003 after 2.5 seconds */
+        /*
+           Audio003 starts 2.5 seconds
+           after GIF003 appears.
+        */
 
         setTimeout(() => {
+
             playAudio(audio003, true);
+
         }, 2500);
 
-        /* Flowers after 5 seconds */
+
+        /*
+           GIF003 remains for 5 seconds.
+        */
 
         setTimeout(() => {
+
             stopAudio(audio003);
+
             changeScreen("screenBouquet");
+
         }, 5000);
 
         return;
     }
 
+
     /* Normal YES */
 
     stopAudio(audio001);
+
     changeScreen("screenBouquet");
+
 });
+
 
 /* NO */
 
@@ -1518,7 +1588,11 @@ noBtn.addEventListener("click", event => {
 
     noCount++;
 
-    /* First four NO presses */
+
+    /*
+       First four NO presses:
+       move the button around.
+    */
 
     if (noCount < 5) {
 
@@ -1533,15 +1607,24 @@ noBtn.addEventListener("click", event => {
         );
 
         noBtn.style.position = "fixed";
-        noBtn.style.left = Math.random() * maxX + "px";
-        noBtn.style.top = Math.random() * maxY + "px";
+        noBtn.style.left =
+            Math.random() * maxX + "px";
+
+        noBtn.style.top =
+            Math.random() * maxY + "px";
+
         noBtn.style.zIndex = "9999";
 
         return;
     }
 
+
+    /* Fifth NO */
+
     startSecondStage();
+
 });
+
 
 /* SECOND STAGE */
 
@@ -1553,67 +1636,97 @@ function startSecondStage() {
 
     gif001Container.classList.add("disintegrate");
 
-    const subtitle = firstStage.querySelector(".subtitle");
-    const question = firstStage.querySelector("h1");
+    const subtitle =
+        firstStage.querySelector(".subtitle");
 
-    if (subtitle) subtitle.style.display = "none";
-    if (question) question.style.display = "none";
+    const question =
+        firstStage.querySelector("h1");
+
+    if (subtitle) {
+        subtitle.style.display = "none";
+    }
+
+    if (question) {
+        question.style.display = "none";
+    }
 
     noBtn.style.display = "none";
+
 
     setTimeout(() => {
 
         gif001Container.style.display = "none";
 
         stageTwo.appendChild(yesBtn);
+
         yesBtn.classList.add("big-yes");
 
         stageTwo.classList.add("active");
 
-        /* Start audio002 when GIF002 appears */
+        /*
+           Start Audio002 as GIF002 appears.
+        */
 
         playAudio(audio002, true);
 
     }, 850);
+
 }
 
-/* FLOWERS */
 
-document.getElementById("openGiftsBtn").addEventListener("click", () => {
-    changeScreen("screenHome");
-});
+/* FLOWER SCREEN */
+
+document
+    .getElementById("openGiftsBtn")
+    .addEventListener("click", () => {
+
+        changeScreen("screenHome");
+
+    });
+
 
 /* BACK BUTTONS */
 
-document.querySelectorAll("[data-go]").forEach(button => {
+document.querySelectorAll("[data-go]")
+    .forEach(button => {
 
-    button.addEventListener("click", () => {
+        button.addEventListener("click", () => {
 
-        stopAudio(memoryMusic);
+            stopAudio(music001);
 
-        changeScreen(button.dataset.go);
+            changeScreen(button.dataset.go);
+
+        });
 
     });
 
-});
 
-document.getElementById("backToHome").addEventListener("click", () => {
+document
+    .getElementById("backToHome")
+    .addEventListener("click", () => {
 
-    stopAudio(memoryMusic);
+        stopAudio(music001);
 
-    changeScreen("screenHome");
+        changeScreen("screenHome");
 
-});
+    });
+
 
 /* GIFTS */
 
-document.querySelectorAll("[data-content]").forEach(button => {
+document.querySelectorAll("[data-content]")
+    .forEach(button => {
 
-    button.addEventListener("click", () => {
-        openContentScreen(button.dataset.content);
+        button.addEventListener("click", () => {
+
+            openContentScreen(
+                button.dataset.content
+            );
+
+        });
+
     });
 
-});
 
 /* LETTER */
 
@@ -1626,44 +1739,65 @@ const letterPages = [
 
 let currentLetterPage = 0;
 
-const letterPrev = document.getElementById("letterPrev");
-const letterNext = document.getElementById("letterNext");
+const letterPrev =
+    document.getElementById("letterPrev");
+
+const letterNext =
+    document.getElementById("letterNext");
+
 const letterPageIndicator =
     document.getElementById("letterPageIndicator");
+
 
 function showLetterPage() {
 
     letterPages.forEach((page, index) => {
+
         page.style.display =
-            index === currentLetterPage ? "block" : "none";
+            index === currentLetterPage
+                ? "block"
+                : "none";
+
     });
+
 
     letterPageIndicator.textContent =
         `${currentLetterPage + 1} / ${letterPages.length}`;
 
+
     letterPrev.style.visibility =
-        currentLetterPage === 0 ? "hidden" : "visible";
+        currentLetterPage === 0
+            ? "hidden"
+            : "visible";
+
 
     letterNext.textContent =
         currentLetterPage === letterPages.length - 1
             ? "Finish ♡"
             : "Continue ❯";
+
 }
+
 
 letterPrev.addEventListener("click", () => {
 
     if (currentLetterPage > 0) {
+
         currentLetterPage--;
+
         showLetterPage();
+
     }
 
 });
+
 
 letterNext.addEventListener("click", () => {
 
     if (currentLetterPage < letterPages.length - 1) {
 
         currentLetterPage++;
+
         showLetterPage();
 
     } else {
@@ -1674,114 +1808,168 @@ letterNext.addEventListener("click", () => {
 
 });
 
+
 /* MEMORIES */
 
-const slides = document.querySelectorAll(".slide");
-const slideshow = document.getElementById("slideshowContainer");
+const slides =
+    document.querySelectorAll(".slide");
+
+const slideshow =
+    document.getElementById("slideshowContainer");
 
 let currentSlide = 0;
+
 
 function showSlide() {
 
     slides.forEach((slide, index) => {
+
         slide.classList.toggle(
             "active",
             index === currentSlide
         );
+
     });
 
 }
 
-document.getElementById("prevBtn").addEventListener("click", () => {
 
-    currentSlide =
-        (currentSlide - 1 + slides.length) %
-        slides.length;
+document
+    .getElementById("prevBtn")
+    .addEventListener("click", () => {
 
-    showSlide();
+        currentSlide =
+            (currentSlide - 1 + slides.length) %
+            slides.length;
 
-});
+        showSlide();
 
-document.getElementById("nextBtn").addEventListener("click", () => {
+    });
 
-    currentSlide =
-        (currentSlide + 1) %
-        slides.length;
 
-    showSlide();
+document
+    .getElementById("nextBtn")
+    .addEventListener("click", () => {
 
-});
+        currentSlide =
+            (currentSlide + 1) %
+            slides.length;
 
-/* CONTENT */
+        showSlide();
+
+    });
+
+
+/* CONTENT SCREEN */
 
 function openContentScreen(type) {
 
-    const letter = document.getElementById("letterContainer");
-    const future = document.getElementById("futureContainer");
+    const letter =
+        document.getElementById("letterContainer");
 
-    stopAudio(memoryMusic);
+    const future =
+        document.getElementById("futureContainer");
+
+
+    stopAudio(music001);
 
     letter.style.display = "none";
     slideshow.style.display = "none";
     future.style.display = "none";
 
-    const title = document.getElementById("contentTitle");
-    const emoji = document.getElementById("contentEmoji");
-    const subtitle = document.getElementById("contentSubtitle");
+
+    const title =
+        document.getElementById("contentTitle");
+
+    const emoji =
+        document.getElementById("contentEmoji");
+
+    const subtitle =
+        document.getElementById("contentSubtitle");
+
+
+    /* LETTER */
 
     if (type === "letter") {
 
         emoji.textContent = "💌";
-        title.textContent = "A Letter For You";
-        subtitle.textContent = "straight from my heart ♡";
+
+        title.textContent =
+            "A Letter For You";
+
+        subtitle.textContent =
+            "straight from my heart ♡";
 
         currentLetterPage = 0;
+
         showLetterPage();
 
         letter.style.display = "block";
+
     }
+
+
+    /* MEMORIES */
 
     if (type === "images") {
 
         emoji.textContent = "📸";
-        title.textContent = "Our Memories";
-        subtitle.textContent = "little moments I treasure ♡";
+
+        title.textContent =
+            "Our Memories";
+
+        subtitle.textContent =
+            "little moments I treasure ♡";
 
         currentSlide = 0;
+
         showSlide();
 
         slideshow.style.display = "block";
 
-        /*
-         * This click came directly from the user,
-         * so the browser is much more likely to allow
-         * the memory music to play.
-         */
 
-        playAudio(memoryMusic, true);
+        /*
+           Start music immediately when
+           the Memories button is clicked.
+        */
+
+        playAudio(music001, true);
+
     }
+
+
+    /* FUTURE */
 
     if (type === "ribbon") {
 
         emoji.textContent = "🎀";
-        title.textContent = "Our Future";
-        subtitle.textContent = "things I hope we experience ♡";
+
+        title.textContent =
+            "Our Future";
+
+        subtitle.textContent =
+            "things I hope we experience ♡";
 
         future.style.display = "block";
+
     }
 
 }
+
 
 /* FLOATING HEARTS */
 
 const heartBackground =
     document.getElementById("heartBackground");
 
+
 function createHeart() {
 
-    const heart = document.createElement("div");
+    const heart =
+        document.createElement("div");
 
     heart.className = "heart";
+
     heart.textContent =
         ["💗", "💕", "💖", "💘", "❤️"][
             Math.floor(Math.random() * 5)
@@ -1799,11 +1987,16 @@ function createHeart() {
     heartBackground.appendChild(heart);
 
     setTimeout(() => {
+
         heart.remove();
+
     }, 10000);
+
 }
 
+
 setInterval(createHeart, 900);
+
 
 /* INITIAL LETTER STATE */
 
