@@ -153,6 +153,16 @@ h2 {
     margin: 8px 0 18px;
 }
 
+/* MUSIC BUTTON */
+
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+}
+
 /* FIRST GIF */
 
 .cute-cat {
@@ -1013,7 +1023,7 @@ button {
 <audio id="audio001" src="./audio001.mp3" loop preload="auto"></audio>
 <audio id="audio002" src="./audio002.mp3" loop preload="auto"></audio>
 <audio id="audio003" src="./audio003.mp3" preload="auto"></audio>
-<audio id="music001" src="./music001.mp3" loop preload="auto"></audio>
+<audio id="music001" src="./Music001.mp3" loop preload="auto"></audio>
 
 
 <!-- FLOATING HEARTS -->
@@ -1032,7 +1042,21 @@ button {
 
 <div id="screenAsk" class="screen active">
 
-    <div id="firstStage">
+    <!-- PLAY MUSIC FIRST -->
+
+    <button
+        id="openingMusicButton"
+        class="primary-btn"
+        type="button"
+    >
+        🎵 PLAY MUSIC
+    </button>
+
+
+    <div
+        id="firstStage"
+        style="display:none;"
+    >
 
         <div class="hearts">
             💖 ✨ 💖
@@ -1854,11 +1878,7 @@ function playAudio(audio, restart = false) {
 
     audio.volume = 1;
 
-    const promise = audio.play();
-
-    if (promise !== undefined) {
-        promise.catch(() => {});
-    }
+    return audio.play();
 
 }
 
@@ -1924,37 +1944,47 @@ const noBtn =
 const yesBtn =
     document.getElementById("yesBtn");
 
+const openingMusicButton =
+    document.getElementById(
+        "openingMusicButton"
+    );
+
 
 let noCount = 0;
 
 let stageTwoStarted = false;
 
 
-/* TRY TO PLAY AUDIO001 */
+/* ==================================================
+   PLAY AUDIO001 FIRST
+================================================== */
 
-window.addEventListener("load", () => {
+openingMusicButton.addEventListener(
+    "click",
+    async () => {
 
-    playAudio(audio001);
+        try {
 
-});
+            await playAudio(
+                audio001,
+                true
+            );
 
+            openingMusicButton.style.display =
+                "none";
 
-/* AUTOPLAY FALLBACK */
+            firstStage.style.display =
+                "block";
 
-document.addEventListener(
-    "pointerdown",
-    () => {
+        } catch (error) {
 
-        if (!stageTwoStarted) {
-
-            playAudio(audio001);
+            console.error(
+                "audio001 could not be started:",
+                error
+            );
 
         }
 
-    },
-    {
-        once: true,
-        passive: true
     }
 );
 
@@ -1987,7 +2017,7 @@ yesBtn.addEventListener("click", () => {
             playAudio(
                 audio003,
                 true
-            );
+            ).catch(() => {});
 
         }, 2500);
 
@@ -2174,7 +2204,7 @@ function startSecondStage() {
         playAudio(
             audio002,
             true
-        );
+        ).catch(() => {});
 
     }, 850);
 
@@ -2276,6 +2306,33 @@ const contentSubtitle =
     document.getElementById(
         "contentSubtitle"
     );
+
+
+/* ==================================================
+   MEMORY MUSIC BUTTON
+================================================== */
+
+const memoryMusicButton =
+    document.createElement("button");
+
+memoryMusicButton.id =
+    "memoryMusicButton";
+
+memoryMusicButton.className =
+    "primary-btn music-button";
+
+memoryMusicButton.type =
+    "button";
+
+memoryMusicButton.textContent =
+    "🎵 PLAY MUSIC";
+
+memoryMusicButton.style.display =
+    "none";
+
+document.body.appendChild(
+    memoryMusicButton
+);
 
 
 /* ==================================================
@@ -2395,6 +2452,9 @@ letterNext.addEventListener(
 
             stopAudio(music001);
 
+            memoryMusicButton.style.display =
+                "none";
+
             changeScreen(
                 "screenHome"
             );
@@ -2476,6 +2536,42 @@ document
 
 
 /* ==================================================
+   MEMORY MUSIC START
+================================================== */
+
+memoryMusicButton.addEventListener(
+    "click",
+    async () => {
+
+        try {
+
+            await playAudio(
+                music001,
+                true
+            );
+
+            memoryMusicButton.style.display =
+                "none";
+
+            slideshow.style.display =
+                "block";
+
+            showSlide();
+
+        } catch (error) {
+
+            console.error(
+                "Music001 could not be started:",
+                error
+            );
+
+        }
+
+    }
+);
+
+
+/* ==================================================
    OPEN CONTENT SCREEN
 ================================================== */
 
@@ -2487,6 +2583,9 @@ function openContentScreen(type) {
     stopAudio(
         music001
     );
+
+    memoryMusicButton.style.display =
+        "none";
 
 
     /* HIDE ALL CONTENT */
@@ -2564,19 +2663,20 @@ function openContentScreen(type) {
             0;
 
 
-        showSlide();
+        /*
+            KEEP THE SLIDESHOW HIDDEN.
 
+            The photos will only appear
+            AFTER Music001.mp3 successfully
+            starts playing.
+        */
 
         slideshow.style.display =
+            "none";
+
+
+        memoryMusicButton.style.display =
             "block";
-
-
-        /* START MUSIC001 */
-
-        playAudio(
-            music001,
-            true
-        );
 
 
         return;
@@ -2616,12 +2716,6 @@ function openContentScreen(type) {
 /* ==================================================
    GIFT BUTTONS
 ================================================== */
-
-/*
-   Event delegation is used here.
-   This makes the three gift buttons
-   reliably open their content.
-*/
 
 document.addEventListener(
     "click",
