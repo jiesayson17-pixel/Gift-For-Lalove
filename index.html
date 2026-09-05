@@ -1,4 +1,4 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,6 +10,10 @@
 
 <style>
 
+/* =========================================================
+   GENERAL
+========================================================= */
+
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
@@ -18,7 +22,9 @@
 body {
     margin: 0;
     padding: 15px;
+
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,18 +37,28 @@ body {
     overflow: hidden;
 }
 
+
+/* =========================================================
+   FLOATING HEART BACKGROUND
+========================================================= */
+
 #heartBackground {
     position: fixed;
     inset: 0;
+
     overflow: hidden;
+
     pointer-events: none;
+
     z-index: 1;
 }
 
 .heart {
     position: absolute;
     bottom: -40px;
+
     font-size: 20px;
+
     animation: floatUp linear forwards;
 }
 
@@ -64,12 +80,18 @@ body {
 
 }
 
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
 .container {
     position: relative;
     z-index: 5;
 
     width: 100%;
     max-width: 430px;
+
     min-height: 580px;
 
     padding: 25px 20px;
@@ -89,6 +111,11 @@ body {
     overflow: hidden;
 }
 
+
+/* =========================================================
+   SCREENS
+========================================================= */
+
 .screen {
     display: none;
 
@@ -102,6 +129,7 @@ body {
 
 .screen.active {
     display: flex;
+
     animation: screenIn .5s ease;
 }
 
@@ -119,15 +147,22 @@ body {
 
 }
 
+
+/* =========================================================
+   HEARTS / TEXT
+========================================================= */
+
 .hearts {
     font-size: 28px;
+
     margin-bottom: 8px;
+
     animation: heartbeat 2s infinite;
 }
 
 @keyframes heartbeat {
 
-    0%,100% {
+    0%, 100% {
         transform: scale(1);
     }
 
@@ -139,31 +174,54 @@ body {
 
 .subtitle {
     color: #ff6b91;
+
     font-size: 15px;
     font-weight: 600;
 }
 
 h1 {
     color: #a90036;
+
     font-size: 25px;
     line-height: 1.3;
+
     margin: 10px 0 25px;
 }
 
 h2 {
     color: #a90036;
+
     margin: 8px 0 18px;
 }
 
+
+/* =========================================================
+   FIRST GIF
+========================================================= */
+
 .cute-cat {
-    font-size: 100px;
-    margin: 15px 0;
+    width: 180px;
+    height: 180px;
+
+    margin: 10px 0 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     animation: catFloat 3s ease-in-out infinite;
+}
+
+.cute-cat img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
 }
 
 @keyframes catFloat {
 
-    0%,100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
@@ -174,30 +232,314 @@ h2 {
 }
 
 
-/* BUTTONS */
+/* =========================================================
+   SECOND STAGE
+========================================================= */
+
+.stage-two {
+    display: none;
+
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stage-two.active {
+    display: flex;
+}
+
+
+/* GIF 002 */
+
+.gif002-wrapper {
+    width: 240px;
+    height: 240px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 5px 0 15px;
+
+    animation: gif002Entrance 1s ease both;
+}
+
+.gif002-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.gif002-question {
+    color: #a90036;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    margin-bottom: 10px;
+
+    animation: questionAppear .8s ease both;
+}
+
+@keyframes gif002Entrance {
+
+    0% {
+        opacity: 0;
+        transform: scale(.2) rotate(-8deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.12) rotate(3deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+@keyframes questionAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   GIF 001 DISINTEGRATION
+========================================================= */
+
+.disintegrate {
+    animation: disintegrate .9s ease forwards !important;
+}
+
+@keyframes disintegrate {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        filter:
+            blur(0)
+            brightness(1);
+    }
+
+    25% {
+        opacity: .9;
+
+        transform:
+            scale(1.04)
+            rotate(-2deg);
+
+        filter:
+            blur(1px)
+            brightness(1.2);
+    }
+
+    55% {
+        opacity: .5;
+
+        transform:
+            scale(.92)
+            rotate(3deg);
+
+        filter:
+            blur(5px)
+            brightness(1.4);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(.55)
+            rotate(-8deg);
+
+        filter:
+            blur(15px)
+            brightness(1.8);
+    }
+
+}
+
+
+/* =========================================================
+   BIG YES BUTTON
+========================================================= */
+
+.big-yes {
+    padding: 20px 55px;
+
+    font-size: 22px;
+
+    transform: scale(1.2);
+
+    animation:
+        yesGrow 1s ease both,
+        yesPulse 1.5s ease-in-out 1s infinite;
+}
+
+@keyframes yesGrow {
+
+    from {
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+}
+
+@keyframes yesPulse {
+
+    0%, 100% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1.32);
+    }
+
+}
+
+
+/* =========================================================
+   GIF 003
+========================================================= */
+
+.stage-three {
+    display: none;
+
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stage-three.active {
+    display: flex;
+}
+
+.gif003-wrapper {
+    width: 250px;
+    height: 250px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: gif003Entrance 1s ease both;
+}
+
+.gif003-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+.gif003-text {
+    margin-top: 10px;
+
+    color: #a90036;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    animation: gif003Text 1s ease .3s both;
+}
+
+@keyframes gif003Entrance {
+
+    0% {
+        opacity: 0;
+        transform: scale(.2) rotate(10deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.12) rotate(-3deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+@keyframes gif003Text {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 button {
     font-family: inherit;
+
     cursor: pointer;
+
     touch-action: manipulation;
+
     -webkit-user-select: none;
     user-select: none;
 }
 
 .primary-btn {
     padding: 13px 24px;
+
     border: none;
     border-radius: 30px;
 
     color: white;
+
     font-size: 14px;
     font-weight: 700;
 
-    background: linear-gradient(
-        135deg,
-        #ff7198,
-        #ff416c
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff7198,
+            #ff416c
+        );
 
     box-shadow:
         0 8px 20px rgba(255, 65, 108, .25);
@@ -216,6 +558,7 @@ button {
     border-radius: 30px;
 
     color: #ff6b91;
+
     background: white;
 
     font-size: 13px;
@@ -224,163 +567,232 @@ button {
 
 .btn-group {
     display: flex;
+
     gap: 12px;
+
     justify-content: center;
 }
 
 
-/* FLOWER SCREEN */
+/* =========================================================
+   FLOWER SCREEN
+========================================================= */
 
 .flower-scene {
     position: relative;
+
     width: 100%;
     height: 350px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
 
+
+/* GIF 004 */
+
 .bouquet {
-    font-size: 135px;
+    width: 180px;
+    height: 180px;
+
     z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     animation: bouquetFloat 3s ease-in-out infinite;
 
     filter:
-        drop-shadow(0 12px 12px rgba(255,100,140,.18));
+        drop-shadow(
+            0 12px 12px
+            rgba(255,100,140,.18)
+        );
+}
+
+.bouquet img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
 }
 
 @keyframes bouquetFloat {
 
-    0%,100% {
-        transform: translateY(5px);
+    0%, 100% {
+        transform: translateY(5px) scale(1);
     }
 
     50% {
-        transform: translateY(-12px);
+        transform: translateY(-12px) scale(1.04);
     }
 
 }
+
+
+/* =========================================================
+   FLOWER WORDS
+========================================================= */
 
 .flower-word {
     position: absolute;
 
     color: #d34c75;
+
     font-size: 12px;
     font-weight: 700;
 
     white-space: nowrap;
 
-    animation: wordFloat 4s ease-in-out infinite;
+    animation:
+        wordFloat 4s ease-in-out infinite;
+
+    z-index: 4;
 }
+
+
+/* LEFT SIDE */
 
 .left1 {
     left: 0;
-    top: 20%;
+    top: 12%;
 }
 
 .left2 {
-    left: 2%;
-    top: 48%;
+    left: 0;
+    top: 45%;
+
     animation-delay: 1s;
 }
 
 .left3 {
-    left: 8%;
-    top: 75%;
+    left: 2%;
+    top: 78%;
+
     animation-delay: 2s;
 }
 
+
+/* RIGHT SIDE */
+
 .right1 {
     right: 0;
-    top: 20%;
+    top: 12%;
+
     animation-delay: .5s;
 }
 
 .right2 {
-    right: 2%;
-    top: 48%;
+    right: 0;
+    top: 45%;
+
     animation-delay: 1.5s;
 }
 
 .right3 {
-    right: 8%;
-    top: 75%;
+    right: 2%;
+    top: 78%;
+
     animation-delay: 2.5s;
 }
 
+
 @keyframes wordFloat {
 
-    0%,100% {
+    0%, 100% {
         transform: translateY(8px);
+
         opacity: .45;
     }
 
     50% {
         transform: translateY(-12px);
+
         opacity: 1;
     }
 
 }
 
+
+/* =========================================================
+   FLOWER SPARKLES
+========================================================= */
+
 .flower-sparkle {
     position: absolute;
+
     font-size: 18px;
-    animation: sparkle 2s ease-in-out infinite;
+
+    animation:
+        sparkle 2s ease-in-out infinite;
+
+    z-index: 5;
 }
 
 .s1 {
-    top: 12%;
-    left: 28%;
+    top: 8%;
+    left: 30%;
 }
 
 .s2 {
-    top: 15%;
-    right: 28%;
+    top: 8%;
+    right: 30%;
+
     animation-delay: .5s;
 }
 
 .s3 {
-    bottom: 18%;
-    left: 25%;
+    bottom: 10%;
+    left: 30%;
+
     animation-delay: 1s;
 }
 
 .s4 {
-    bottom: 15%;
-    right: 25%;
+    bottom: 10%;
+    right: 30%;
+
     animation-delay: 1.5s;
 }
 
 @keyframes sparkle {
 
-    0%,100% {
+    0%, 100% {
         transform: scale(.7);
+
         opacity: .3;
     }
 
     50% {
         transform: scale(1.3);
+
         opacity: 1;
     }
 
 }
 
 
-/* HOME */
+/* =========================================================
+   HOME
+========================================================= */
 
 .gift-grid {
     width: 100%;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
     gap: 9px;
 }
 
 .gift {
     min-height: 160px;
+
     padding: 10px 5px;
 
     border: 2px solid #ffd0dc;
@@ -389,7 +801,8 @@ button {
     background: white;
 
     box-shadow:
-        0 8px 20px rgba(255,100,140,.1);
+        0 8px 20px
+        rgba(255,100,140,.1);
 
     transition:
         transform .25s,
@@ -404,14 +817,16 @@ button {
     display: block;
 
     font-size: 45px;
+
     margin-bottom: 12px;
 
-    animation: giftBounce 2.5s infinite;
+    animation:
+        giftBounce 2.5s infinite;
 }
 
 @keyframes giftBounce {
 
-    0%,100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
@@ -425,6 +840,7 @@ button {
     display: block;
 
     color: #a90036;
+
     font-size: 11px;
     font-weight: 800;
 }
@@ -435,6 +851,7 @@ button {
     margin-top: 5px;
 
     color: #e17b99;
+
     font-size: 9px;
 }
 
@@ -443,21 +860,26 @@ button {
 }
 
 
-/* CONTENT */
+/* =========================================================
+   CONTENT
+========================================================= */
 
 .content-display {
     width: 100%;
+
     min-height: 320px;
 
     padding: 20px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     background: white;
 
     border: 2px solid #ffe0e8;
+
     border-radius: 22px;
 
     overflow-y: auto;
@@ -465,18 +887,22 @@ button {
 
 .letter-text {
     color: #555;
+
     font-size: 15px;
+
     line-height: 1.7;
+
     font-style: italic;
 }
 
 
-/* ==================================================
-   SLIDESHOW WITH PHOTO + DESCRIPTION
-   ================================================== */
+/* =========================================================
+   MEMORIES SLIDESHOW
+========================================================= */
 
 .slideshow {
     position: relative;
+
     width: 100%;
 }
 
@@ -484,6 +910,7 @@ button {
     display: none;
 
     width: 100%;
+
     min-height: 280px;
 
     padding: 15px;
@@ -493,19 +920,24 @@ button {
     border-radius: 17px;
 
     align-items: center;
+
     gap: 18px;
 
     box-shadow:
-        0 5px 15px rgba(0,0,0,0.08);
+        0 5px 15px
+        rgba(0,0,0,0.08);
 }
 
 .slide.active {
     display: flex;
-    animation: photoIn .4s ease;
+
+    animation:
+        photoIn .4s ease;
 }
 
 .slide img {
     width: 55%;
+
     height: 260px;
 
     object-fit: cover;
@@ -545,11 +977,13 @@ button {
 
     from {
         opacity: 0;
+
         transform: scale(.95);
     }
 
     to {
         opacity: 1;
+
         transform: scale(1);
     }
 
@@ -560,17 +994,20 @@ button {
 
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     width: 38px;
     height: 38px;
 
     border: none;
+
     border-radius: 50%;
 
     color: white;
 
-    background: rgba(255,80,120,.85);
+    background:
+        rgba(255,80,120,.85);
 
     font-size: 17px;
 
@@ -586,7 +1023,9 @@ button {
 }
 
 
-/* FUTURE */
+/* =========================================================
+   FUTURE
+========================================================= */
 
 .future-list {
     width: 100%;
@@ -594,16 +1033,20 @@ button {
 
 .future-item {
     margin: 10px 0;
+
     padding: 13px;
 
     text-align: left;
 
     background: #fff5f8;
 
-    border-left: 4px solid #ff7095;
+    border-left:
+        4px solid #ff7095;
+
     border-radius: 14px;
 
-    animation: futureIn .5s ease both;
+    animation:
+        futureIn .5s ease both;
 }
 
 .future-item strong {
@@ -616,6 +1059,7 @@ button {
     margin-top: 5px;
 
     color: #666;
+
     font-size: 12px;
 }
 
@@ -623,20 +1067,56 @@ button {
 
     from {
         opacity: 0;
-        transform: translateX(-15px);
+
+        transform:
+            translateX(-15px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
+
+        transform:
+            translateX(0);
     }
 
 }
 
 
-/* SMALL SCREENS */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media(max-width:360px) {
+@media(max-width: 600px) {
+
+    .gif002-wrapper {
+        width: 210px;
+        height: 210px;
+    }
+
+    .gif003-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+
+    .big-yes {
+        padding: 18px 48px;
+
+        font-size: 20px;
+    }
+
+    .bouquet {
+        width: 160px;
+        height: 160px;
+    }
+
+    .flower-word {
+        font-size: 10px;
+    }
+
+}
+
+
+@media(max-width: 360px) {
 
     .container {
         padding: 20px 14px;
@@ -651,16 +1131,18 @@ button {
     }
 
     .flower-word {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .slide {
         gap: 8px;
+
         padding: 10px;
     }
 
     .slide img {
         width: 52%;
+
         height: 230px;
     }
 
@@ -692,121 +1174,252 @@ button {
 <div class="container">
 
 
-<!-- =========================
+<!-- =====================================================
      FIRST PAGE
-========================= -->
+===================================================== -->
 
 <div id="screenAsk" class="screen active">
 
-    <div class="hearts">
-        💖 ✨ 💖
+
+    <!-- ORIGINAL FIRST STAGE -->
+
+    <div id="firstStage">
+
+        <div class="hearts">
+            💖 ✨ 💖
+        </div>
+
+
+        <div class="cute-cat" id="gif001Container">
+
+            <img
+                src="./gif001.gif"
+                alt="Cute cat">
+
+        </div>
+
+
+        <div class="subtitle">
+            Hey beautiful ♡
+        </div>
+
+
+        <h1>
+            Do you want to see<br>
+            your little surprise?
+        </h1>
+
+
+        <div class="btn-group">
+
+            <button
+                id="yesBtn"
+                class="primary-btn"
+                type="button">
+
+                YES PLEASE 💗
+
+            </button>
+
+
+            <button
+                id="noBtn"
+                class="secondary-btn"
+                type="button">
+
+                NO THANKS
+
+            </button>
+
+        </div>
+
     </div>
 
-    <div class="cute-cat">
-        🐱
-    </div>
 
-    <div class="subtitle">
-        Hey beautiful ♡
-    </div>
+    <!-- =================================================
+         SECOND STAGE
+    ================================================== -->
 
-    <h1>
-        Do you want to see<br>
-        your little surprise?
-    </h1>
+    <div
+        id="stageTwo"
+        class="stage-two">
 
-    <div class="btn-group">
 
-        <button
-            id="yesBtn"
-            class="primary-btn"
-            type="button">
+        <div class="gif002-question">
 
-            YES PLEASE 💗
+            You don't love me anymore? 😿
 
-        </button>
+        </div>
 
-        <button
-            id="noBtn"
-            class="secondary-btn"
-            type="button">
 
-            NO THANKS
+        <div class="gif002-wrapper">
 
-        </button>
+            <img
+                src="./gif002.gif"
+                alt="Sad cat">
+
+        </div>
+
+
+        <!-- YES BUTTON WILL BE MOVED HERE BY JAVASCRIPT -->
 
     </div>
+
+
+    <!-- =================================================
+         THIRD STAGE
+    ================================================== -->
+
+    <div
+        id="stageThree"
+        class="stage-three">
+
+
+        <div class="gif003-wrapper">
+
+            <img
+                src="./gif003.gif"
+                alt="Happy cat">
+
+        </div>
+
+
+        <div class="gif003-text">
+
+            You do love me😼
+
+        </div>
+
+
+    </div>
+
 
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      FLOWER PAGE
-========================= -->
+===================================================== -->
 
 <div id="screenBouquet" class="screen">
 
+
     <div class="hearts">
+
         🌸 ✨ 🌷
+
     </div>
 
+
     <div class="subtitle">
+
         Something special for you
+
     </div>
 
 
     <div class="flower-scene">
 
+
+        <!-- LEFT WORDS -->
+
         <div class="flower-word left1">
+
             GORGEOUS LALOVE KO!!
+
         </div>
+
 
         <div class="flower-word left2">
+
             LALOVE IS THE BEST!!
+
         </div>
+
 
         <div class="flower-word left3">
+
             You're my lalove always & forever
+
         </div>
+
+
+        <!-- RIGHT WORDS -->
 
         <div class="flower-word right1">
+
             I LOVE YOU SO MUCH!!!
+
         </div>
+
 
         <div class="flower-word right2">
+
             MUAHHHH!!! muah! muah! muah! MUAHHHH!!!😚
+
         </div>
+
 
         <div class="flower-word right3">
+
             MY ONE AND ONLY LALOVE!!
+
         </div>
 
+
+        <!-- SPARKLES -->
 
         <div class="flower-sparkle s1">
+
             ✨
+
         </div>
+
 
         <div class="flower-sparkle s2">
+
             💕
+
         </div>
+
 
         <div class="flower-sparkle s3">
+
             🌸
+
         </div>
+
 
         <div class="flower-sparkle s4">
+
             💗
+
         </div>
 
+
+        <!-- NEW FLOWER GIF -->
+
         <div class="bouquet">
-            💐
+
+            <img
+                src="./gif004.webp"
+                alt="Animated flowers">
+
         </div>
+
 
     </div>
 
 
-    <p style="color:#a90036;font-size:14px;font-weight:600;">
+    <p
+        style="
+        color:#a90036;
+        font-size:14px;
+        font-weight:600;
+        ">
+
         A little bouquet for my favorite person. 💗
+
     </p>
 
 
@@ -819,46 +1432,67 @@ button {
 
     </button>
 
+
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      HOME PAGE
-========================= -->
+===================================================== -->
 
 <div id="screenHome" class="screen">
 
+
     <div class="hearts">
+
         💝 ✨ 💝
+
     </div>
+
 
     <div class="subtitle">
+
         Three little things for you
+
     </div>
 
+
     <h2>
+
         Pick one, lalove ♡
+
     </h2>
 
 
     <div class="gift-grid">
+
 
         <button
             class="gift"
             type="button"
             data-content="letter">
 
+
             <span class="gift-icon">
+
                 💌
+
             </span>
+
 
             <span class="gift-title">
+
                 MY LETTER
+
             </span>
 
+
             <span class="gift-sub">
+
                 open me ♡
+
             </span>
+
 
         </button>
 
@@ -868,17 +1502,27 @@ button {
             type="button"
             data-content="images">
 
+
             <span class="gift-icon">
+
                 📸
+
             </span>
+
 
             <span class="gift-title">
+
                 MEMORIES
+
             </span>
 
+
             <span class="gift-sub">
+
                 our moments ♡
+
             </span>
+
 
         </button>
 
@@ -888,19 +1532,30 @@ button {
             type="button"
             data-content="ribbon">
 
+
             <span class="gift-icon">
+
                 🎀
+
             </span>
+
 
             <span class="gift-title">
+
                 OUR FUTURE
+
             </span>
+
 
             <span class="gift-sub">
+
                 someday ♡
+
             </span>
 
+
         </button>
+
 
     </div>
 
@@ -914,14 +1569,16 @@ button {
 
     </button>
 
+
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      CONTENT PAGE
-========================= -->
+===================================================== -->
 
 <div id="screenContent" class="screen">
+
 
     <div
         class="hearts"
@@ -942,30 +1599,35 @@ button {
 
 
     <h2 id="contentTitle">
+
         A little something for you
+
     </h2>
 
 
     <div class="content-display">
 
 
-        <!-- =========================
+        <!-- =================================================
              LETTER
-        ========================= -->
+        ================================================== -->
 
         <div
             id="letterContainer"
             class="letter-text"
             style="display:none;">
 
+
             Lalove,
 
             <br><br>
+
 
             I just want you to know how grateful I am
             that you're part of my life. ❤️
 
             <br><br>
+
 
             Thank you for every little moment,
             every laugh, every conversation,
@@ -973,24 +1635,28 @@ button {
 
             <br><br>
 
+
             I hope we continue choosing each other,
             understanding each other, and growing
             together.
 
             <br><br>
 
+
             I love you so much, lalove. 💗
 
             <br><br>
 
+
             — your lalove ♡
+
 
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              MEMORIES
-        ========================= -->
+        ================================================== -->
 
         <div
             id="slideshowContainer"
@@ -1005,15 +1671,21 @@ button {
                     src="./001.jpg"
                     alt="Memory 1">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         Our First Memory ♡
+
                     </h3>
 
+
                     <p>
+
                         This was one of those little moments
                         that I really wanted to remember.
+
                     </p>
 
                 </div>
@@ -1029,15 +1701,21 @@ button {
                     src="./002.jpg"
                     alt="Memory 2">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         A Beautiful Day ♡
+
                     </h3>
 
+
                     <p>
+
                         A simple moment, but one that
                         became special to me.
+
                     </p>
 
                 </div>
@@ -1053,15 +1731,21 @@ button {
                     src="./003.jpg"
                     alt="Memory 3">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         That Special Moment
+
                     </h3>
 
+
                     <p>
+
                         I'm really happy that we got to
                         share this moment together.
+
                     </p>
 
                 </div>
@@ -1077,15 +1761,21 @@ button {
                     src="./004.jpg"
                     alt="Memory 4">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         Another Memory ♡
+
                     </h3>
 
+
                     <p>
+
                         One of the many little moments
                         that I'll always treasure.
+
                     </p>
 
                 </div>
@@ -1101,15 +1791,21 @@ button {
                     src="./005.jpg"
                     alt="Memory 5">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         Sweet Moment
+
                     </h3>
 
+
                     <p>
+
                         Even the simplest moments can
                         become beautiful memories.
+
                     </p>
 
                 </div>
@@ -1125,15 +1821,21 @@ button {
                     src="./006.jpg"
                     alt="Memory 6">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         Us ♡
+
                     </h3>
 
+
                     <p>
+
                         Another moment that I'm glad
                         we were able to experience.
+
                     </p>
 
                 </div>
@@ -1149,15 +1851,21 @@ button {
                     src="./007.jpg"
                     alt="Memory 7">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         A Day to Remember
+
                     </h3>
 
+
                     <p>
+
                         This is another memory that
                         I'll always be happy to look back on.
+
                     </p>
 
                 </div>
@@ -1173,15 +1881,21 @@ button {
                     src="./008.jpg"
                     alt="Memory 8">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         Another Little Memory ♡
+
                     </h3>
 
+
                     <p>
+
                         I hope we can make many more
                         memories like this together.
+
                     </p>
 
                 </div>
@@ -1197,15 +1911,21 @@ button {
                     src="./009.jpg"
                     alt="Memory 9">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         One More Memory
+
                     </h3>
 
+
                     <p>
+
                         Sometimes the simplest moments
                         become our favorite memories.
+
                     </p>
 
                 </div>
@@ -1221,15 +1941,21 @@ button {
                     src="./010.jpg"
                     alt="Memory 10">
 
+
                 <div class="memory-description">
 
                     <h3>
+
                         Forever in My Memories ♡
+
                     </h3>
 
+
                     <p>
+
                         Thank you for all the beautiful
                         memories we've made together.
+
                     </p>
 
                 </div>
@@ -1237,7 +1963,7 @@ button {
             </div>
 
 
-            <!-- PREVIOUS BUTTON -->
+            <!-- PREVIOUS -->
 
             <button
                 class="slide-btn prev"
@@ -1249,7 +1975,7 @@ button {
             </button>
 
 
-            <!-- NEXT BUTTON -->
+            <!-- NEXT -->
 
             <button
                 class="slide-btn next"
@@ -1264,9 +1990,9 @@ button {
         </div>
 
 
-        <!-- =========================
+        <!-- =================================================
              FUTURE
-        ========================= -->
+        ================================================== -->
 
         <div
             id="futureContainer"
@@ -1279,8 +2005,10 @@ button {
                 💕 <strong>More memories</strong>
 
                 <span>
+
                     More laughs, random dates,
                     pictures, and little moments.
+
                 </span>
 
             </div>
@@ -1291,8 +2019,10 @@ button {
                 🌷 <strong>Grow together</strong>
 
                 <span>
+
                     Keep supporting each other
                     through every new chapter.
+
                 </span>
 
             </div>
@@ -1303,8 +2033,10 @@ button {
                 ✈️ <strong>Dream together</strong>
 
                 <span>
+
                     Places we want to visit and
                     memories we want to make.
+
                 </span>
 
             </div>
@@ -1315,8 +2047,10 @@ button {
                 🎀 <strong>Keep choosing love</strong>
 
                 <span>
+
                     I hope we continue choosing
                     kindness, patience, and each other.
+
                 </span>
 
             </div>
@@ -1337,29 +2071,31 @@ button {
 
     </button>
 
-</div>
-
 
 </div>
 
 
-<!-- =========================
+</div>
+
+
+<!-- =====================================================
      JAVASCRIPT
-========================= -->
+===================================================== -->
 
 <script>
 
 "use strict";
 
 
-/* =========================
+/* =========================================================
    SCREEN CHANGE
-========================= */
+========================================================= */
 
 function changeScreen(screenId) {
 
     const screens =
         document.querySelectorAll(".screen");
+
 
     screens.forEach(function(screen) {
 
@@ -1380,6 +2116,7 @@ function changeScreen(screenId) {
         );
 
         return;
+
     }
 
 
@@ -1388,194 +2125,555 @@ function changeScreen(screenId) {
 }
 
 
-/* =========================
+/* =========================================================
+   FIRST PAGE ELEMENTS
+========================================================= */
+
+const firstStage =
+    document.getElementById("firstStage");
+
+const stageTwo =
+    document.getElementById("stageTwo");
+
+const stageThree =
+    document.getElementById("stageThree");
+
+const gif001Container =
+    document.getElementById("gif001Container");
+
+const noBtn =
+    document.getElementById("noBtn");
+
+const yesBtn =
+    document.getElementById("yesBtn");
+
+
+let noCount = 0;
+
+let stageTwoStarted = false;
+
+
+/* =========================================================
    YES BUTTON
-========================= */
+========================================================= */
 
-document
-    .getElementById("yesBtn")
-    .addEventListener("click", function() {
-
-        changeScreen("screenBouquet");
-
-    });
+yesBtn.addEventListener(
+    "click",
+    function() {
 
 
-/* =========================
+        /* -----------------------------------------------
+           IF STAGE TWO IS ACTIVE
+        ------------------------------------------------ */
+
+        if (stageTwoStarted) {
+
+            /*
+             * Remove the YES button
+             */
+
+            yesBtn.remove();
+
+
+            /*
+             * Hide stage two
+             */
+
+            stageTwo.classList.remove("active");
+
+
+            /*
+             * Show stage three
+             */
+
+            stageThree.classList.add("active");
+
+
+            /*
+             * Wait 5 seconds
+             * then go to flower page
+             */
+
+            setTimeout(function() {
+
+                stageThree.classList.remove(
+                    "active"
+                );
+
+                changeScreen(
+                    "screenBouquet"
+                );
+
+            }, 5000);
+
+
+            return;
+
+        }
+
+
+        /* -----------------------------------------------
+           NORMAL YES
+        ------------------------------------------------ */
+
+        changeScreen(
+            "screenBouquet"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   NO BUTTON
+========================================================= */
+
+noBtn.addEventListener(
+    "click",
+    function(event) {
+
+        event.preventDefault();
+
+
+        if (stageTwoStarted) {
+            return;
+        }
+
+
+        noCount++;
+
+
+        /*
+         * First four NO presses:
+         * make the button move around
+         */
+
+        if (noCount < 5) {
+
+
+            const maxX =
+                Math.max(
+                    10,
+                    window.innerWidth -
+                    noBtn.offsetWidth -
+                    10
+                );
+
+
+            const maxY =
+                Math.max(
+                    10,
+                    window.innerHeight -
+                    noBtn.offsetHeight -
+                    10
+                );
+
+
+            const x =
+                Math.random() * maxX;
+
+
+            const y =
+                Math.random() * maxY;
+
+
+            noBtn.style.position =
+                "fixed";
+
+
+            noBtn.style.left =
+                x + "px";
+
+
+            noBtn.style.top =
+                y + "px";
+
+
+            noBtn.style.zIndex =
+                "9999";
+
+
+            return;
+
+        }
+
+
+        /*
+         * Fifth NO press
+         */
+
+        startSecondStage();
+
+    }
+);
+
+
+/* =========================================================
+   START SECOND STAGE
+========================================================= */
+
+function startSecondStage() {
+
+    stageTwoStarted = true;
+
+
+    /*
+     * Disintegrate GIF001
+     */
+
+    gif001Container.classList.add(
+        "disintegrate"
+    );
+
+
+    /*
+     * Hide the original subtitle and question
+     */
+
+    const subtitle =
+        firstStage.querySelector(
+            ".subtitle"
+        );
+
+    const question =
+        firstStage.querySelector(
+            "h1"
+        );
+
+
+    if (subtitle) {
+
+        subtitle.style.display =
+            "none";
+
+    }
+
+
+    if (question) {
+
+        question.style.display =
+            "none";
+
+    }
+
+
+    /*
+     * Hide NO
+     */
+
+    noBtn.style.display =
+        "none";
+
+
+    /*
+     * Wait for GIF001's
+     * disintegration animation
+     */
+
+    setTimeout(function() {
+
+
+        /*
+         * Hide first GIF
+         */
+
+        gif001Container.style.display =
+            "none";
+
+
+        /*
+         * Move YES button into
+         * the second stage
+         */
+
+        stageTwo.appendChild(
+            yesBtn
+        );
+
+
+        /*
+         * Make YES button big
+         */
+
+        yesBtn.classList.add(
+            "big-yes"
+        );
+
+
+        /*
+         * Show second stage
+         */
+
+        stageTwo.classList.add(
+            "active"
+        );
+
+
+    }, 850);
+
+}
+
+
+/* =========================================================
    OPEN GIFTS
-========================= */
+========================================================= */
 
 document
     .getElementById("openGiftsBtn")
-    .addEventListener("click", function() {
+    .addEventListener(
+        "click",
+        function() {
 
-        changeScreen("screenHome");
+            changeScreen(
+                "screenHome"
+            );
 
-    });
+        }
+    );
 
 
-/* =========================
-   BACK BUTTON
-========================= */
+/* =========================================================
+   BACK TO HOME
+========================================================= */
 
 document
     .getElementById("backToHome")
-    .addEventListener("click", function() {
+    .addEventListener(
+        "click",
+        function() {
 
-        changeScreen("screenHome");
+            changeScreen(
+                "screenHome"
+            );
 
-    });
+        }
+    );
 
 
-/* =========================
-   BACK TO BOUQUET
-========================= */
+/* =========================================================
+   BACK TO FLOWER PAGE
+========================================================= */
 
 document
     .querySelectorAll("[data-go]")
-    .forEach(function(button) {
+    .forEach(
+        function(button) {
 
-        button.addEventListener("click", function() {
 
-            changeScreen(
-                button.dataset.go
+            button.addEventListener(
+                "click",
+                function() {
+
+
+                    changeScreen(
+                        button.dataset.go
+                    );
+
+
+                }
             );
 
-        });
 
-    });
+        }
+    );
 
 
-/* =========================
-   GIFT BOXES
-========================= */
+/* =========================================================
+   GIFT BUTTONS
+========================================================= */
 
 document
     .querySelectorAll("[data-content]")
-    .forEach(function(button) {
+    .forEach(
+        function(button) {
 
-        button.addEventListener("click", function() {
 
-            openContentScreen(
-                button.dataset.content
+            button.addEventListener(
+                "click",
+                function() {
+
+
+                    openContentScreen(
+                        button.dataset.content
+                    );
+
+
+                }
             );
 
-        });
 
-    });
+        }
+    );
 
 
-/* =========================
-   CONTENT
-========================= */
+/* =========================================================
+   CONTENT SCREEN
+========================================================= */
 
 function openContentScreen(type) {
 
+
     const letter =
-        document.getElementById("letterContainer");
+        document.getElementById(
+            "letterContainer"
+        );
+
 
     const slideshow =
-        document.getElementById("slideshowContainer");
+        document.getElementById(
+            "slideshowContainer"
+        );
+
 
     const future =
-        document.getElementById("futureContainer");
+        document.getElementById(
+            "futureContainer"
+        );
 
 
-    letter.style.display = "none";
-    slideshow.style.display = "none";
-    future.style.display = "none";
+    letter.style.display =
+        "none";
+
+
+    slideshow.style.display =
+        "none";
+
+
+    future.style.display =
+        "none";
 
 
     const title =
-        document.getElementById("contentTitle");
+        document.getElementById(
+            "contentTitle"
+        );
+
 
     const emoji =
-        document.getElementById("contentEmoji");
+        document.getElementById(
+            "contentEmoji"
+        );
+
 
     const subtitle =
-        document.getElementById("contentSubtitle");
+        document.getElementById(
+            "contentSubtitle"
+        );
 
 
     if (type === "letter") {
 
-        emoji.textContent = "💌";
+
+        emoji.textContent =
+            "💌";
+
 
         title.textContent =
             "A Letter For You";
 
+
         subtitle.textContent =
             "straight from my heart ♡";
 
-        letter.style.display = "block";
+
+        letter.style.display =
+            "block";
+
 
     }
 
 
     if (type === "images") {
 
-        emoji.textContent = "📸";
+
+        emoji.textContent =
+            "📸";
+
 
         title.textContent =
             "Our Memories";
 
+
         subtitle.textContent =
             "little moments I treasure ♡";
 
-        slideshow.style.display = "block";
+
+        slideshow.style.display =
+            "block";
+
 
         currentSlide = 0;
 
+
         showSlide();
+
 
     }
 
 
     if (type === "ribbon") {
 
-        emoji.textContent = "🎀";
+
+        emoji.textContent =
+            "🎀";
+
 
         title.textContent =
             "Our Future";
 
+
         subtitle.textContent =
             "things I hope we experience ♡";
 
-        future.style.display = "block";
+
+        future.style.display =
+            "block";
+
 
     }
 
 
-    changeScreen("screenContent");
+    changeScreen(
+        "screenContent"
+    );
 
 }
 
 
-/* =========================
+/* =========================================================
    SLIDESHOW
-========================= */
+========================================================= */
 
 let currentSlide = 0;
 
 
 function getSlides() {
 
-    return document.querySelectorAll(".slide");
+    return document.querySelectorAll(
+        ".slide"
+    );
 
 }
 
 
 function showSlide() {
 
+
     const slides =
         getSlides();
 
 
     if (!slides.length) {
+
         return;
+
     }
 
 
-    if (currentSlide >= slides.length) {
+    if (
+        currentSlide >=
+        slides.length
+    ) {
 
         currentSlide = 0;
 
@@ -1590,15 +2688,21 @@ function showSlide() {
     }
 
 
-    slides.forEach(function(slide) {
+    slides.forEach(
+        function(slide) {
 
-        slide.classList.remove("active");
+            slide.classList.remove(
+                "active"
+            );
 
-    });
+        }
+    );
 
 
     slides[currentSlide]
-        .classList.add("active");
+        .classList.add(
+            "active"
+        );
 
 }
 
@@ -1607,87 +2711,40 @@ function showSlide() {
 
 document
     .getElementById("nextBtn")
-    .addEventListener("click", function() {
+    .addEventListener(
+        "click",
+        function() {
 
-        currentSlide++;
+            currentSlide++;
 
-        showSlide();
+            showSlide();
 
-    });
+        }
+    );
 
 
 /* PREVIOUS */
 
 document
     .getElementById("prevBtn")
-    .addEventListener("click", function() {
+    .addEventListener(
+        "click",
+        function() {
 
-        currentSlide--;
+            currentSlide--;
 
-        showSlide();
+            showSlide();
 
-    });
-
-
-/* =========================
-   NO BUTTON
-========================= */
-
-document
-    .getElementById("noBtn")
-    .addEventListener("click", function(event) {
-
-        event.preventDefault();
+        }
+    );
 
 
-        const button =
-            document.getElementById("noBtn");
-
-
-        const maxX =
-            Math.max(
-                10,
-                window.innerWidth -
-                button.offsetWidth -
-                10
-            );
-
-
-        const maxY =
-            Math.max(
-                10,
-                window.innerHeight -
-                button.offsetHeight -
-                10
-            );
-
-
-        const x =
-            Math.random() * maxX;
-
-
-        const y =
-            Math.random() * maxY;
-
-
-        button.style.position = "fixed";
-
-        button.style.left =
-            x + "px";
-
-        button.style.top =
-            y + "px";
-
-        button.style.zIndex = "9999";
-
-    });
-
-
-/* =========================
+/* =========================================================
    FLOATING HEARTS
-========================= */
+========================================================= */
 
 function createHeart() {
+
 
     const background =
         document.getElementById(
@@ -1696,13 +2753,17 @@ function createHeart() {
 
 
     const heart =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
-    heart.className = "heart";
+    heart.className =
+        "heart";
 
 
     const choices = [
+
         "❤️",
         "💗",
         "💕",
@@ -1710,6 +2771,7 @@ function createHeart() {
         "💝",
         "✨",
         "🌸"
+
     ];
 
 
@@ -1723,33 +2785,52 @@ function createHeart() {
 
 
     heart.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() * 100 +
+        "vw";
 
 
     heart.style.fontSize =
-        (12 + Math.random() * 14) + "px";
+        (
+            12 +
+            Math.random() * 14
+        ) + "px";
 
 
     heart.style.animationDuration =
-        (5 + Math.random() * 4) + "s";
+        (
+            5 +
+            Math.random() * 4
+        ) + "s";
 
 
-    background.appendChild(heart);
+    background.appendChild(
+        heart
+    );
 
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
 
-        heart.remove();
+            heart.remove();
 
-    }, 10000);
+        },
+        10000
+    );
 
 }
 
 
-setInterval(createHeart, 600);
+setInterval(
+    createHeart,
+    600
+);
 
 
-for (let i = 0; i < 8; i++) {
+for (
+    let i = 0;
+    i < 8;
+    i++
+) {
 
     setTimeout(
         createHeart,
@@ -1762,4 +2843,5 @@ for (let i = 0; i < 8; i++) {
 
 
 </body>
+
 </html>
