@@ -1,8 +1,15 @@
-<!DOCTYPE html><html lang="en">
+   <!DOCTYPE html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Lalove ❤️</title><style>
+
+<title>For My Lalove ❤️</title>
+
+<style>
+
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
@@ -15,9 +22,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
     background: #ffeef3;
+
     font-family: "Segoe UI", Tahoma, sans-serif;
     text-align: center;
+
     overflow: hidden;
 }
 
@@ -37,6 +47,7 @@ body {
 }
 
 @keyframes floatUp {
+
     0% {
         transform: translateY(0) rotate(0);
         opacity: 0;
@@ -50,15 +61,19 @@ body {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
     }
+
 }
 
 .container {
     position: relative;
     z-index: 5;
+
     width: 100%;
     max-width: 430px;
     min-height: 580px;
+
     padding: 25px 20px;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,6 +91,7 @@ body {
 
 .screen {
     display: none;
+
     width: 100%;
     min-height: 520px;
 
@@ -90,6 +106,7 @@ body {
 }
 
 @keyframes screenIn {
+
     from {
         opacity: 0;
         transform: translateY(15px) scale(.97);
@@ -99,6 +116,7 @@ body {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+
 }
 
 .hearts {
@@ -108,6 +126,7 @@ body {
 }
 
 @keyframes heartbeat {
+
     0%,100% {
         transform: scale(1);
     }
@@ -115,6 +134,7 @@ body {
     50% {
         transform: scale(1.12);
     }
+
 }
 
 .subtitle {
@@ -142,6 +162,7 @@ h2 {
 }
 
 @keyframes catFloat {
+
     0%,100% {
         transform: translateY(0);
     }
@@ -149,7 +170,9 @@ h2 {
     50% {
         transform: translateY(-10px);
     }
+
 }
+
 
 /* BUTTONS */
 
@@ -205,6 +228,7 @@ button {
     justify-content: center;
 }
 
+
 /* FLOWER SCREEN */
 
 .flower-scene {
@@ -228,6 +252,7 @@ button {
 }
 
 @keyframes bouquetFloat {
+
     0%,100% {
         transform: translateY(5px);
     }
@@ -235,13 +260,16 @@ button {
     50% {
         transform: translateY(-12px);
     }
+
 }
 
 .flower-word {
     position: absolute;
+
     color: #d34c75;
     font-size: 12px;
     font-weight: 700;
+
     white-space: nowrap;
 
     animation: wordFloat 4s ease-in-out infinite;
@@ -283,6 +311,7 @@ button {
 }
 
 @keyframes wordFloat {
+
     0%,100% {
         transform: translateY(8px);
         opacity: .45;
@@ -292,6 +321,7 @@ button {
         transform: translateY(-12px);
         opacity: 1;
     }
+
 }
 
 .flower-sparkle {
@@ -324,6 +354,7 @@ button {
 }
 
 @keyframes sparkle {
+
     0%,100% {
         transform: scale(.7);
         opacity: .3;
@@ -333,14 +364,18 @@ button {
         transform: scale(1.3);
         opacity: 1;
     }
+
 }
+
 
 /* HOME */
 
 .gift-grid {
     width: 100%;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 9px;
 }
 
@@ -367,6 +402,7 @@ button {
 
 .gift-icon {
     display: block;
+
     font-size: 45px;
     margin-bottom: 12px;
 
@@ -374,6 +410,7 @@ button {
 }
 
 @keyframes giftBounce {
+
     0%,100% {
         transform: translateY(0);
     }
@@ -381,10 +418,12 @@ button {
     50% {
         transform: translateY(-7px);
     }
+
 }
 
 .gift-title {
     display: block;
+
     color: #a90036;
     font-size: 11px;
     font-weight: 800;
@@ -392,7 +431,9 @@ button {
 
 .gift-sub {
     display: block;
+
     margin-top: 5px;
+
     color: #e17b99;
     font-size: 9px;
 }
@@ -401,11 +442,13 @@ button {
     margin-top: 20px;
 }
 
+
 /* CONTENT */
 
 .content-display {
     width: 100%;
     min-height: 320px;
+
     padding: 20px;
 
     display: flex;
@@ -413,6 +456,7 @@ button {
     justify-content: center;
 
     background: white;
+
     border: 2px solid #ffe0e8;
     border-radius: 22px;
 
@@ -426,7 +470,10 @@ button {
     font-style: italic;
 }
 
-/* SLIDESHOW */
+
+/* ==================================================
+   SLIDESHOW WITH PHOTO + DESCRIPTION
+   ================================================== */
 
 .slideshow {
     position: relative;
@@ -437,18 +484,65 @@ button {
     display: none;
 
     width: 100%;
-    height: 260px;
+    min-height: 280px;
 
-    object-fit: cover;
+    padding: 15px;
+
+    background: white;
+
     border-radius: 17px;
+
+    align-items: center;
+    gap: 18px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
 }
 
 .slide.active {
-    display: block;
+    display: flex;
     animation: photoIn .4s ease;
 }
 
+.slide img {
+    width: 55%;
+    height: 260px;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    flex-shrink: 0;
+}
+
+.memory-description {
+    flex: 1;
+
+    text-align: left;
+
+    padding: 10px;
+}
+
+.memory-description h3 {
+    margin: 0 0 10px;
+
+    color: #a90036;
+
+    font-size: 18px;
+}
+
+.memory-description p {
+    margin: 0;
+
+    color: #666;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
 @keyframes photoIn {
+
     from {
         opacity: 0;
         transform: scale(.95);
@@ -458,10 +552,12 @@ button {
         opacity: 1;
         transform: scale(1);
     }
+
 }
 
 .slide-btn {
     position: absolute;
+
     top: 50%;
 
     transform: translateY(-50%);
@@ -473,9 +569,12 @@ button {
     border-radius: 50%;
 
     color: white;
+
     background: rgba(255,80,120,.85);
 
     font-size: 17px;
+
+    z-index: 10;
 }
 
 .prev {
@@ -485,6 +584,7 @@ button {
 .next {
     right: 5px;
 }
+
 
 /* FUTURE */
 
@@ -512,6 +612,7 @@ button {
 
 .future-item span {
     display: block;
+
     margin-top: 5px;
 
     color: #666;
@@ -519,6 +620,7 @@ button {
 }
 
 @keyframes futureIn {
+
     from {
         opacity: 0;
         transform: translateX(-15px);
@@ -528,7 +630,11 @@ button {
         opacity: 1;
         transform: translateX(0);
     }
+
 }
+
+
+/* SMALL SCREENS */
 
 @media(max-width:360px) {
 
@@ -547,388 +653,701 @@ button {
     .flower-word {
         font-size: 10px;
     }
+
+    .slide {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .slide img {
+        width: 52%;
+        height: 230px;
+    }
+
+    .memory-description {
+        padding: 5px;
+    }
+
+    .memory-description h3 {
+        font-size: 15px;
+    }
+
+    .memory-description p {
+        font-size: 12px;
+    }
+
 }
-</style></head><body><div id="heartBackground"></div><div class="container"><!-- =========================
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div id="heartBackground"></div>
+
+
+<div class="container">
+
+
+<!-- =========================
      FIRST PAGE
-========================= --><div id="screenAsk" class="screen active"><div class="hearts">
-    💖 ✨ 💖
+========================= -->
+
+<div id="screenAsk" class="screen active">
+
+    <div class="hearts">
+        💖 ✨ 💖
+    </div>
+
+    <div class="cute-cat">
+        🐱
+    </div>
+
+    <div class="subtitle">
+        Hey beautiful ♡
+    </div>
+
+    <h1>
+        Do you want to see<br>
+        your little surprise?
+    </h1>
+
+    <div class="btn-group">
+
+        <button
+            id="yesBtn"
+            class="primary-btn"
+            type="button">
+
+            YES PLEASE 💗
+
+        </button>
+
+        <button
+            id="noBtn"
+            class="secondary-btn"
+            type="button">
+
+            NO THANKS
+
+        </button>
+
+    </div>
+
 </div>
 
-<div class="cute-cat">
-    🐱
-</div>
 
-<div class="subtitle">
-    Hey beautiful ♡
-</div>
+<!-- =========================
+     FLOWER PAGE
+========================= -->
 
-<h1>
-    Do you want to see<br>
-    your little surprise?
-</h1>
+<div id="screenBouquet" class="screen">
 
-<div class="btn-group">
+    <div class="hearts">
+        🌸 ✨ 🌷
+    </div>
+
+    <div class="subtitle">
+        Something special for you
+    </div>
+
+
+    <div class="flower-scene">
+
+        <div class="flower-word left1">
+            GORGEOUS LALOVE KO!!
+        </div>
+
+        <div class="flower-word left2">
+            LALOVE IS THE BEST!!
+        </div>
+
+        <div class="flower-word left3">
+            You're my lalove always & forever
+        </div>
+
+        <div class="flower-word right1">
+            I LOVE YOU SO MUCH!!!
+        </div>
+
+        <div class="flower-word right2">
+            MUAHHHH!!! muah! muah! muah! MUAHHHH!!!😚
+        </div>
+
+        <div class="flower-word right3">
+            MY ONE AND ONLY LALOVE!!
+        </div>
+
+
+        <div class="flower-sparkle s1">
+            ✨
+        </div>
+
+        <div class="flower-sparkle s2">
+            💕
+        </div>
+
+        <div class="flower-sparkle s3">
+            🌸
+        </div>
+
+        <div class="flower-sparkle s4">
+            💗
+        </div>
+
+        <div class="bouquet">
+            💐
+        </div>
+
+    </div>
+
+
+    <p style="color:#a90036;font-size:14px;font-weight:600;">
+        A little bouquet for my favorite person. 💗
+    </p>
+
 
     <button
-        id="yesBtn"
+        id="openGiftsBtn"
         class="primary-btn"
         type="button">
 
-        YES PLEASE 💗
+        🏠 Open My Gifts
 
     </button>
 
+</div>
+
+
+<!-- =========================
+     HOME PAGE
+========================= -->
+
+<div id="screenHome" class="screen">
+
+    <div class="hearts">
+        💝 ✨ 💝
+    </div>
+
+    <div class="subtitle">
+        Three little things for you
+    </div>
+
+    <h2>
+        Pick one, lalove ♡
+    </h2>
+
+
+    <div class="gift-grid">
+
+        <button
+            class="gift"
+            type="button"
+            data-content="letter">
+
+            <span class="gift-icon">
+                💌
+            </span>
+
+            <span class="gift-title">
+                MY LETTER
+            </span>
+
+            <span class="gift-sub">
+                open me ♡
+            </span>
+
+        </button>
+
+
+        <button
+            class="gift"
+            type="button"
+            data-content="images">
+
+            <span class="gift-icon">
+                📸
+            </span>
+
+            <span class="gift-title">
+                MEMORIES
+            </span>
+
+            <span class="gift-sub">
+                our moments ♡
+            </span>
+
+        </button>
+
+
+        <button
+            class="gift"
+            type="button"
+            data-content="ribbon">
+
+            <span class="gift-icon">
+                🎀
+            </span>
+
+            <span class="gift-title">
+                OUR FUTURE
+            </span>
+
+            <span class="gift-sub">
+                someday ♡
+            </span>
+
+        </button>
+
+    </div>
+
 
     <button
-        id="noBtn"
-        class="secondary-btn"
+        class="secondary-btn back-btn"
+        type="button"
+        data-go="screenBouquet">
+
+        ⬅️ Back
+
+    </button>
+
+</div>
+
+
+<!-- =========================
+     CONTENT PAGE
+========================= -->
+
+<div id="screenContent" class="screen">
+
+    <div
+        class="hearts"
+        id="contentEmoji">
+
+        ✨
+
+    </div>
+
+
+    <div
+        class="subtitle"
+        id="contentSubtitle">
+
+        Something from my heart
+
+    </div>
+
+
+    <h2 id="contentTitle">
+        A little something for you
+    </h2>
+
+
+    <div class="content-display">
+
+
+        <!-- =========================
+             LETTER
+        ========================= -->
+
+        <div
+            id="letterContainer"
+            class="letter-text"
+            style="display:none;">
+
+            Lalove,
+
+            <br><br>
+
+            I just want you to know how grateful I am
+            that you're part of my life. ❤️
+
+            <br><br>
+
+            Thank you for every little moment,
+            every laugh, every conversation,
+            and every memory we've made.
+
+            <br><br>
+
+            I hope we continue choosing each other,
+            understanding each other, and growing
+            together.
+
+            <br><br>
+
+            I love you so much, lalove. 💗
+
+            <br><br>
+
+            — your lalove ♡
+
+        </div>
+
+
+        <!-- =========================
+             MEMORIES
+        ========================= -->
+
+        <div
+            id="slideshowContainer"
+            class="slideshow">
+
+
+            <!-- PHOTO 001 -->
+
+            <div class="slide active">
+
+                <img
+                    src="./001.jpg"
+                    alt="Memory 1">
+
+                <div class="memory-description">
+
+                    <h3>
+                        Our First Memory ♡
+                    </h3>
+
+                    <p>
+                        This was one of those little moments
+                        that I really wanted to remember.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 002 -->
+
+            <div class="slide">
+
+                <img
+                    src="./002.jpg"
+                    alt="Memory 2">
+
+                <div class="memory-description">
+
+                    <h3>
+                        A Beautiful Day ♡
+                    </h3>
+
+                    <p>
+                        A simple moment, but one that
+                        became special to me.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 003 -->
+
+            <div class="slide">
+
+                <img
+                    src="./003.jpg"
+                    alt="Memory 3">
+
+                <div class="memory-description">
+
+                    <h3>
+                        That Special Moment
+                    </h3>
+
+                    <p>
+                        I'm really happy that we got to
+                        share this moment together.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 004 -->
+
+            <div class="slide">
+
+                <img
+                    src="./004.jpg"
+                    alt="Memory 4">
+
+                <div class="memory-description">
+
+                    <h3>
+                        Another Memory ♡
+                    </h3>
+
+                    <p>
+                        One of the many little moments
+                        that I'll always treasure.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 005 -->
+
+            <div class="slide">
+
+                <img
+                    src="./005.jpg"
+                    alt="Memory 5">
+
+                <div class="memory-description">
+
+                    <h3>
+                        Sweet Moment
+                    </h3>
+
+                    <p>
+                        Even the simplest moments can
+                        become beautiful memories.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 006 -->
+
+            <div class="slide">
+
+                <img
+                    src="./006.jpg"
+                    alt="Memory 6">
+
+                <div class="memory-description">
+
+                    <h3>
+                        Us ♡
+                    </h3>
+
+                    <p>
+                        Another moment that I'm glad
+                        we were able to experience.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 007 -->
+
+            <div class="slide">
+
+                <img
+                    src="./007.jpg"
+                    alt="Memory 7">
+
+                <div class="memory-description">
+
+                    <h3>
+                        A Day to Remember
+                    </h3>
+
+                    <p>
+                        This is another memory that
+                        I'll always be happy to look back on.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 008 -->
+
+            <div class="slide">
+
+                <img
+                    src="./008.jpg"
+                    alt="Memory 8">
+
+                <div class="memory-description">
+
+                    <h3>
+                        Another Little Memory ♡
+                    </h3>
+
+                    <p>
+                        I hope we can make many more
+                        memories like this together.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 009 -->
+
+            <div class="slide">
+
+                <img
+                    src="./009.jpg"
+                    alt="Memory 9">
+
+                <div class="memory-description">
+
+                    <h3>
+                        One More Memory
+                    </h3>
+
+                    <p>
+                        Sometimes the simplest moments
+                        become our favorite memories.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHOTO 010 -->
+
+            <div class="slide">
+
+                <img
+                    src="./010.jpg"
+                    alt="Memory 10">
+
+                <div class="memory-description">
+
+                    <h3>
+                        Forever in My Memories ♡
+                    </h3>
+
+                    <p>
+                        Thank you for all the beautiful
+                        memories we've made together.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREVIOUS BUTTON -->
+
+            <button
+                class="slide-btn prev"
+                id="prevBtn"
+                type="button">
+
+                ❮
+
+            </button>
+
+
+            <!-- NEXT BUTTON -->
+
+            <button
+                class="slide-btn next"
+                id="nextBtn"
+                type="button">
+
+                ❯
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =========================
+             FUTURE
+        ========================= -->
+
+        <div
+            id="futureContainer"
+            class="future-list"
+            style="display:none;">
+
+
+            <div class="future-item">
+
+                💕 <strong>More memories</strong>
+
+                <span>
+                    More laughs, random dates,
+                    pictures, and little moments.
+                </span>
+
+            </div>
+
+
+            <div class="future-item">
+
+                🌷 <strong>Grow together</strong>
+
+                <span>
+                    Keep supporting each other
+                    through every new chapter.
+                </span>
+
+            </div>
+
+
+            <div class="future-item">
+
+                ✈️ <strong>Dream together</strong>
+
+                <span>
+                    Places we want to visit and
+                    memories we want to make.
+                </span>
+
+            </div>
+
+
+            <div class="future-item">
+
+                🎀 <strong>Keep choosing love</strong>
+
+                <span>
+                    I hope we continue choosing
+                    kindness, patience, and each other.
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <button
+        id="backToHome"
+        class="secondary-btn back-btn"
         type="button">
 
-        NO THANKS
-
-    </button>
-
-</div>
-
-</div><!-- =========================
-     FLOWER PAGE
-========================= --><div id="screenBouquet" class="screen"><div class="hearts">
-    🌸 ✨ 🌷
-</div>
-
-<div class="subtitle">
-    Something special for you
-</div>
-
-
-<div class="flower-scene">
-
-    <div class="flower-word left1">
-        GORGEOUS LALOVE KO!!
-    </div>
-
-    <div class="flower-word left2">
-        LALOVE IS THE BEST!!
-    </div>
-
-    <div class="flower-word left3">
-       You're  my lalove always & forever
-    </div>
-
-
-    <div class="flower-word right1">
-        I LOVE YOU SO MUCH!!!
-    </div>
-
-    <div class="flower-word right2">
-        MUAHHHH!!! muah! muah! muah! MUAHHHH!!!😚
-    </div>
-
-    <div class="flower-word right3">
-        MY ONE AND ONLY LALOVE!!
-    </div>
-
-
-    <div class="flower-sparkle s1">
-        ✨
-    </div>
-
-    <div class="flower-sparkle s2">
-        💕
-    </div>
-
-    <div class="flower-sparkle s3">
-        🌸
-    </div>
-
-    <div class="flower-sparkle s4">
-        💗
-    </div>
-
-
-    <div class="bouquet">
-        💐
-    </div>
-
-</div>
-
-
-<p style="color:#a90036;font-size:14px;font-weight:600;">
-    A little bouquet for my favorite person. 💗
-</p>
-
-
-<button
-    id="openGiftsBtn"
-    class="primary-btn"
-    type="button">
-
-    🏠 Open My Gifts
-
-</button>
-
-</div><!-- =========================
-     HOME PAGE
-========================= --><div id="screenHome" class="screen"><div class="hearts">
-    💝 ✨ 💝
-</div>
-
-<div class="subtitle">
-    Three little things for you
-</div>
-
-<h2>
-    Pick one, lalove ♡
-</h2>
-
-
-<div class="gift-grid">
-
-    <button
-        class="gift"
-        type="button"
-        data-content="letter">
-
-        <span class="gift-icon">
-            💌
-        </span>
-
-        <span class="gift-title">
-            MY LETTER
-        </span>
-
-        <span class="gift-sub">
-            open me ♡
-        </span>
-
-    </button>
-
-
-    <button
-        class="gift"
-        type="button"
-        data-content="images">
-
-        <span class="gift-icon">
-            📸
-        </span>
-
-        <span class="gift-title">
-            MEMORIES
-        </span>
-
-        <span class="gift-sub">
-            our moments ♡
-        </span>
-
-    </button>
-
-
-    <button
-        class="gift"
-        type="button"
-        data-content="ribbon">
-
-        <span class="gift-icon">
-            🎀
-        </span>
-
-        <span class="gift-title">
-            OUR FUTURE
-        </span>
-
-        <span class="gift-sub">
-            someday ♡
-        </span>
+        ⬅️ Back to Gifts
 
     </button>
 
 </div>
 
 
-<button
-    class="secondary-btn back-btn"
-    type="button"
-    data-go="screenBouquet">
-
-    ⬅️ Back
-
-</button>
-
-</div><!-- =========================
-     CONTENT PAGE
-========================= --><div id="screenContent" class="screen"><div
-    class="hearts"
-    id="contentEmoji">
-
-    ✨
-
 </div>
 
 
-<div
-    class="subtitle"
-    id="contentSubtitle">
-
-    Something from my heart
-
-</div>
-
-
-<h2 id="contentTitle">
-    A little something for you
-</h2>
-
-
-<div class="content-display">
-
-
-    <!-- LETTER -->
-
-    <div
-        id="letterContainer"
-        class="letter-text"
-        style="display:none;">
-
-        Lalove,
-
-        <br><br>
-
-        I just want you to know how grateful I am
-        that you're part of my life. ❤️
-
-        <br><br>
-
-        Thank you for every little moment,
-        every laugh, every conversation,
-        and every memory we've made.
-
-        <br><br>
-
-        I hope we continue choosing each other,
-        understanding each other, and growing
-        together.
-
-        <br><br>
-
-        I love you so much, lalove. 💗
-
-        <br><br>
-
-        — your lalove ♡
-
-    </div>
-<!-- MEMORIES -->
-
-<div
-    id="slideshowContainer"
-    class="slideshow"
-    style="display:none;">
-
-    <img class="slide active" src="./001.jpg" alt="Memory 1">
-    <img class="slide" src="./002.jpg" alt="Memory 2">
-    <img class="slide" src="./003.jpg" alt="Memory 3">
-    <img class="slide" src="./004.jpg" alt="Memory 4">
-    <img class="slide" src="./005.jpg" alt="Memory 5">
-    <img class="slide" src="./006.jpg" alt="Memory 6">
-    <img class="slide" src="./007.jpg" alt="Memory 7">
-    <img class="slide" src="./008.jpg" alt="Memory 8">
-    <img class="slide" src="./009.jpg" alt="Memory 9">
-    <img class="slide" src="./010.jpg" alt="Memory 10">
-
-        <button
-            class="slide-btn prev"
-            id="prevBtn"
-            type="button">
-
-            ❮
-
-        </button>
-
-
-        <button
-            class="slide-btn next"
-            id="nextBtn"
-            type="button">
-
-            ❯
-
-        </button>
-
-    </div>
-
-
-    <!-- FUTURE -->
-
-    <div
-        id="futureContainer"
-        class="future-list"
-        style="display:none;">
-
-        <div class="future-item">
-
-            💕 <strong>More memories</strong>
-
-            <span>
-                More laughs, random dates,
-                pictures, and little moments.
-            </span>
-
-        </div>
-
-
-        <div class="future-item">
-
-            🌷 <strong>Grow together</strong>
-
-            <span>
-                Keep supporting each other
-                through every new chapter.
-            </span>
-
-        </div>
-
-
-        <div class="future-item">
-
-            ✈️ <strong>Dream together</strong>
-
-            <span>
-                Places we want to visit and
-                memories we want to make.
-            </span>
-
-        </div>
-
-
-        <div class="future-item">
-
-            🎀 <strong>Keep choosing love</strong>
-
-            <span>
-                I hope we continue choosing
-                kindness, patience, and each other.
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<button
-    id="backToHome"
-    class="secondary-btn back-btn"
-    type="button">
-
-    ⬅️ Back to Gifts
-
-</button>
-
-</div></div><!-- =========================
+<!-- =========================
      JAVASCRIPT
-========================= --><script>
+========================= -->
+
+<script>
 
 "use strict";
 
@@ -961,11 +1380,11 @@ function changeScreen(screenId) {
         );
 
         return;
-
     }
 
 
     target.classList.add("active");
+
 }
 
 
@@ -1157,13 +1576,17 @@ function showSlide() {
 
 
     if (currentSlide >= slides.length) {
+
         currentSlide = 0;
+
     }
 
 
     if (currentSlide < 0) {
+
         currentSlide =
             slides.length - 1;
+
     }
 
 
@@ -1180,6 +1603,8 @@ function showSlide() {
 }
 
 
+/* NEXT */
+
 document
     .getElementById("nextBtn")
     .addEventListener("click", function() {
@@ -1190,6 +1615,8 @@ document
 
     });
 
+
+/* PREVIOUS */
 
 document
     .getElementById("prevBtn")
@@ -1211,6 +1638,7 @@ document
     .addEventListener("click", function(event) {
 
         event.preventDefault();
+
 
         const button =
             document.getElementById("noBtn");
@@ -1331,6 +1759,7 @@ for (let i = 0; i < 8; i++) {
 }
 
 </script>
+
 
 </body>
 </html>
