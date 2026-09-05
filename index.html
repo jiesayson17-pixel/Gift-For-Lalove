@@ -251,7 +251,9 @@ h2 {
 }
 
 
-/* GIF 002 */
+/* =========================================================
+   GIF 002
+========================================================= */
 
 .gif002-wrapper {
     width: 240px;
@@ -323,7 +325,8 @@ h2 {
 ========================================================= */
 
 .disintegrate {
-    animation: disintegrate .9s ease forwards !important;
+    animation:
+        disintegrate .9s ease forwards !important;
 }
 
 @keyframes disintegrate {
@@ -384,6 +387,7 @@ h2 {
 ========================================================= */
 
 .big-yes {
+
     padding: 20px 55px;
 
     font-size: 22px;
@@ -432,6 +436,7 @@ h2 {
 ========================================================= */
 
 .stage-three {
+
     display: none;
 
     width: 100%;
@@ -446,6 +451,7 @@ h2 {
 }
 
 .gif003-wrapper {
+
     width: 250px;
     height: 250px;
 
@@ -453,10 +459,12 @@ h2 {
     justify-content: center;
     align-items: center;
 
-    animation: gif003Entrance 1s ease both;
+    animation:
+        gif003Entrance 1s ease both;
 }
 
 .gif003-wrapper img {
+
     width: 100%;
     height: 100%;
 
@@ -464,6 +472,7 @@ h2 {
 }
 
 .gif003-text {
+
     margin-top: 10px;
 
     color: #a90036;
@@ -471,24 +480,31 @@ h2 {
     font-size: 22px;
     font-weight: 800;
 
-    animation: gif003Text 1s ease .3s both;
+    animation:
+        gif003Text 1s ease .3s both;
 }
 
 @keyframes gif003Entrance {
 
     0% {
         opacity: 0;
-        transform: scale(.2) rotate(10deg);
+        transform:
+            scale(.2)
+            rotate(10deg);
     }
 
     60% {
         opacity: 1;
-        transform: scale(1.12) rotate(-3deg);
+        transform:
+            scale(1.12)
+            rotate(-3deg);
     }
 
     100% {
         opacity: 1;
-        transform: scale(1) rotate(0);
+        transform:
+            scale(1)
+            rotate(0);
     }
 
 }
@@ -497,12 +513,16 @@ h2 {
 
     from {
         opacity: 0;
-        transform: translateY(15px) scale(.8);
+        transform:
+            translateY(15px)
+            scale(.8);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 
 }
@@ -513,6 +533,7 @@ h2 {
 ========================================================= */
 
 button {
+
     font-family: inherit;
 
     cursor: pointer;
@@ -524,6 +545,7 @@ button {
 }
 
 .primary-btn {
+
     padding: 13px 24px;
 
     border: none;
@@ -542,19 +564,26 @@ button {
         );
 
     box-shadow:
-        0 8px 20px rgba(255, 65, 108, .25);
+        0 8px 20px
+        rgba(255,65,108,.25);
 
-    transition: transform .2s;
+    transition:
+        transform .2s;
 }
 
 .primary-btn:active {
-    transform: scale(.94);
+
+    transform:
+        scale(.94);
 }
 
 .secondary-btn {
+
     padding: 11px 20px;
 
-    border: 2px solid #ffc0d0;
+    border:
+        2px solid #ffc0d0;
+
     border-radius: 30px;
 
     color: #ff6b91;
@@ -566,6 +595,7 @@ button {
 }
 
 .btn-group {
+
     display: flex;
 
     gap: 12px;
@@ -579,6 +609,7 @@ button {
 ========================================================= */
 
 .flower-scene {
+
     position: relative;
 
     width: 100%;
@@ -591,9 +622,12 @@ button {
 }
 
 
-/* GIF 004 */
+/* =========================================================
+   GIF 004
+========================================================= */
 
 .bouquet {
+
     width: 180px;
     height: 180px;
 
@@ -604,7 +638,8 @@ button {
     align-items: center;
     justify-content: center;
 
-    animation: bouquetFloat 3s ease-in-out infinite;
+    animation:
+        bouquetFloat 3s ease-in-out infinite;
 
     filter:
         drop-shadow(
@@ -614,6 +649,7 @@ button {
 }
 
 .bouquet img {
+
     width: 100%;
     height: 100%;
 
@@ -623,11 +659,15 @@ button {
 @keyframes bouquetFloat {
 
     0%, 100% {
-        transform: translateY(5px) scale(1);
+        transform:
+            translateY(5px)
+            scale(1);
     }
 
     50% {
-        transform: translateY(-12px) scale(1.04);
+        transform:
+            translateY(-12px)
+            scale(1.04);
     }
 
 }
@@ -638,6 +678,7 @@ button {
 ========================================================= */
 
 .flower-word {
+
     position: absolute;
 
     color: #d34c75;
@@ -654,7 +695,7 @@ button {
 }
 
 
-/* LEFT SIDE */
+/* LEFT */
 
 .left1 {
     left: 0;
@@ -676,7 +717,7 @@ button {
 }
 
 
-/* RIGHT SIDE */
+/* RIGHT */
 
 .right1 {
     right: 0;
@@ -703,13 +744,17 @@ button {
 @keyframes wordFloat {
 
     0%, 100% {
-        transform: translateY(8px);
+
+        transform:
+            translateY(8px);
 
         opacity: .45;
     }
 
     50% {
-        transform: translateY(-12px);
+
+        transform:
+            translateY(-12px);
 
         opacity: 1;
     }
@@ -722,6 +767,7 @@ button {
 ========================================================= */
 
 .flower-sparkle {
+
     position: absolute;
 
     font-size: 18px;
@@ -761,13 +807,17 @@ button {
 @keyframes sparkle {
 
     0%, 100% {
-        transform: scale(.7);
+
+        transform:
+            scale(.7);
 
         opacity: .3;
     }
 
     50% {
-        transform: scale(1.3);
+
+        transform:
+            scale(1.3);
 
         opacity: 1;
     }
@@ -780,6 +830,7 @@ button {
 ========================================================= */
 
 .gift-grid {
+
     width: 100%;
 
     display: grid;
@@ -791,11 +842,14 @@ button {
 }
 
 .gift {
+
     min-height: 160px;
 
     padding: 10px 5px;
 
-    border: 2px solid #ffd0dc;
+    border:
+        2px solid #ffd0dc;
+
     border-radius: 20px;
 
     background: white;
@@ -810,10 +864,13 @@ button {
 }
 
 .gift:active {
-    transform: scale(.93);
+
+    transform:
+        scale(.93);
 }
 
 .gift-icon {
+
     display: block;
 
     font-size: 45px;
@@ -827,16 +884,19 @@ button {
 @keyframes giftBounce {
 
     0%, 100% {
-        transform: translateY(0);
+        transform:
+            translateY(0);
     }
 
     50% {
-        transform: translateY(-7px);
+        transform:
+            translateY(-7px);
     }
 
 }
 
 .gift-title {
+
     display: block;
 
     color: #a90036;
@@ -846,6 +906,7 @@ button {
 }
 
 .gift-sub {
+
     display: block;
 
     margin-top: 5px;
@@ -856,6 +917,7 @@ button {
 }
 
 .back-btn {
+
     margin-top: 20px;
 }
 
@@ -865,6 +927,7 @@ button {
 ========================================================= */
 
 .content-display {
+
     width: 100%;
 
     min-height: 320px;
@@ -878,35 +941,199 @@ button {
 
     background: white;
 
-    border: 2px solid #ffe0e8;
+    border:
+        2px solid #ffe0e8;
 
     border-radius: 22px;
 
     overflow-y: auto;
 }
 
-.letter-text {
-    color: #555;
 
-    font-size: 15px;
+/* =========================================================
+   NOTEBOOK LETTER
+========================================================= */
 
-    line-height: 1.7;
+.notebook {
 
-    font-style: italic;
+    width: 100%;
+    height: 330px;
+
+    position: relative;
+
+    padding:
+        25px
+        18px
+        20px
+        42px;
+
+    text-align: left;
+
+    overflow-y: auto;
+
+    border-radius: 10px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #fffdf7 0px,
+            #fffdf7 29px,
+            #c9dff5 30px
+        );
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,.08);
+
+    border:
+        1px solid #eadfce;
+}
+
+
+/* RED LINE */
+
+.notebook::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 28px;
+
+    width: 2px;
+
+    background: #f2a1ad;
+
+    opacity: .7;
+}
+
+
+/* NOTEBOOK HOLES */
+
+.notebook::after {
+
+    content:
+        "•\A•\A•\A•\A•\A•\A•\A•\A•\A•";
+
+    white-space: pre;
+
+    position: absolute;
+
+    left: 7px;
+    top: 18px;
+
+    line-height: 30px;
+
+    color: #d5c8b8;
+
+    font-size: 14px;
+}
+
+
+/* LETTER PAGE */
+
+.letter-page {
+
+    min-height: 100%;
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #4f4f4f;
+
+    font-family:
+        "Segoe Print",
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 13px;
+
+    line-height: 30px;
+
+    padding-right: 5px;
+}
+
+.letter-page p {
+
+    margin:
+        0 0 10px;
+}
+
+.letter-page .greeting {
+
+    color: #a90036;
+
+    font-weight: 700;
+}
+
+.letter-page .signature {
+
+    color: #a90036;
+
+    font-weight: 700;
+
+    text-align: right;
+
+    margin-top: 10px;
 }
 
 
 /* =========================================================
-   MEMORIES SLIDESHOW
+   LETTER NAVIGATION
+========================================================= */
+
+.letter-navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    gap: 10px;
+}
+
+.letter-navigation button {
+
+    flex: 1;
+}
+
+.letter-page-indicator {
+
+    color: #c05b7c;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MEMORIES
 ========================================================= */
 
 .slideshow {
+
     position: relative;
 
     width: 100%;
 }
 
+
+/* EACH SLIDE */
+
 .slide {
+
     display: none;
 
     width: 100%;
@@ -925,18 +1152,40 @@ button {
 
     box-shadow:
         0 5px 15px
-        rgba(0,0,0,0.08);
+        rgba(0,0,0,.08);
 }
 
+
+/* ODD = IMAGE LEFT */
+
+.slide:nth-of-type(odd) {
+
+    flex-direction:
+        row;
+}
+
+
+/* EVEN = IMAGE RIGHT */
+
+.slide:nth-of-type(even) {
+
+    flex-direction:
+        row-reverse;
+}
+
+
 .slide.active {
+
     display: flex;
 
     animation:
         photoIn .4s ease;
 }
 
+
 .slide img {
-    width: 55%;
+
+    width: 52%;
 
     height: 260px;
 
@@ -947,16 +1196,47 @@ button {
     flex-shrink: 0;
 }
 
+
+/* DESCRIPTION */
+
 .memory-description {
+
     flex: 1;
+
+    min-width: 0;
 
     text-align: left;
 
     padding: 10px;
 }
 
+
+/* ODD DESCRIPTION COMES FROM RIGHT */
+
+.slide:nth-of-type(odd)
+.memory-description {
+
+    animation:
+        descriptionFromRight
+        .5s ease both;
+}
+
+
+/* EVEN DESCRIPTION COMES FROM LEFT */
+
+.slide:nth-of-type(even)
+.memory-description {
+
+    animation:
+        descriptionFromLeft
+        .5s ease both;
+}
+
+
 .memory-description h3 {
-    margin: 0 0 10px;
+
+    margin:
+        0 0 10px;
 
     color: #a90036;
 
@@ -964,6 +1244,7 @@ button {
 }
 
 .memory-description p {
+
     margin: 0;
 
     color: #666;
@@ -973,23 +1254,113 @@ button {
     font-size: 14px;
 }
 
-@keyframes photoIn {
+
+/* DESCRIPTION ANIMATIONS */
+
+@keyframes descriptionFromRight {
 
     from {
+
         opacity: 0;
 
-        transform: scale(.95);
+        transform:
+            translateX(25px);
     }
 
     to {
+
         opacity: 1;
 
-        transform: scale(1);
+        transform:
+            translateX(0);
     }
 
 }
 
+@keyframes descriptionFromLeft {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+@keyframes photoIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.95);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   MEMORY MUSIC
+   DOES NOT TAKE SPACE FROM SLIDESHOW
+========================================================= */
+
+.memory-music {
+
+    width: 100%;
+
+    height: 24px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 5px;
+
+    pointer-events: none;
+}
+
+.memory-music span {
+
+    color: #c05b7c;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    opacity: .75;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SLIDESHOW BUTTONS
+========================================================= */
+
 .slide-btn {
+
     position: absolute;
 
     top: 50%;
@@ -1015,10 +1386,12 @@ button {
 }
 
 .prev {
+
     left: 5px;
 }
 
 .next {
+
     right: 5px;
 }
 
@@ -1028,17 +1401,21 @@ button {
 ========================================================= */
 
 .future-list {
+
     width: 100%;
 }
 
 .future-item {
-    margin: 10px 0;
+
+    margin:
+        10px 0;
 
     padding: 13px;
 
     text-align: left;
 
-    background: #fff5f8;
+    background:
+        #fff5f8;
 
     border-left:
         4px solid #ff7095;
@@ -1050,10 +1427,12 @@ button {
 }
 
 .future-item strong {
+
     color: #ad1746;
 }
 
 .future-item span {
+
     display: block;
 
     margin-top: 5px;
@@ -1066,6 +1445,7 @@ button {
 @keyframes futureIn {
 
     from {
+
         opacity: 0;
 
         transform:
@@ -1073,6 +1453,7 @@ button {
     }
 
     to {
+
         opacity: 1;
 
         transform:
@@ -1089,28 +1470,89 @@ button {
 @media(max-width: 600px) {
 
     .gif002-wrapper {
+
         width: 210px;
         height: 210px;
     }
 
     .gif003-wrapper {
+
         width: 220px;
         height: 220px;
     }
 
     .big-yes {
-        padding: 18px 48px;
+
+        padding:
+            18px 48px;
 
         font-size: 20px;
     }
 
     .bouquet {
+
         width: 160px;
         height: 160px;
     }
 
     .flower-word {
+
         font-size: 10px;
+    }
+
+    .notebook {
+
+        height: 330px;
+
+        padding-left: 38px;
+    }
+
+    .notebook::before {
+
+        left: 25px;
+    }
+
+    .notebook::after {
+
+        left: 5px;
+    }
+
+    .letter-page {
+
+        font-size: 12px;
+
+        line-height: 30px;
+    }
+
+    .slide {
+
+        gap: 10px;
+
+        padding: 10px;
+    }
+
+    .slide img {
+
+        width: 52%;
+
+        height: 240px;
+    }
+
+    .memory-description {
+
+        padding: 5px;
+    }
+
+    .memory-description h3 {
+
+        font-size: 15px;
+    }
+
+    .memory-description p {
+
+        font-size: 12px;
+
+        line-height: 1.45;
     }
 
 }
@@ -1119,43 +1561,81 @@ button {
 @media(max-width: 360px) {
 
     .container {
-        padding: 20px 14px;
+
+        padding:
+            20px 14px;
     }
 
     .gift {
+
         min-height: 140px;
     }
 
     .gift-icon {
+
         font-size: 38px;
     }
 
     .flower-word {
+
         font-size: 9px;
     }
 
-    .slide {
-        gap: 8px;
+    .notebook {
 
-        padding: 10px;
+        height: 320px;
+
+        padding-left: 34px;
+    }
+
+    .notebook::before {
+
+        left: 22px;
+    }
+
+    .letter-page {
+
+        font-size: 11px;
+
+        line-height: 30px;
+    }
+
+    .slide {
+
+        gap: 7px;
+
+        padding: 8px;
     }
 
     .slide img {
-        width: 52%;
 
-        height: 230px;
+        width: 51%;
+
+        height: 220px;
     }
 
     .memory-description {
-        padding: 5px;
+
+        padding: 3px;
     }
 
     .memory-description h3 {
-        font-size: 15px;
+
+        font-size: 14px;
+
+        margin-bottom: 7px;
     }
 
     .memory-description p {
-        font-size: 12px;
+
+        font-size: 11px;
+
+        line-height: 1.4;
+    }
+
+    .memory-music span {
+
+        font-size: 9px;
     }
 
 }
@@ -1167,6 +1647,45 @@ button {
 
 <body>
 
+
+<!-- =====================================================
+     AUDIO FILES
+===================================================== -->
+
+<audio
+    id="audio001"
+    src="./audio001.mp3"
+    loop
+    preload="auto">
+</audio>
+
+
+<audio
+    id="audio002"
+    src="./audio002.mp3"
+    loop
+    preload="auto">
+</audio>
+
+
+<audio
+    id="audio003"
+    src="./audio003.mp3"
+    preload="auto">
+</audio>
+
+
+<audio
+    id="music001"
+    src="./music001.mp3"
+    loop
+    preload="auto">
+</audio>
+
+
+<!-- =====================================================
+     FLOATING HEART BACKGROUND
+===================================================== -->
 
 <div id="heartBackground"></div>
 
@@ -1181,16 +1700,19 @@ button {
 <div id="screenAsk" class="screen active">
 
 
-    <!-- ORIGINAL FIRST STAGE -->
-
     <div id="firstStage">
 
+
         <div class="hearts">
+
             💖 ✨ 💖
+
         </div>
 
 
-        <div class="cute-cat" id="gif001Container">
+        <div
+            class="cute-cat"
+            id="gif001Container">
 
             <img
                 src="./gif001.gif"
@@ -1200,17 +1722,22 @@ button {
 
 
         <div class="subtitle">
+
             Hey beautiful ♡
+
         </div>
 
 
         <h1>
+
             Do you want to see<br>
             your little surprise?
+
         </h1>
 
 
         <div class="btn-group">
+
 
             <button
                 id="yesBtn"
@@ -1231,67 +1758,67 @@ button {
 
             </button>
 
-        </div>
-
-    </div>
-
-
-    <!-- =================================================
-         SECOND STAGE
-    ================================================== -->
-
-    <div
-        id="stageTwo"
-        class="stage-two">
-
-
-        <div class="gif002-question">
-
-            You don't love me anymore? 😿
-
-        </div>
-
-
-        <div class="gif002-wrapper">
-
-            <img
-                src="./gif002.gif"
-                alt="Sad cat">
-
-        </div>
-
-
-        <!-- YES BUTTON WILL BE MOVED HERE BY JAVASCRIPT -->
-
-    </div>
-
-
-    <!-- =================================================
-         THIRD STAGE
-    ================================================== -->
-
-    <div
-        id="stageThree"
-        class="stage-three">
-
-
-        <div class="gif003-wrapper">
-
-            <img
-                src="./gif003.gif"
-                alt="Happy cat">
-
-        </div>
-
-
-        <div class="gif003-text">
-
-            You do love me😼
 
         </div>
 
 
     </div>
+
+
+<!-- =================================================
+     SECOND STAGE
+================================================== -->
+
+<div
+    id="stageTwo"
+    class="stage-two">
+
+
+    <div class="gif002-question">
+
+        You don't love me anymore? 😿
+
+    </div>
+
+
+    <div class="gif002-wrapper">
+
+        <img
+            src="./gif002.gif"
+            alt="Sad cat">
+
+    </div>
+
+
+</div>
+
+
+<!-- =================================================
+     THIRD STAGE
+================================================== -->
+
+<div
+    id="stageThree"
+    class="stage-three">
+
+
+    <div class="gif003-wrapper">
+
+        <img
+            src="./gif003.gif"
+            alt="Happy cat">
+
+    </div>
+
+
+    <div class="gif003-text">
+
+        You do love me😼
+
+    </div>
+
+
+</div>
 
 
 </div>
@@ -1321,8 +1848,6 @@ button {
     <div class="flower-scene">
 
 
-        <!-- LEFT WORDS -->
-
         <div class="flower-word left1">
 
             GORGEOUS LALOVE KO!!
@@ -1332,7 +1857,7 @@ button {
 
         <div class="flower-word left2">
 
-            LALOVE THE BEST!!
+            LALOVE IS THE BEST!!
 
         </div>
 
@@ -1344,8 +1869,6 @@ button {
         </div>
 
 
-        <!-- RIGHT WORDS -->
-
         <div class="flower-word right1">
 
             I LOVE YOU SO MUCH!!!
@@ -1355,7 +1878,7 @@ button {
 
         <div class="flower-word right2">
 
-            MUAHHHH! MUAHHHH!!!😚
+            MUAHHHH!!! muah! muah! muah! MUAHHHH!!!😚
 
         </div>
 
@@ -1366,8 +1889,6 @@ button {
 
         </div>
 
-
-        <!-- SPARKLES -->
 
         <div class="flower-sparkle s1">
 
@@ -1396,8 +1917,6 @@ button {
 
         </div>
 
-
-        <!-- NEW FLOWER GIF -->
 
         <div class="bouquet">
 
@@ -1608,452 +2127,168 @@ button {
     <div class="content-display">
 
 
-        <!-- =================================================
-             LETTER
-        ================================================== -->
+<!-- =================================================
+     LETTER
+================================================== -->
+
+<div
+    id="letterContainer"
+    style="
+        display:none;
+        width:100%;
+    ">
+
+
+    <div class="notebook">
+
+
+        <!-- PAGE 1 -->
 
         <div
-            id="letterContainer"
-            class="letter-text"
-            style="display:none;">
+            class="letter-page"
+            id="letterPage1">
 
 
-            Lalove,
+            <p class="greeting">
 
-            <br><br>
+                Hello po lalove ko! ❤️
 
-
-            I just want you to know how grateful I am
-            that you're part of my life. ❤️
-
-            <br><br>
+            </p>
 
 
-            Thank you for every little moment,
-            every laugh, every conversation,
-            and every memory we've made.
+            <p>
 
-            <br><br>
+                Happy Anniversary po
+                mwhehehehe.
 
-
-            I hope we continue choosing each other,
-            understanding each other, and growing
-            together.
-
-            <br><br>
+            </p>
 
 
-            I love you so much, lalove. 💗
+            <p>
 
-            <br><br>
+                BEST THING NA NAKAPAG LIVE IN
+                NA AGAD TAYO.
+
+            </p>
 
 
-            — your lalove ♡
+            <p>
+
+                Sorry po lalove if eto lang muna
+                gift ko hindi kasi tayo makagastos.
+                Need natin tipirin budget natin.
+
+            </p>
+
+
+            <p>
+
+                Though I know naman na ngayon lang yun
+                and sa umpisa lang talaga mahirap.
+                Malalagpasan rin naman natin 'to.
+
+            </p>
 
 
         </div>
 
 
-        <!-- =================================================
-             MEMORIES
-        ================================================== -->
+        <!-- PAGE 2 -->
 
         <div
-            id="slideshowContainer"
-            class="slideshow">
+            class="letter-page"
+            id="letterPage2"
+            style="display:none;">
 
 
-            <!-- PHOTO 001 -->
+            <p>
 
-            <div class="slide active">
+                Let's move on sa depressing part.
 
-                <img
-                    src="./001.jpg"
-                    alt="Memory 1">
+            </p>
 
 
-                <div class="memory-description">
+            <p>
 
-                    <h3>
+                Lalove ko alam mo ba I LOVE YOU
+                SO SO SO SO SO MUCHHH!!!
 
-                        Our First Memory ♡
+            </p>
 
-                    </h3>
 
+            <p>
 
-                    <p>
+                Gagawin ko lahat para sa lalove ko!!
 
-                        This was one of those little moments
-                        that I really wanted to remember.
+            </p>
 
-                    </p>
 
-                </div>
+            <p>
 
-            </div>
+                Can't wait na mangyari yung mga
+                gusto nating bagay like magkapera
+                first and foremost then gumala
+                kung saan natin gusto,
 
-
-            <!-- PHOTO 002 -->
-
-            <div class="slide">
-
-                <img
-                    src="./002.jpg"
-                    alt="Memory 2">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        A Beautiful Day ♡
-
-                    </h3>
-
-
-                    <p>
-
-                        A simple moment, but one that
-                        became special to me.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 003 -->
-
-            <div class="slide">
-
-                <img
-                    src="./003.jpg"
-                    alt="Memory 3">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        That Special Moment
-
-                    </h3>
-
-
-                    <p>
-
-                        I'm really happy that we got to
-                        share this moment together.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 004 -->
-
-            <div class="slide">
-
-                <img
-                    src="./004.jpg"
-                    alt="Memory 4">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        Another Memory ♡
-
-                    </h3>
-
-
-                    <p>
-
-                        One of the many little moments
-                        that I'll always treasure.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 005 -->
-
-            <div class="slide">
-
-                <img
-                    src="./005.jpg"
-                    alt="Memory 5">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        Sweet Moment
-
-                    </h3>
-
-
-                    <p>
-
-                        Even the simplest moments can
-                        become beautiful memories.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 006 -->
-
-            <div class="slide">
-
-                <img
-                    src="./006.jpg"
-                    alt="Memory 6">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        Us ♡
-
-                    </h3>
-
-
-                    <p>
-
-                        Another moment that I'm glad
-                        we were able to experience.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 007 -->
-
-            <div class="slide">
-
-                <img
-                    src="./007.jpg"
-                    alt="Memory 7">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        A Day to Remember
-
-                    </h3>
-
-
-                    <p>
-
-                        This is another memory that
-                        I'll always be happy to look back on.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 008 -->
-
-            <div class="slide">
-
-                <img
-                    src="./008.jpg"
-                    alt="Memory 8">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        Another Little Memory ♡
-
-                    </h3>
-
-
-                    <p>
-
-                        I hope we can make many more
-                        memories like this together.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 009 -->
-
-            <div class="slide">
-
-                <img
-                    src="./009.jpg"
-                    alt="Memory 9">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        One More Memory
-
-                    </h3>
-
-
-                    <p>
-
-                        Sometimes the simplest moments
-                        become our favorite memories.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PHOTO 010 -->
-
-            <div class="slide">
-
-                <img
-                    src="./010.jpg"
-                    alt="Memory 10">
-
-
-                <div class="memory-description">
-
-                    <h3>
-
-                        Forever in My Memories ♡
-
-                    </h3>
-
-
-                    <p>
-
-                        Thank you for all the beautiful
-                        memories we've made together.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PREVIOUS -->
-
-            <button
-                class="slide-btn prev"
-                id="prevBtn"
-                type="button">
-
-                ❮
-
-            </button>
-
-
-            <!-- NEXT -->
-
-            <button
-                class="slide-btn next"
-                id="nextBtn"
-                type="button">
-
-                ❯
-
-            </button>
+            </p>
 
 
         </div>
 
 
-        <!-- =================================================
-             FUTURE
-        ================================================== -->
+        <!-- PAGE 3 -->
 
         <div
-            id="futureContainer"
-            class="future-list"
+            class="letter-page"
+            id="letterPage3"
             style="display:none;">
 
 
-            <div class="future-item">
+            <p>
 
-                💕 <strong>More memories</strong>
+                kumain ng kahit anong gusto natin
+                and marami pang iba.
 
-                <span>
-
-                    More laughs, random dates,
-                    pictures, and little moments.
-
-                </span>
-
-            </div>
+            </p>
 
 
-            <div class="future-item">
+            <p>
 
-                🌷 <strong>Grow together</strong>
+                As long as kasama ang lalove ko
+                BEST THING na mwhehehehe.
 
-                <span>
-
-                    Keep supporting each other
-                    through every new chapter.
-
-                </span>
-
-            </div>
+            </p>
 
 
-            <div class="future-item">
+            <p>
 
-                ✈️ <strong>Dream together</strong>
+                Na appreciate ko sobra lahat
+                ng memories natin lalove ko
+                be it pag-aaway natin and good thing.
 
-                <span>
-
-                    Places we want to visit and
-                    memories we want to make.
-
-                </span>
-
-            </div>
+            </p>
 
 
-            <div class="future-item">
+            <p>
 
-                🎀 <strong>Keep choosing love</strong>
+                I LOVE YOU SO MUCH LALOVE KO!!!
 
-                <span>
+            </p>
 
-                    I hope we continue choosing
-                    kindness, patience, and each other.
 
-                </span>
+            <p>
 
-            </div>
+                MUAHHHH!!! muah! muah! muah!
+                MUAHHHHH!!!!
+
+            </p>
+
+
+            <p class="greeting">
+
+                HAPPY ANNIVERSARY PO!!! ❤️
+
+            </p>
 
 
         </div>
@@ -2062,14 +2297,482 @@ button {
     </div>
 
 
-    <button
-        id="backToHome"
-        class="secondary-btn back-btn"
-        type="button">
+    <!-- LETTER NAVIGATION -->
 
-        ⬅️ Back to Gifts
+    <div class="letter-navigation">
 
-    </button>
+
+        <button
+            id="letterPrev"
+            class="secondary-btn"
+            type="button">
+
+            ❮ Previous
+
+        </button>
+
+
+        <div
+            id="letterPageIndicator"
+            class="letter-page-indicator">
+
+            1 / 3
+
+        </div>
+
+
+        <button
+            id="letterNext"
+            class="primary-btn"
+            type="button">
+
+            Continue ❯
+
+        </button>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =================================================
+     MEMORIES SLIDESHOW
+================================================== -->
+
+<div
+    id="slideshowContainer"
+    class="slideshow"
+    style="display:none;">
+
+
+<!-- PHOTO 001 -->
+
+<div class="slide active">
+
+    <img
+        src="./001.jpg"
+        alt="Memory 1">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            Our First Memory ♡
+
+        </h3>
+
+
+        <p>
+
+            This was one of those little moments
+            that I really wanted to remember.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 002 -->
+
+<div class="slide">
+
+    <img
+        src="./002.jpg"
+        alt="Memory 2">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            A Beautiful Day ♡
+
+        </h3>
+
+
+        <p>
+
+            A simple moment, but one that
+            became special to me.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 003 -->
+
+<div class="slide">
+
+    <img
+        src="./003.jpg"
+        alt="Memory 3">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            That Special Moment
+
+        </h3>
+
+
+        <p>
+
+            I'm really happy that we got to
+            share this moment together.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 004 -->
+
+<div class="slide">
+
+    <img
+        src="./004.jpg"
+        alt="Memory 4">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            Another Memory ♡
+
+        </h3>
+
+
+        <p>
+
+            One of the many little moments
+            that I'll always treasure.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 005 -->
+
+<div class="slide">
+
+    <img
+        src="./005.jpg"
+        alt="Memory 5">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            Sweet Moment
+
+        </h3>
+
+
+        <p>
+
+            Even the simplest moments can
+            become beautiful memories.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 006 -->
+
+<div class="slide">
+
+    <img
+        src="./006.jpg"
+        alt="Memory 6">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            Us ♡
+
+        </h3>
+
+
+        <p>
+
+            Another moment that I'm glad
+            we were able to experience.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 007 -->
+
+<div class="slide">
+
+    <img
+        src="./007.jpg"
+        alt="Memory 7">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            A Day to Remember
+
+        </h3>
+
+
+        <p>
+
+            This is another memory that
+            I'll always be happy to look back on.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 008 -->
+
+<div class="slide">
+
+    <img
+        src="./008.jpg"
+        alt="Memory 8">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            Another Little Memory ♡
+
+        </h3>
+
+
+        <p>
+
+            I hope we can make many more
+            memories like this together.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 009 -->
+
+<div class="slide">
+
+    <img
+        src="./009.jpg"
+        alt="Memory 9">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            One More Memory
+
+        </h3>
+
+
+        <p>
+
+            Sometimes the simplest moments
+            become our favorite memories.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PHOTO 010 -->
+
+<div class="slide">
+
+    <img
+        src="./010.jpg"
+        alt="Memory 10">
+
+
+    <div class="memory-description">
+
+        <h3>
+
+            Forever in My Memories ♡
+
+        </h3>
+
+
+        <p>
+
+            Thank you for all the beautiful
+            memories we've made together.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- PREVIOUS -->
+
+<button
+    class="slide-btn prev"
+    id="prevBtn"
+    type="button">
+
+    ❮
+
+</button>
+
+
+<!-- NEXT -->
+
+<button
+    class="slide-btn next"
+    id="nextBtn"
+    type="button">
+
+    ❯
+
+</button>
+
+
+</div>
+
+
+<!-- =================================================
+     MEMORY MUSIC
+     SEPARATE FROM SLIDESHOW
+================================================== -->
+
+<div
+    id="memoryMusicIndicator"
+    class="memory-music"
+    style="display:none;">
+
+    <span>
+
+        🎵 Playing our memories music...
+
+    </span>
+
+</div>
+
+
+<!-- =================================================
+     FUTURE
+================================================== -->
+
+<div
+    id="futureContainer"
+    class="future-list"
+    style="display:none;">
+
+
+    <div class="future-item">
+
+        💕 <strong>More memories</strong>
+
+        <span>
+
+            More laughs, random dates,
+            pictures, and little moments.
+
+        </span>
+
+    </div>
+
+
+    <div class="future-item">
+
+        🌷 <strong>Grow together</strong>
+
+        <span>
+
+            Keep supporting each other
+            through every new chapter.
+
+        </span>
+
+    </div>
+
+
+    <div class="future-item">
+
+        ✈️ <strong>Dream together</strong>
+
+        <span>
+
+            Places we want to visit and
+            memories we want to make.
+
+        </span>
+
+    </div>
+
+
+    <div class="future-item">
+
+        🎀 <strong>Keep choosing love</strong>
+
+        <span>
+
+            I hope we continue choosing
+            kindness, patience, and each other.
+
+        </span>
+
+    </div>
+
+
+</div>
+
+
+</div>
+
+
+<button
+    id="backToHome"
+    class="secondary-btn back-btn"
+    type="button">
+
+    ⬅️ Back to Gifts
+
+</button>
 
 
 </div>
@@ -2097,15 +2800,21 @@ function changeScreen(screenId) {
         document.querySelectorAll(".screen");
 
 
-    screens.forEach(function(screen) {
+    screens.forEach(
+        function(screen) {
 
-        screen.classList.remove("active");
+            screen.classList.remove(
+                "active"
+            );
 
-    });
+        }
+    );
 
 
     const target =
-        document.getElementById(screenId);
+        document.getElementById(
+            screenId
+        );
 
 
     if (!target) {
@@ -2120,7 +2829,85 @@ function changeScreen(screenId) {
     }
 
 
-    target.classList.add("active");
+    target.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =========================================================
+   AUDIO
+========================================================= */
+
+const audio001 =
+    document.getElementById(
+        "audio001"
+    );
+
+
+const audio002 =
+    document.getElementById(
+        "audio002"
+    );
+
+
+const audio003 =
+    document.getElementById(
+        "audio003"
+    );
+
+
+const music001 =
+    document.getElementById(
+        "music001"
+    );
+
+
+/*
+ * Stop audio.
+ */
+
+function stopAudio(audio) {
+
+    if (!audio) return;
+
+    audio.pause();
+
+    audio.currentTime = 0;
+
+}
+
+
+/*
+ * Play audio.
+ */
+
+function playAudio(audio) {
+
+    if (!audio) return;
+
+
+    const playPromise =
+        audio.play();
+
+
+    if (
+        playPromise !== undefined
+    ) {
+
+        playPromise.catch(
+            function(error) {
+
+                console.log(
+                    "Audio playback was blocked:",
+                    error
+                );
+
+            }
+        );
+
+    }
 
 }
 
@@ -2130,22 +2917,39 @@ function changeScreen(screenId) {
 ========================================================= */
 
 const firstStage =
-    document.getElementById("firstStage");
+    document.getElementById(
+        "firstStage"
+    );
+
 
 const stageTwo =
-    document.getElementById("stageTwo");
+    document.getElementById(
+        "stageTwo"
+    );
+
 
 const stageThree =
-    document.getElementById("stageThree");
+    document.getElementById(
+        "stageThree"
+    );
+
 
 const gif001Container =
-    document.getElementById("gif001Container");
+    document.getElementById(
+        "gif001Container"
+    );
+
 
 const noBtn =
-    document.getElementById("noBtn");
+    document.getElementById(
+        "noBtn"
+    );
+
 
 const yesBtn =
-    document.getElementById("yesBtn");
+    document.getElementById(
+        "yesBtn"
+    );
 
 
 let noCount = 0;
@@ -2162,49 +2966,91 @@ yesBtn.addEventListener(
     function() {
 
 
-        /* -----------------------------------------------
-           IF STAGE TWO IS ACTIVE
-        ------------------------------------------------ */
+        /*
+         * YES during stage two.
+         */
 
         if (stageTwoStarted) {
 
+
             /*
-             * Remove the YES button
+             * Stop audio002.
+             */
+
+            stopAudio(
+                audio002
+            );
+
+
+            /*
+             * Remove YES.
              */
 
             yesBtn.remove();
 
 
             /*
-             * Hide stage two
+             * Hide stage two.
              */
 
-            stageTwo.classList.remove("active");
+            stageTwo.classList.remove(
+                "active"
+            );
 
 
             /*
-             * Show stage three
+             * Show stage three.
              */
 
-            stageThree.classList.add("active");
+            stageThree.classList.add(
+                "active"
+            );
 
 
             /*
-             * Wait 5 seconds
-             * then go to flower page
+             * Audio003 starts
+             * after 2.5 seconds.
+             *
+             * Change 2500 if needed.
              */
 
-            setTimeout(function() {
+            setTimeout(
+                function() {
 
-                stageThree.classList.remove(
-                    "active"
-                );
+                    playAudio(
+                        audio003
+                    );
 
-                changeScreen(
-                    "screenBouquet"
-                );
+                },
+                2500
+            );
 
-            }, 5000);
+
+            /*
+             * Go to flowers after
+             * 5 seconds.
+             */
+
+            setTimeout(
+                function() {
+
+                    stopAudio(
+                        audio003
+                    );
+
+
+                    stageThree.classList.remove(
+                        "active"
+                    );
+
+
+                    changeScreen(
+                        "screenBouquet"
+                    );
+
+                },
+                5000
+            );
 
 
             return;
@@ -2212,9 +3058,14 @@ yesBtn.addEventListener(
         }
 
 
-        /* -----------------------------------------------
-           NORMAL YES
-        ------------------------------------------------ */
+        /*
+         * Normal YES.
+         */
+
+        stopAudio(
+            audio001
+        );
+
 
         changeScreen(
             "screenBouquet"
@@ -2236,7 +3087,9 @@ noBtn.addEventListener(
 
 
         if (stageTwoStarted) {
+
             return;
+
         }
 
 
@@ -2244,8 +3097,7 @@ noBtn.addEventListener(
 
 
         /*
-         * First four NO presses:
-         * make the button move around
+         * First four NO presses.
          */
 
         if (noCount < 5) {
@@ -2270,11 +3122,13 @@ noBtn.addEventListener(
 
 
             const x =
-                Math.random() * maxX;
+                Math.random() *
+                maxX;
 
 
             const y =
-                Math.random() * maxY;
+                Math.random() *
+                maxY;
 
 
             noBtn.style.position =
@@ -2299,7 +3153,7 @@ noBtn.addEventListener(
 
 
         /*
-         * Fifth NO press
+         * Fifth NO.
          */
 
         startSecondStage();
@@ -2309,7 +3163,7 @@ noBtn.addEventListener(
 
 
 /* =========================================================
-   START SECOND STAGE
+   SECOND STAGE
 ========================================================= */
 
 function startSecondStage() {
@@ -2318,7 +3172,16 @@ function startSecondStage() {
 
 
     /*
-     * Disintegrate GIF001
+     * Stop audio001.
+     */
+
+    stopAudio(
+        audio001
+    );
+
+
+    /*
+     * Disintegrate GIF001.
      */
 
     gif001Container.classList.add(
@@ -2327,13 +3190,14 @@ function startSecondStage() {
 
 
     /*
-     * Hide the original subtitle and question
+     * Hide original text.
      */
 
     const subtitle =
         firstStage.querySelector(
             ".subtitle"
         );
+
 
     const question =
         firstStage.querySelector(
@@ -2358,7 +3222,7 @@ function startSecondStage() {
 
 
     /*
-     * Hide NO
+     * Hide NO.
      */
 
     noBtn.style.display =
@@ -2366,50 +3230,54 @@ function startSecondStage() {
 
 
     /*
-     * Wait for GIF001's
-     * disintegration animation
+     * Wait for GIF001
+     * to disappear.
      */
 
-    setTimeout(function() {
+    setTimeout(
+        function() {
 
 
-        /*
-         * Hide first GIF
-         */
-
-        gif001Container.style.display =
-            "none";
+            gif001Container.style.display =
+                "none";
 
 
-        /*
-         * Move YES button into
-         * the second stage
-         */
+            /*
+             * Move YES button
+             * to stage two.
+             */
 
-        stageTwo.appendChild(
-            yesBtn
-        );
-
-
-        /*
-         * Make YES button big
-         */
-
-        yesBtn.classList.add(
-            "big-yes"
-        );
+            stageTwo.appendChild(
+                yesBtn
+            );
 
 
-        /*
-         * Show second stage
-         */
-
-        stageTwo.classList.add(
-            "active"
-        );
+            yesBtn.classList.add(
+                "big-yes"
+            );
 
 
-    }, 850);
+            /*
+             * Show stage two.
+             */
+
+            stageTwo.classList.add(
+                "active"
+            );
+
+
+            /*
+             * Start audio002.
+             */
+
+            playAudio(
+                audio002
+            );
+
+
+        },
+        850
+    );
 
 }
 
@@ -2419,7 +3287,9 @@ function startSecondStage() {
 ========================================================= */
 
 document
-    .getElementById("openGiftsBtn")
+    .getElementById(
+        "openGiftsBtn"
+    )
     .addEventListener(
         "click",
         function() {
@@ -2437,10 +3307,30 @@ document
 ========================================================= */
 
 document
-    .getElementById("backToHome")
+    .getElementById(
+        "backToHome"
+    )
     .addEventListener(
         "click",
         function() {
+
+
+            /*
+             * Stop memory music.
+             */
+
+            stopAudio(
+                music001
+            );
+
+
+            document
+                .getElementById(
+                    "memoryMusicIndicator"
+                )
+                .style.display =
+                "none";
+
 
             changeScreen(
                 "screenHome"
@@ -2451,11 +3341,13 @@ document
 
 
 /* =========================================================
-   BACK TO FLOWER PAGE
+   BACK TO FLOWER
 ========================================================= */
 
 document
-    .querySelectorAll("[data-go]")
+    .querySelectorAll(
+        "[data-go]"
+    )
     .forEach(
         function(button) {
 
@@ -2463,6 +3355,23 @@ document
             button.addEventListener(
                 "click",
                 function() {
+
+
+                    /*
+                     * Stop memory music.
+                     */
+
+                    stopAudio(
+                        music001
+                    );
+
+
+                    document
+                        .getElementById(
+                            "memoryMusicIndicator"
+                        )
+                        .style.display =
+                        "none";
 
 
                     changeScreen(
@@ -2483,7 +3392,9 @@ document
 ========================================================= */
 
 document
-    .querySelectorAll("[data-content]")
+    .querySelectorAll(
+        "[data-content]"
+    )
     .forEach(
         function(button) {
 
@@ -2504,6 +3415,184 @@ document
 
         }
     );
+
+
+/* =========================================================
+   LETTER
+========================================================= */
+
+const letterPages = [
+
+    document.getElementById(
+        "letterPage1"
+    ),
+
+    document.getElementById(
+        "letterPage2"
+    ),
+
+    document.getElementById(
+        "letterPage3"
+    )
+
+];
+
+
+let currentLetterPage = 0;
+
+
+const letterPrev =
+    document.getElementById(
+        "letterPrev"
+    );
+
+
+const letterNext =
+    document.getElementById(
+        "letterNext"
+    );
+
+
+const letterPageIndicator =
+    document.getElementById(
+        "letterPageIndicator"
+    );
+
+
+function showLetterPage() {
+
+
+    letterPages.forEach(
+        function(
+            page,
+            index
+        ) {
+
+
+            if (
+                index ===
+                currentLetterPage
+            ) {
+
+                page.style.display =
+                    "block";
+
+            } else {
+
+                page.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    /*
+     * Page indicator.
+     */
+
+    letterPageIndicator.textContent =
+        (
+            currentLetterPage + 1
+        ) +
+        " / " +
+        letterPages.length;
+
+
+    /*
+     * Previous visibility.
+     */
+
+    if (
+        currentLetterPage === 0
+    ) {
+
+        letterPrev.style.visibility =
+            "hidden";
+
+    } else {
+
+        letterPrev.style.visibility =
+            "visible";
+
+    }
+
+
+    /*
+     * Next button.
+     */
+
+    if (
+        currentLetterPage ===
+        letterPages.length - 1
+    ) {
+
+        letterNext.textContent =
+            "Finish ♡";
+
+    } else {
+
+        letterNext.textContent =
+            "Continue ❯";
+
+    }
+
+}
+
+
+/* PREVIOUS LETTER */
+
+letterPrev.addEventListener(
+    "click",
+    function() {
+
+
+        if (
+            currentLetterPage > 0
+        ) {
+
+            currentLetterPage--;
+
+            showLetterPage();
+
+        }
+
+    }
+);
+
+
+/* NEXT LETTER */
+
+letterNext.addEventListener(
+    "click",
+    function() {
+
+
+        if (
+            currentLetterPage <
+            letterPages.length - 1
+        ) {
+
+            currentLetterPage++;
+
+            showLetterPage();
+
+        } else {
+
+
+            /*
+             * Finish letter.
+             */
+
+            changeScreen(
+                "screenHome"
+            );
+
+        }
+
+    }
+);
 
 
 /* =========================================================
@@ -2530,6 +3619,30 @@ function openContentScreen(type) {
             "futureContainer"
         );
 
+
+    const musicIndicator =
+        document.getElementById(
+            "memoryMusicIndicator"
+        );
+
+
+    /*
+     * Always stop memory music
+     * before changing content.
+     */
+
+    stopAudio(
+        music001
+    );
+
+
+    musicIndicator.style.display =
+        "none";
+
+
+    /*
+     * Hide all content.
+     */
 
     letter.style.display =
         "none";
@@ -2561,7 +3674,13 @@ function openContentScreen(type) {
         );
 
 
-    if (type === "letter") {
+    /* =====================================================
+       LETTER
+    ===================================================== */
+
+    if (
+        type === "letter"
+    ) {
 
 
         emoji.textContent =
@@ -2576,14 +3695,24 @@ function openContentScreen(type) {
             "straight from my heart ♡";
 
 
+        currentLetterPage = 0;
+
+        showLetterPage();
+
+
         letter.style.display =
             "block";
-
 
     }
 
 
-    if (type === "images") {
+    /* =====================================================
+       MEMORIES
+    ===================================================== */
+
+    if (
+        type === "images"
+    ) {
 
 
         emoji.textContent =
@@ -2598,20 +3727,50 @@ function openContentScreen(type) {
             "little moments I treasure ♡";
 
 
+        /*
+         * Show slideshow.
+         */
+
         slideshow.style.display =
             "block";
 
 
-        currentSlide = 0;
+        /*
+         * Show music indicator
+         * underneath slideshow.
+         */
 
+        musicIndicator.style.display =
+            "flex";
+
+
+        /*
+         * Start from photo 001.
+         */
+
+        currentSlide = 0;
 
         showSlide();
 
 
+        /*
+         * Start music001.
+         */
+
+        playAudio(
+            music001
+        );
+
     }
 
 
-    if (type === "ribbon") {
+    /* =====================================================
+       FUTURE
+    ===================================================== */
+
+    if (
+        type === "ribbon"
+    ) {
 
 
         emoji.textContent =
@@ -2628,7 +3787,6 @@ function openContentScreen(type) {
 
         future.style.display =
             "block";
-
 
     }
 
@@ -2650,7 +3808,7 @@ let currentSlide = 0;
 function getSlides() {
 
     return document.querySelectorAll(
-        ".slide"
+        "#slideshowContainer .slide"
     );
 
 }
@@ -2680,7 +3838,9 @@ function showSlide() {
     }
 
 
-    if (currentSlide < 0) {
+    if (
+        currentSlide < 0
+    ) {
 
         currentSlide =
             slides.length - 1;
@@ -2707,10 +3867,14 @@ function showSlide() {
 }
 
 
-/* NEXT */
+/* =========================================================
+   NEXT MEMORY
+========================================================= */
 
 document
-    .getElementById("nextBtn")
+    .getElementById(
+        "nextBtn"
+    )
     .addEventListener(
         "click",
         function() {
@@ -2723,10 +3887,14 @@ document
     );
 
 
-/* PREVIOUS */
+/* =========================================================
+   PREVIOUS MEMORY
+========================================================= */
 
 document
-    .getElementById("prevBtn")
+    .getElementById(
+        "prevBtn"
+    )
     .addEventListener(
         "click",
         function() {
@@ -2785,22 +3953,27 @@ function createHeart() {
 
 
     heart.style.left =
-        Math.random() * 100 +
+        Math.random() *
+        100 +
         "vw";
 
 
     heart.style.fontSize =
         (
             12 +
-            Math.random() * 14
-        ) + "px";
+            Math.random() *
+            14
+        ) +
+        "px";
 
 
     heart.style.animationDuration =
         (
             5 +
-            Math.random() * 4
-        ) + "s";
+            Math.random() *
+            4
+        ) +
+        "s";
 
 
     background.appendChild(
@@ -2838,6 +4011,13 @@ for (
     );
 
 }
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+showLetterPage();
 
 </script>
 
