@@ -163,6 +163,41 @@ h2 {
     z-index: 10000;
 }
 
+/* OPENING MUSIC */
+
+.opening-music-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.opening-music-text {
+    color: #a90036;
+    font-size: 20px;
+    font-weight: 800;
+    animation: musicTextFloat 2s ease-in-out infinite;
+}
+
+@keyframes musicTextFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+.opening-music-area .primary-btn {
+    padding: 15px 30px;
+    font-size: 15px;
+}
+
 /* FIRST GIF */
 
 .cute-cat {
@@ -660,6 +695,31 @@ button {
     overflow-y: auto;
 }
 
+/* MEMORIES MUSIC PROMPT */
+
+.memory-music-prompt {
+    width: 100%;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+}
+
+.memory-music-text {
+    color: #a90036;
+    font-size: 19px;
+    font-weight: 800;
+    animation: musicTextFloat 2s ease-in-out infinite;
+}
+
+.memory-music-prompt .primary-btn {
+    padding: 15px 30px;
+    font-size: 15px;
+}
+
 /* NOTEBOOK */
 
 .notebook {
@@ -843,6 +903,33 @@ button {
     right: 2px;
 }
 
+/* MEMORY VIDEO */
+
+.memory-video-container {
+    width: 100%;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.memory-video {
+    width: 100%;
+    max-height: 350px;
+    border-radius: 18px;
+    object-fit: contain;
+    background: black;
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+}
+
+.memory-video-text {
+    color: #a90036;
+    font-size: 18px;
+    font-weight: 800;
+}
+
 /* FUTURE */
 
 .future-list {
@@ -953,6 +1040,10 @@ button {
         line-height: 1.45;
     }
 
+    .memory-music-text {
+        font-size: 17px;
+    }
+
 }
 
 @media(max-width: 360px) {
@@ -1023,7 +1114,12 @@ button {
 <audio id="audio001" src="./audio001.mp3" loop preload="auto"></audio>
 <audio id="audio002" src="./audio002.mp3" loop preload="auto"></audio>
 <audio id="audio003" src="./audio003.mp3" preload="auto"></audio>
+
+<!-- MUSIC001 = MEMORIES MUSIC -->
 <audio id="music001" src="./Music001.mp3" loop preload="auto"></audio>
+
+<!-- MUSIC002 = BOUQUET / LETTER / FUTURE MUSIC -->
+<audio id="music002" src="./Music002.mp3" loop preload="auto"></audio>
 
 
 <!-- FLOATING HEARTS -->
@@ -1044,14 +1140,27 @@ button {
 
     <!-- PLAY MUSIC FIRST -->
 
-    <button
-        id="openingMusicButton"
-        class="primary-btn"
-        type="button"
+    <div
+        id="openingMusicArea"
+        class="opening-music-area"
     >
-        🎵 PLAY MUSIC
-    </button>
 
+        <div class="opening-music-text">
+            Click it lalove, click it!!
+        </div>
+
+        <button
+            id="openingMusicButton"
+            class="primary-btn"
+            type="button"
+        >
+            🎵 PLAY MUSIC
+        </button>
+
+    </div>
+
+
+    <!-- FIRST STAGE -->
 
     <div
         id="firstStage"
@@ -1062,7 +1171,10 @@ button {
             💖 ✨ 💖
         </div>
 
-        <div class="cute-cat" id="gif001Container">
+        <div
+            class="cute-cat"
+            id="gif001Container"
+        >
 
             <img
                 src="./gif001.gif"
@@ -1105,7 +1217,10 @@ button {
 
     <!-- SECOND STAGE -->
 
-    <div id="stageTwo" class="stage-two">
+    <div
+        id="stageTwo"
+        class="stage-two"
+    >
 
         <div class="gif002-question">
             You don't love me anymore? 😿
@@ -1125,7 +1240,10 @@ button {
 
     <!-- THIRD STAGE -->
 
-    <div id="stageThree" class="stage-three">
+    <div
+        id="stageThree"
+        class="stage-three"
+    >
 
         <div class="gif003-wrapper">
 
@@ -1149,7 +1267,10 @@ button {
      FLOWER SCREEN
 ========================= -->
 
-<div id="screenBouquet" class="screen">
+<div
+    id="screenBouquet"
+    class="screen"
+>
 
     <div class="hearts">
         🌸 ✨ 🌷
@@ -1235,7 +1356,10 @@ button {
      HOME / GIFTS
 ========================= -->
 
-<div id="screenHome" class="screen">
+<div
+    id="screenHome"
+    class="screen"
+>
 
     <div class="hearts">
         💝 ✨ 💝
@@ -1251,6 +1375,8 @@ button {
 
 
     <div class="gift-grid">
+
+        <!-- LETTER -->
 
         <button
             class="gift"
@@ -1273,6 +1399,8 @@ button {
         </button>
 
 
+        <!-- MEMORIES -->
+
         <button
             class="gift"
             type="button"
@@ -1293,6 +1421,8 @@ button {
 
         </button>
 
+
+        <!-- FUTURE -->
 
         <button
             class="gift"
@@ -1332,13 +1462,22 @@ button {
      CONTENT SCREEN
 ========================= -->
 
-<div id="screenContent" class="screen">
+<div
+    id="screenContent"
+    class="screen"
+>
 
-    <div class="hearts" id="contentEmoji">
+    <div
+        class="hearts"
+        id="contentEmoji"
+    >
         ✨
     </div>
 
-    <div class="subtitle" id="contentSubtitle">
+    <div
+        class="subtitle"
+        id="contentSubtitle"
+    >
         Something from my heart
     </div>
 
@@ -1489,6 +1628,31 @@ button {
                 </button>
 
             </div>
+
+        </div>
+
+
+        <!-- =====================
+             MEMORIES MUSIC PROMPT
+        ====================== -->
+
+        <div
+            id="memoryMusicPrompt"
+            class="memory-music-prompt"
+            style="display:none;"
+        >
+
+            <div class="memory-music-text">
+                Play it if you love me lalove
+            </div>
+
+            <button
+                id="memoryMusicButton"
+                class="primary-btn"
+                type="button"
+            >
+                🎵 PLAY MUSIC
+            </button>
 
         </div>
 
@@ -1665,7 +1829,7 @@ button {
                 <div class="memory-description">
 
                     <h3>
-                        Museum 🎨 
+                        Museum 🎨
                     </h3>
 
                     <p>
@@ -1691,7 +1855,7 @@ button {
                 <div class="memory-description">
 
                     <h3>
-                        Museum 02 🎨 
+                        Museum 02 🎨
                     </h3>
 
                     <p>
@@ -1721,7 +1885,7 @@ button {
                     <p>
                         First celebration natin ng magkasama isa sa best thing na ginawa natin!!
                         First time din natin mag ferris wheel scary man ang taas HAHAHA still
-                        very enjoyable kaso di kita fireworks 
+                        very enjoyable kaso di kita fireworks
                     </p>
 
                 </div>
@@ -1773,6 +1937,40 @@ button {
             >
                 ❯
             </button>
+
+        </div>
+
+
+        <!-- =====================
+             MEMORY VIDEO
+        ====================== -->
+
+        <div
+            id="memoryVideoContainer"
+            class="memory-video-container"
+            style="display:none;"
+        >
+
+            <div class="memory-video-text">
+                A little video of our memories ♡
+            </div>
+
+            <video
+                id="memoryVideo"
+                class="memory-video"
+                controls
+                playsinline
+                preload="auto"
+            >
+
+                <source
+                    src="./MEMORIES.mp4"
+                    type="video/mp4"
+                >
+
+                Your browser does not support video playback.
+
+            </video>
 
         </div>
 
@@ -1879,10 +2077,17 @@ const audio003 =
 const music001 =
     document.getElementById("music001");
 
+const music002 =
+    document.getElementById("music002");
+
 
 function playAudio(audio, restart = false) {
 
-    if (!audio) return;
+    if (!audio) {
+        return Promise.reject(
+            new Error("Audio element not found")
+        );
+    }
 
     if (restart) {
         audio.currentTime = 0;
@@ -1897,7 +2102,9 @@ function playAudio(audio, restart = false) {
 
 function stopAudio(audio) {
 
-    if (!audio) return;
+    if (!audio) {
+        return;
+    }
 
     audio.pause();
 
@@ -1956,6 +2163,11 @@ const noBtn =
 const yesBtn =
     document.getElementById("yesBtn");
 
+const openingMusicArea =
+    document.getElementById(
+        "openingMusicArea"
+    );
+
 const openingMusicButton =
     document.getElementById(
         "openingMusicButton"
@@ -1968,7 +2180,7 @@ let stageTwoStarted = false;
 
 
 /* ==================================================
-   PLAY AUDIO001 FIRST
+   OPENING MUSIC FIRST
 ================================================== */
 
 openingMusicButton.addEventListener(
@@ -1982,7 +2194,12 @@ openingMusicButton.addEventListener(
                 true
             );
 
-            openingMusicButton.style.display =
+            /*
+                Only reveal the first stage
+                after audio001 successfully starts.
+            */
+
+            openingMusicArea.style.display =
                 "none";
 
             firstStage.style.display =
@@ -2005,62 +2222,119 @@ openingMusicButton.addEventListener(
    YES BUTTON
 ================================================== */
 
-yesBtn.addEventListener("click", () => {
+yesBtn.addEventListener(
+    "click",
+    () => {
 
+        /* ==============================
+           SECOND STAGE YES
+        ============================== */
 
-    /* SECOND STAGE YES */
+        if (stageTwoStarted) {
 
-    if (stageTwoStarted) {
+            stopAudio(audio002);
 
-        stopAudio(audio002);
+            yesBtn.remove();
 
-        yesBtn.remove();
-
-
-        stageTwo.classList.remove("active");
-
-        stageThree.classList.add("active");
-
-
-        /* START AUDIO003 AFTER 2.5 SECONDS */
-
-        setTimeout(() => {
-
-            playAudio(
-                audio003,
-                true
-            ).catch(() => {});
-
-        }, 2500);
-
-
-        /* RETURN TO FLOWERS AFTER 5 SECONDS */
-
-        setTimeout(() => {
-
-            stopAudio(audio003);
-
-            changeScreen(
-                "screenBouquet"
+            stageTwo.classList.remove(
+                "active"
             );
 
-        }, 5000);
+            stageThree.classList.add(
+                "active"
+            );
 
 
-        return;
+            /*
+                START AUDIO003
+                AFTER 2.5 SECONDS
+            */
+
+            setTimeout(
+                () => {
+
+                    playAudio(
+                        audio003,
+                        true
+                    ).catch(error => {
+
+                        console.error(
+                            "audio003 could not be started:",
+                            error
+                        );
+
+                    });
+
+                },
+                2500
+            );
+
+
+            /*
+                AFTER 5 SECONDS:
+                STOP AUDIO003
+                SHOW BOUQUET
+                START MUSIC002
+            */
+
+            setTimeout(
+                () => {
+
+                    stopAudio(
+                        audio003
+                    );
+
+                    changeScreen(
+                        "screenBouquet"
+                    );
+
+                    /*
+                        Music002 starts at the
+                        exact time the bouquet
+                        screen appears.
+                    */
+
+                    playAudio(
+                        music002,
+                        true
+                    ).catch(error => {
+
+                        console.error(
+                            "Music002 could not be started:",
+                            error
+                        );
+
+                    });
+
+                },
+                5000
+            );
+
+
+            return;
+
+        }
+
+
+        /* ==============================
+           NORMAL YES
+        ============================== */
+
+        stopAudio(
+            audio001
+        );
+
+        changeScreen(
+            "screenBouquet"
+        );
+
+        playAudio(
+            music002,
+            true
+        ).catch(() => {});
 
     }
-
-
-    /* NORMAL YES */
-
-    stopAudio(audio001);
-
-    changeScreen(
-        "screenBouquet"
-    );
-
-});
+);
 
 
 /* ==================================================
@@ -2082,7 +2356,9 @@ noBtn.addEventListener(
         noCount++;
 
 
-        /* FIRST FOUR NO PRESSES */
+        /* ==============================
+           FIRST FOUR NO PRESSES
+        ============================== */
 
         if (noCount < 5) {
 
@@ -2129,7 +2405,9 @@ noBtn.addEventListener(
         }
 
 
-        /* FIFTH NO */
+        /* ==============================
+           FIFTH NO
+        ============================== */
 
         startSecondStage();
 
@@ -2146,7 +2424,9 @@ function startSecondStage() {
     stageTwoStarted = true;
 
 
-    stopAudio(audio001);
+    stopAudio(
+        audio001
+    );
 
 
     /* DISINTEGRATE GIF001 */
@@ -2188,37 +2468,51 @@ function startSecondStage() {
         "none";
 
 
-    /* SHOW SECOND STAGE */
+    /*
+        SHOW SECOND STAGE
+    */
 
-    setTimeout(() => {
+    setTimeout(
+        () => {
 
-        gif001Container.style.display =
-            "none";
-
-
-        stageTwo.appendChild(
-            yesBtn
-        );
+            gif001Container.style.display =
+                "none";
 
 
-        yesBtn.classList.add(
-            "big-yes"
-        );
+            stageTwo.appendChild(
+                yesBtn
+            );
 
 
-        stageTwo.classList.add(
-            "active"
-        );
+            yesBtn.classList.add(
+                "big-yes"
+            );
 
 
-        /* START AUDIO002 */
+            stageTwo.classList.add(
+                "active"
+            );
 
-        playAudio(
-            audio002,
-            true
-        ).catch(() => {});
 
-    }, 850);
+            /*
+                START AUDIO002
+            */
+
+            playAudio(
+                audio002,
+                true
+            ).catch(error => {
+
+                console.error(
+                    "audio002 could not be started:",
+                    error
+                );
+
+            });
+
+        },
+        850
+    );
 
 }
 
@@ -2242,7 +2536,7 @@ document
 
 
 /* ==================================================
-   BACK BUTTON
+   BACK BUTTONS
 ================================================== */
 
 document
@@ -2255,6 +2549,10 @@ document
 
                 stopAudio(
                     music001
+                );
+
+                stopAudio(
+                    music002
                 );
 
                 changeScreen(
@@ -2275,6 +2573,10 @@ document
 
             stopAudio(
                 music001
+            );
+
+            stopAudio(
+                music002
             );
 
             changeScreen(
@@ -2304,6 +2606,26 @@ const future =
         "futureContainer"
     );
 
+const memoryMusicPrompt =
+    document.getElementById(
+        "memoryMusicPrompt"
+    );
+
+const memoryMusicButton =
+    document.getElementById(
+        "memoryMusicButton"
+    );
+
+const memoryVideoContainer =
+    document.getElementById(
+        "memoryVideoContainer"
+    );
+
+const memoryVideo =
+    document.getElementById(
+        "memoryVideo"
+    );
+
 const contentTitle =
     document.getElementById(
         "contentTitle"
@@ -2318,33 +2640,6 @@ const contentSubtitle =
     document.getElementById(
         "contentSubtitle"
     );
-
-
-/* ==================================================
-   MEMORY MUSIC BUTTON
-================================================== */
-
-const memoryMusicButton =
-    document.createElement("button");
-
-memoryMusicButton.id =
-    "memoryMusicButton";
-
-memoryMusicButton.className =
-    "primary-btn music-button";
-
-memoryMusicButton.type =
-    "button";
-
-memoryMusicButton.textContent =
-    "🎵 PLAY MUSIC";
-
-memoryMusicButton.style.display =
-    "none";
-
-document.body.appendChild(
-    memoryMusicButton
-);
 
 
 /* ==================================================
@@ -2462,10 +2757,18 @@ letterNext.addEventListener(
 
         } else {
 
-            stopAudio(music001);
+            /*
+                Letter finished.
+                Return to gifts.
 
-            memoryMusicButton.style.display =
-                "none";
+                Music002 continues while
+                reading the letter, but stops
+                when leaving it.
+            */
+
+            stopAudio(
+                music002
+            );
 
             changeScreen(
                 "screenHome"
@@ -2506,6 +2809,10 @@ function showSlide() {
 }
 
 
+/* ==================================================
+   PREVIOUS MEMORY
+================================================== */
+
 document
     .getElementById("prevBtn")
     .addEventListener(
@@ -2527,19 +2834,34 @@ document
     );
 
 
+/* ==================================================
+   NEXT MEMORY
+================================================== */
+
 document
     .getElementById("nextBtn")
     .addEventListener(
         "click",
         () => {
 
-            currentSlide =
-                (
-                    currentSlide +
-                    1
-                ) %
-                slides.length;
+            /*
+                If currently on Memory 10,
+                go to the video page.
+            */
 
+            if (
+                currentSlide ===
+                slides.length - 1
+            ) {
+
+                openMemoryVideo();
+
+                return;
+
+            }
+
+
+            currentSlide++;
 
             showSlide();
 
@@ -2548,7 +2870,7 @@ document
 
 
 /* ==================================================
-   MEMORY MUSIC START
+   MEMORY MUSIC
 ================================================== */
 
 memoryMusicButton.addEventListener(
@@ -2562,11 +2884,21 @@ memoryMusicButton.addEventListener(
                 true
             );
 
-            memoryMusicButton.style.display =
+
+            /*
+                Music successfully started.
+
+                Hide the prompt and reveal
+                the memories.
+            */
+
+            memoryMusicPrompt.style.display =
                 "none";
 
             slideshow.style.display =
                 "block";
+
+            currentSlide = 0;
 
             showSlide();
 
@@ -2584,23 +2916,98 @@ memoryMusicButton.addEventListener(
 
 
 /* ==================================================
-   OPEN CONTENT SCREEN
+   OPEN MEMORY VIDEO
 ================================================== */
 
-function openContentScreen(type) {
+function openMemoryVideo() {
 
-
-    /* STOP MEMORY MUSIC */
+    /*
+        Stop Music001 before opening
+        the memory video.
+    */
 
     stopAudio(
         music001
     );
 
-    memoryMusicButton.style.display =
+
+    slideshow.style.display =
         "none";
 
 
-    /* HIDE ALL CONTENT */
+    memoryMusicPrompt.style.display =
+        "none";
+
+
+    memoryVideoContainer.style.display =
+        "flex";
+
+
+    /*
+        Reset video to the beginning.
+    */
+
+    memoryVideo.currentTime = 0;
+
+
+    /*
+        Attempt autoplay.
+
+        This click came directly from the
+        Next button, so browsers normally
+        allow playback.
+    */
+
+    const videoPromise =
+        memoryVideo.play();
+
+
+    if (
+        videoPromise !== undefined
+    ) {
+
+        videoPromise.catch(error => {
+
+            console.error(
+                "MEMORIES video could not autoplay:",
+                error
+            );
+
+        });
+
+    }
+
+}
+
+
+/* ==================================================
+   OPEN CONTENT SCREEN
+================================================== */
+
+function openContentScreen(type) {
+
+    /*
+        Stop Music001.
+    */
+
+    stopAudio(
+        music001
+    );
+
+
+    /*
+        Music002 is used for Letter and Future,
+        but NOT Memories.
+    */
+
+    stopAudio(
+        music002
+    );
+
+
+    /*
+        Hide everything first.
+    */
 
     letter.style.display =
         "none";
@@ -2611,8 +3018,25 @@ function openContentScreen(type) {
     future.style.display =
         "none";
 
+    memoryMusicPrompt.style.display =
+        "none";
 
-    /* OPEN CONTENT SCREEN */
+    memoryVideoContainer.style.display =
+        "none";
+
+
+    /*
+        Stop memory video if it was playing.
+    */
+
+    memoryVideo.pause();
+
+    memoryVideo.currentTime = 0;
+
+
+    /*
+        OPEN CONTENT SCREEN
+    */
 
     changeScreen(
         "screenContent"
@@ -2648,6 +3072,24 @@ function openContentScreen(type) {
             "block";
 
 
+        /*
+            Music002 continues/starts
+            when Letter opens.
+        */
+
+        playAudio(
+            music002,
+            true
+        ).catch(error => {
+
+            console.error(
+                "Music002 could not be started:",
+                error
+            );
+
+        });
+
+
         return;
 
     }
@@ -2676,19 +3118,20 @@ function openContentScreen(type) {
 
 
         /*
-            KEEP THE SLIDESHOW HIDDEN.
-
-            The photos will only appear
-            AFTER Music001.mp3 successfully
-            starts playing.
+            Hide slideshow initially.
         */
 
         slideshow.style.display =
             "none";
 
 
-        memoryMusicButton.style.display =
-            "block";
+        /*
+            Show the music prompt
+            in the middle of the box.
+        */
+
+        memoryMusicPrompt.style.display =
+            "flex";
 
 
         return;
@@ -2716,6 +3159,24 @@ function openContentScreen(type) {
 
         future.style.display =
             "block";
+
+
+        /*
+            Music002 continues/starts
+            when Future opens.
+        */
+
+        playAudio(
+            music002,
+            true
+        ).catch(error => {
+
+            console.error(
+                "Music002 could not be started:",
+                error
+            );
+
+        });
 
 
         return;
