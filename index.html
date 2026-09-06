@@ -2112,6 +2112,28 @@ function stopAudio(audio) {
 
 }
 
+/* MUSIC002 / MUSIC001 CONTROL */
+function startMusic002FromBeginning() {
+    if (!music002) return;
+    music002.pause(); music002.currentTime = 0; music002.loop = true;
+    music002.play().catch(error => console.error("Music002 could not be started:", error));
+}
+function continueMusic002() {
+    if (!music002) return;
+    music002.loop = true;
+    if (music002.paused) music002.play().catch(error => console.error("Music002 could not continue:", error));
+}
+function startMusic001FromBeginning() {
+    if (!music001) return Promise.reject(new Error("Music001 not found"));
+    music001.pause(); music001.currentTime = 0; music001.loop = true;
+    return music001.play();
+}
+function stopMusic001() {
+    if (!music001) return;
+    music001.pause(); music001.currentTime = 0;
+}
+
+
 
 /* ==================================================
    SCREEN SYSTEM
@@ -2294,17 +2316,7 @@ yesBtn.addEventListener(
                         screen appears.
                     */
 
-                    playAudio(
-                        music002,
-                        true
-                    ).catch(error => {
-
-                        console.error(
-                            "Music002 could not be started:",
-                            error
-                        );
-
-                    });
+                    startMusic002FromBeginning();
 
                 },
                 5000
@@ -2547,13 +2559,8 @@ document
             "click",
             () => {
 
-                stopAudio(
-                    music001
-                );
-
-                stopAudio(
-                    music002
-                );
+                stopMusic001();
+                continueMusic002();
 
                 changeScreen(
                     button.dataset.go
@@ -2573,10 +2580,6 @@ document
 
             stopAudio(
                 music001
-            );
-
-            stopAudio(
-                music002
             );
 
             changeScreen(
@@ -2994,15 +2997,7 @@ function openContentScreen(type) {
         music001
     );
 
-
-    /*
-        Music002 is used for Letter and Future,
-        but NOT Memories.
-    */
-
-    stopAudio(
-        music002
-    );
+    /* Music002 continues for Letter/Future; Memories switches to Music001. */
 
 
     /*
@@ -3077,17 +3072,7 @@ function openContentScreen(type) {
             when Letter opens.
         */
 
-        playAudio(
-            music002,
-            true
-        ).catch(error => {
-
-            console.error(
-                "Music002 could not be started:",
-                error
-            );
-
-        });
+        continueMusic002();
 
 
         return;
@@ -3100,6 +3085,8 @@ function openContentScreen(type) {
     ================================================== */
 
     if (type === "images") {
+
+        stopAudio(music002);
 
         contentEmoji.textContent =
             "📸";
@@ -3166,17 +3153,7 @@ function openContentScreen(type) {
             when Future opens.
         */
 
-        playAudio(
-            music002,
-            true
-        ).catch(error => {
-
-            console.error(
-                "Music002 could not be started:",
-                error
-            );
-
-        });
+        continueMusic002();
 
 
         return;
